@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oluwapelumi Akande | Client Success & Digital Marketing</title>
+    <title>Oluwapelumi Akande | Social Media & Digital Marketing Manager</title>
+    <meta name="description" content="Oluwapelumi Akande — Social Media & Digital Marketing Manager helping fintechs and startups grow through strategic content, community management, and data-driven campaigns.">
+    <meta name="keywords" content="social media manager, digital marketing, fintech marketing, content strategy, Lagos, Nigeria, social media strategist">
+    <meta name="author" content="Oluwapelumi Akande">
+    <meta property="og:title" content="Oluwapelumi Akande | Social Media & Digital Marketing Manager">
+    <meta property="og:description" content="Helping fintechs and startups grow through strategic social media, content, and digital campaigns.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lumiee.vercel.app">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Oluwapelumi Akande | Social Media & Digital Marketing Manager">
+    <meta name="twitter:description" content="Helping fintechs and startups grow through strategic social media, content, and digital campaigns.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <style>
@@ -23,6 +33,8 @@
             --color-accent: #FF6B50;
         }
 
+        * { box-sizing: border-box; }
+
         body {
             font-family: var(--font-satoshi);
             background-color: var(--color-bg);
@@ -30,10 +42,7 @@
             scroll-behavior: smooth;
         }
 
-        ::selection {
-            background-color: var(--color-accent);
-            color: white;
-        }
+        ::selection { background-color: var(--color-accent); color: white; }
 
         .glass-nav {
             background: rgba(17, 17, 17, 0.8);
@@ -41,15 +50,25 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .hero-text {
-            font-size: 13vw;
-            line-height: 0.9;
-            letter-spacing: -0.05em;
-        }
+        .hero-text { font-size: 13vw; line-height: 0.85; letter-spacing: -0.05em; }
 
-        .text-outline {
-            -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.3);
-            -webkit-text-fill-color: transparent;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 80, 0.1); }
+            50% { box-shadow: 0 0 40px rgba(255, 107, 80, 0.3); }
+        }
+        .glow-pulse { animation: pulse-glow 3s ease-in-out infinite; }
+
+        .marquee { overflow: hidden; white-space: nowrap; }
+        .marquee-content { display: inline-block; animation: marquee 40s linear infinite; }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .gradient-border {
@@ -68,50 +87,50 @@
             pointer-events: none;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .platform-card:hover .platform-icon {
+            transform: scale(1.1) rotate(-5deg);
         }
-        .animate-float { animation: float 4s ease-in-out infinite; }
 
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 80, 0.1); }
-            50% { box-shadow: 0 0 40px rgba(255, 107, 80, 0.3); }
+        .stat-number {
+            background: linear-gradient(135deg, #fff 0%, #FF6B50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .glow-pulse { animation: pulse-glow 3s ease-in-out infinite; }
 
-        .marquee {
-            overflow: hidden;
-            white-space: nowrap;
+        @keyframes scroll-reveal {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 30s linear infinite;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        .reveal { animation: scroll-reveal 0.7s ease-out forwards; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; }
         }
     </style>
 </head>
 <body>
     <div class="min-h-screen bg-[#050505] overflow-x-hidden">
 
+        <!-- Skip Link -->
+        <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-6 focus:py-3 focus:bg-[#FF6B50] focus:text-black focus:rounded-xl focus:font-bold">Skip to main content</a>
+
         <!-- Navigation -->
-        <nav class="fixed top-0 left-0 right-0 z-[100] px-6 py-5 flex items-center justify-between text-sm font-medium tracking-tight">
+        <nav class="fixed top-0 left-0 right-0 z-[100] px-6 py-5 flex items-center justify-between text-sm font-medium tracking-tight" role="navigation" aria-label="Main navigation">
             <div class="flex items-center gap-10">
-                <a href="/" class="flex items-center group">
-                    <div class="w-8 h-8 bg-white rounded flex items-center justify-center text-black font-extrabold text-lg transition-transform group-hover:rotate-12">OA</div>
+                <a href="/" class="flex items-center group" aria-label="Home">
+                    <div class="w-9 h-9 bg-white rounded-xl flex items-center justify-center text-black font-extrabold text-lg transition-transform group-hover:rotate-12">PA</div>
                 </a>
                 <div class="hidden lg:flex items-center gap-8 text-[#888888]">
                     <a href="#about" class="hover:text-white transition-colors">About</a>
                     <a href="#services" class="hover:text-white transition-colors">Services</a>
+                    <a href="#platforms" class="hover:text-white transition-colors">Platforms</a>
                     <a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a>
+                    <a href="#insights" class="hover:text-white transition-colors">Insights</a>
                     <a href="#contact" class="hover:text-white transition-colors">Contact</a>
                 </div>
             </div>
             <div class="flex items-center gap-8">
-                <a href="portfolio.html" class="hidden md:block text-[#888888] hover:text-white transition-colors">Selected Work</a>
                 <a href="#contact" class="px-5 py-2.5 bg-[#1a1a1a] hover:bg-white hover:text-black border border-[#333333] rounded-lg transition-all duration-300">
                     Let's Talk
                 </a>
@@ -119,19 +138,19 @@
         </nav>
 
         <!-- Floating Bottom Nav -->
-        <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[110] hidden md:flex items-center gap-2 p-2 glass-nav rounded-2xl shadow-2xl">
+        <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[110] hidden md:flex items-center gap-2 p-2 glass-nav rounded-2xl shadow-2xl" role="navigation" aria-label="Quick navigation">
             <div class="flex items-center gap-1 pr-4 border-r border-[#333333]">
-                <a href="#about" class="p-3 hover:bg-[#222222] rounded-xl transition-all" title="About">
+                <a href="#about" class="p-3 hover:bg-[#222222] rounded-xl transition-all" title="About" aria-label="About">
                     <iconify-icon icon="lucide:user" class="text-xl text-white"></iconify-icon>
                 </a>
-                <a href="#services" class="p-3 hover:bg-[#222222] rounded-xl transition-all" title="Services">
+                <a href="#services" class="p-3 hover:bg-[#222222] rounded-xl transition-all" title="Services" aria-label="Services">
                     <iconify-icon icon="lucide:package" class="text-xl text-white"></iconify-icon>
                 </a>
-                <a href="portfolio.html" class="p-3 hover:bg-[#222222] rounded-xl transition-all" title="Portfolio">
+                <a href="portfolio.html" class="p-3 hover:bg-[#222222] rounded-xl transition-all" title="Portfolio" aria-label="Portfolio">
                     <iconify-icon icon="lucide:layout-grid" class="text-xl text-white"></iconify-icon>
                 </a>
-                <a href="#testimonials" class="p-3 hover:bg-[#222222] rounded-xl transition-all" title="Testimonials">
-                    <iconify-icon icon="lucide:message-circle" class="text-xl text-white"></iconify-icon>
+                <a href="#insights" class="p-3 hover:bg-[#222222] rounded-xl transition-all" title="Insights" aria-label="Insights">
+                    <iconify-icon icon="lucide:pen-line" class="text-xl text-white"></iconify-icon>
                 </a>
             </div>
             <a href="#contact" class="px-6 py-3 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold text-sm tracking-wide uppercase rounded-xl transition-all">
@@ -139,422 +158,619 @@
             </a>
         </div>
 
-        <!-- Hero Section -->
-        <header class="relative h-screen w-full flex flex-col items-center justify-center">
-            <div class="absolute inset-0 z-0 pointer-events-none">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1a1a1a_0%,_#050505_70%)] opacity-60"></div>
-                <div class="absolute top-1/4 left-10 w-72 h-72 bg-[#FF6B50] rounded-full blur-[120px] opacity-10"></div>
-                <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-[#4F46E5] rounded-full blur-[150px] opacity-10"></div>
-            </div>
-
-            <div class="relative z-10 text-center px-6">
-                <div class="flex items-center justify-center gap-3 mb-6">
-                    <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-                    <span class="text-[10px] font-bold tracking-[0.3em] text-[#888888] uppercase">Available for Projects</span>
+        <main id="main">
+            <!-- Hero Section -->
+            <header class="relative h-screen w-full flex flex-col items-center justify-center" role="banner">
+                <div class="absolute inset-0 z-0 pointer-events-none">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1a1a1a_0%,_#050505_70%)] opacity-60"></div>
+                    <div class="absolute top-1/4 left-10 w-72 h-72 bg-[#FF6B50] rounded-full blur-[120px] opacity-15"></div>
+                    <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-[#4F46E5] rounded-full blur-[150px] opacity-10"></div>
                 </div>
-                <h1 class="hero-text font-bold text-white">
-                    <span class="block">DIGITAL</span>
-                    <span class="block text-[#FF6B50]">MARKETER</span>
-                </h1>
-                <p class="mt-8 text-lg md:text-xl text-[#888888] max-w-2xl mx-auto leading-relaxed font-light">
-                    Helping fintechs & startups <span class="text-white font-medium">win and keep customers</span> through CX, marketing, and tight operations.
-                </p>
-                <div class="mt-10 flex items-center justify-center gap-4 flex-wrap">
-                    <a href="#contact" class="px-8 py-3.5 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold rounded-xl transition-all glow-pulse">
-                        Start a Project
-                    </a>
-                    <a href="portfolio.html" class="px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all text-white">
-                        View Portfolio
-                    </a>
-                </div>
-            </div>
 
-            <!-- Bottom Info -->
-            <div class="absolute bottom-12 left-8 md:left-12 flex items-center gap-5">
-                <div class="flex -space-x-4">
-                    <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-gradient-to-br from-[#FF6B50] to-[#4F46E5] flex items-center justify-center text-[10px] font-bold text-white">GA</div>
-                    <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-gradient-to-br from-[#7C3AED] to-[#EC4899] flex items-center justify-center text-[10px] font-bold text-white">DM</div>
-                    <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-gradient-to-br from-[#10B981] to-[#3B82F6] flex items-center justify-center text-[10px] font-bold text-white">CX</div>
-                </div>
-                <p class="text-xs md:text-sm font-medium leading-tight text-[#888888]">
-                    Certified in Digital Marketing<br/>Google & AltSchool
-                </p>
-            </div>
-
-            <div class="absolute bottom-12 right-8 md:right-12 text-right">
-                <a href="mailto:akandeoluwapelumi15@gmail.com" class="text-white font-medium hover:text-[#FF6B50] transition-colors border-b-2 border-white hover:border-[#FF6B50] pb-1">
-                    akandeoluwapelumi15@gmail.com
-                </a>
-                <p class="text-[#555555] text-xs mt-2 tracking-wide">Lagos, NG & Remote</p>
-            </div>
-        </header>
-
-        <!-- Marquee -->
-        <div class="marquee py-8 border-t border-b border-[#1a1a1a]">
-            <div class="marquee-content">
-                <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
-                <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Product Marketing</span>
-                <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
-                <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Client Success</span>
-                <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
-                <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Digital Strategy</span>
-                <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
-                <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">CX Design</span>
-                <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
-                <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Growth Ops</span>
-                <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
-                <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Product Marketing</span>
-                <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
-                <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Client Success</span>
-            </div>
-        </div>
-
-        <!-- About Section -->
-        <section id="about" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
-            <div class="flex items-center gap-3 mb-10">
-                <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
-                <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">About Me</span>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
-                <div class="lg:col-span-3">
-                    <h2 class="text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight text-white mb-8">
-                        I'm Oluwapelumi Akande — <span class="text-[#444444]">Client Success & Digital Marketing</span> professional.
-                    </h2>
-                    <p class="text-lg text-[#888888] leading-relaxed mb-8 max-w-2xl">
-                        I help fintechs and startups win and keep customers through strategic CX, 
-                        data-driven marketing, and tight operations. With certifications from Google 
-                        in Digital Marketing and AltSchool in Product Marketing, I bring a blend of 
-                        analytical rigor and creative storytelling to every project.
+                <div class="relative z-10 text-center px-6">
+                    <div class="flex items-center justify-center gap-3 mb-6">
+                        <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                        <span class="text-[10px] font-bold tracking-[0.3em] text-[#888888] uppercase">Available for Projects & Collaborations</span>
+                    </div>
+                    <h1 class="hero-text font-bold text-white">
+                        <span class="block">SOCIAL</span>
+                        <span class="block text-[#FF6B50]">MANAGER</span>
+                    </h1>
+                    <p class="mt-8 text-lg md:text-xl text-[#888888] max-w-2xl mx-auto leading-relaxed font-light">
+                        Helping fintechs & startups <span class="text-white font-medium">build loyal communities</span> through strategic social media, content, and data-driven digital campaigns.
                     </p>
-                    <div class="flex flex-wrap gap-6">
-                        <div class="flex items-center gap-3 bg-[#111111] px-5 py-3 rounded-xl">
-                            <iconify-icon icon="lucide:award" class="text-[#FF6B50] text-xl"></iconify-icon>
-                            <span class="text-sm font-medium">Google Digital Marketing</span>
-                        </div>
-                        <div class="flex items-center gap-3 bg-[#111111] px-5 py-3 rounded-xl">
-                            <iconify-icon icon="lucide:award" class="text-[#FF6B50] text-xl"></iconify-icon>
-                            <span class="text-sm font-medium">AltSchool Product Marketing</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:col-span-2 flex items-center justify-center">
-                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-[#1a1a1a] to-[#111111] flex items-center justify-center relative gradient-border">
-                        <div class="text-center">
-                            <div class="text-6xl font-bold text-white">OA</div>
-                            <p class="text-[#666666] text-sm mt-2 tracking-wide">Client Success & Digital Marketing</p>
-                        </div>
-                        <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-[#FF6B50] rounded-full flex items-center justify-center text-2xl font-bold text-black animate-float">5+</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
-            <div class="flex items-center gap-3 mb-10">
-                <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
-                <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">What I Do</span>
-            </div>
-
-            <h2 class="text-4xl md:text-7xl font-medium leading-[1.05] tracking-tight text-white max-w-5xl mb-24">
-                Services that help you <span class="text-[#666666]">grow revenue</span> and retain customers.
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Service 1 -->
-                <div class="bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
-                    <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] group-hover:text-black transition-all">
-                        <iconify-icon icon="lucide:trending-up" class="text-2xl text-white group-hover:text-black"></iconify-icon>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Digital Strategy</h3>
-                    <p class="text-[#888888] leading-relaxed">Data-driven marketing strategies tailored for fintech and startup growth.</p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
-                    <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] group-hover:text-black transition-all">
-                        <iconify-icon icon="lucide:users" class="text-2xl text-white group-hover:text-black"></iconify-icon>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Client Success</h3>
-                    <p class="text-[#888888] leading-relaxed">Retention systems and CX frameworks that turn users into advocates.</p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
-                    <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] group-hover:text-black transition-all">
-                        <iconify-icon icon="lucide:megaphone" class="text-2xl text-white group-hover:text-black"></iconify-icon>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Product Marketing</h3>
-                    <p class="text-[#888888] leading-relaxed">Go-to-market strategies and positioning that drive adoption and revenue.</p>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
-                    <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] group-hover:text-black transition-all">
-                        <iconify-icon icon="lucide:bar-chart-3" class="text-2xl text-white group-hover:text-black"></iconify-icon>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Growth Ops</h3>
-                    <p class="text-[#888888] leading-relaxed">Operational systems and processes that scale your customer acquisition.</p>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
-                    <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] group-hover:text-black transition-all">
-                        <iconify-icon icon="lucide:pen-tool" class="text-2xl text-white group-hover:text-black"></iconify-icon>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Content & Copy</h3>
-                    <p class="text-[#888888] leading-relaxed">Compelling narratives and content that resonate with your target audience.</p>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
-                    <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] group-hover:text-black transition-all">
-                        <iconify-icon icon="lucide:database" class="text-2xl text-white group-hover:text-black"></iconify-icon>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Analytics & Reporting</h3>
-                    <p class="text-[#888888] leading-relaxed">Clear dashboards and insights to measure what matters and optimize fast.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portfolio Preview Section -->
-        <section class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-20 border-b border-[#222222] pb-10">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
-                        <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">Portfolio</span>
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white">Selected Work</h2>
-                </div>
-                <a href="portfolio.html" class="hidden md:flex items-center gap-2 text-[#888888] hover:text-white transition-colors text-sm font-medium">
-                    View All Projects
-                    <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
-                </a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-32">
-                <!-- Project 1 -->
-                <article class="group cursor-pointer">
-                    <a href="portfolio.html">
-                        <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Fintech CX Strategy" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                        </div>
-                        <div class="mt-8 flex justify-between items-start">
-                            <div>
-                                <h3 class="text-3xl font-bold tracking-tight mb-2 group-hover:text-[#FF6B50] transition-colors">FinFlow</h3>
-                                <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em]">CX Strategy / Fintech</p>
-                            </div>
-                            <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
-                                <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="group cursor-pointer md:mt-24">
-                    <a href="portfolio.html">
-                        <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Marketing Campaign" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                        </div>
-                        <div class="mt-8 flex justify-between items-start">
-                            <div>
-                                <h3 class="text-3xl font-bold tracking-tight mb-2 group-hover:text-[#FF6B50] transition-colors">PaySwift</h3>
-                                <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em]">Product Marketing / Launch</p>
-                            </div>
-                            <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
-                                <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="group cursor-pointer">
-                    <a href="portfolio.html">
-                        <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
-                            <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=1000&auto=format&fit=crop" alt="CRM Implementation" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                        </div>
-                        <div class="mt-8 flex justify-between items-start">
-                            <div>
-                                <h3 class="text-3xl font-bold tracking-tight mb-2 group-hover:text-[#FF6B50] transition-colors">VaultEdge</h3>
-                                <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em]">Growth Ops / SaaS</p>
-                            </div>
-                            <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
-                                <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-
-                <!-- Project 4 -->
-                <article class="group cursor-pointer md:mt-24">
-                    <a href="portfolio.html">
-                        <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
-                            <img src="https://images.unsplash.com/photo-1432889821006-3149403b3405?q=80&w=1000&auto=format&fit=crop" alt="Content Strategy" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                        </div>
-                        <div class="mt-8 flex justify-between items-start">
-                            <div>
-                                <h3 class="text-3xl font-bold tracking-tight mb-2 group-hover:text-[#FF6B50] transition-colors">NestCredit</h3>
-                                <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em]">Content Strategy / Fintech</p>
-                            </div>
-                            <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
-                                <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-            </div>
-
-            <div class="mt-20 text-center md:hidden">
-                <a href="portfolio.html" class="inline-flex items-center gap-2 px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all text-white font-medium">
-                    View All Projects
-                    <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
-                </a>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section id="testimonials" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
-            <div class="flex items-center gap-3 mb-10">
-                <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
-                <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">Testimonials</span>
-            </div>
-
-            <h2 class="text-4xl md:text-6xl font-medium leading-[1.05] tracking-tight text-white max-w-4xl mb-20">
-                What clients say about <span class="text-[#666666]">working with me</span>
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-[#111111] rounded-2xl p-8 border border-[#1a1a1a]">
-                    <div class="flex items-center gap-1 mb-6">
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                    </div>
-                    <p class="text-[#aaaaaa] leading-relaxed mb-8">"Pelumi transformed our customer onboarding flow. Retention jumped 40% in the first quarter. Her CX strategies are second to none."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#4F46E5] to-[#7C3AED] flex items-center justify-center text-sm font-bold">TK</div>
-                        <div>
-                            <p class="text-white text-sm font-semibold">Tunde K.</p>
-                            <p class="text-[#666666] text-xs">CEO, FinFlow</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-[#111111] rounded-2xl p-8 border border-[#1a1a1a]">
-                    <div class="flex items-center gap-1 mb-6">
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                    </div>
-                    <p class="text-[#aaaaaa] leading-relaxed mb-8">"The go-to-market strategy Pelumi developed for PaySwift was flawless. We hit 10k users in the first month. Incredible work."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#EC4899] to-[#F43F5E] flex items-center justify-center text-sm font-bold">AM</div>
-                        <div>
-                            <p class="text-white text-sm font-semibold">Ada M.</p>
-                            <p class="text-[#666666] text-xs">CMO, PaySwift</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-[#111111] rounded-2xl p-8 border border-[#1a1a1a]">
-                    <div class="flex items-center gap-1 mb-6">
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                        <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                    </div>
-                    <p class="text-[#aaaaaa] leading-relaxed mb-8">"Working with Pelumi on our content strategy was a game-changer. She understands fintech audiences deeply and delivers every time."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#10B981] to-[#3B82F6] flex items-center justify-center text-sm font-bold">CI</div>
-                        <div>
-                            <p class="text-white text-sm font-semibold">Chidi I.</p>
-                            <p class="text-[#666666] text-xs">COO, NestCredit</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats -->
-        <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
-                <div class="text-center">
-                    <div class="text-5xl md:text-6xl font-bold text-white mb-2">15+</div>
-                    <p class="text-[#666666] text-sm uppercase tracking-widest text-[10px] font-bold">Clients Served</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-5xl md:text-6xl font-bold text-white mb-2">40%</div>
-                    <p class="text-[#666666] text-sm uppercase tracking-widest text-[10px] font-bold">Avg. Retention Lift</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-5xl md:text-6xl font-bold text-white mb-2">10k+</div>
-                    <p class="text-[#666666] text-sm uppercase tracking-widest text-[10px] font-bold">Users Acquired</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-5xl md:text-6xl font-bold text-white mb-2">5+</div>
-                    <p class="text-[#666666] text-sm uppercase tracking-widest text-[10px] font-bold">Years Experience</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA / Contact Section -->
-        <footer id="contact" class="relative pt-48 pb-32 px-6 md:px-12 border-t border-[#1a1a1a]">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
-                <div class="flex-1">
-                    <h2 class="text-[14vw] md:text-[10vw] leading-[0.85] font-black tracking-tighter text-white mb-12 select-none">
-                        LET'S<br />TALK.
-                    </h2>
-                    <div class="flex flex-col gap-6">
-                        <a href="mailto:akandeoluwapelumi15@gmail.com" class="text-3xl md:text-4xl font-semibold hover:text-[#FF6B50] transition-all w-fit">
-                            akandeoluwapelumi15@gmail.com
+                    <div class="mt-10 flex items-center justify-center gap-4 flex-wrap">
+                        <a href="#contact" class="px-8 py-3.5 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold rounded-xl transition-all glow-pulse">
+                            Start a Project
                         </a>
-                        <div class="flex items-center gap-4 flex-wrap">
-                            <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="text-[#666666] flex items-center gap-2 hover:text-white transition-colors">
-                                <iconify-icon icon="lucide:message-circle"></iconify-icon>
-                                WhatsApp
-                            </a>
-                            <span class="text-[#333333]">/</span>
-                            <p class="text-[#666666] flex items-center gap-2">
-                                <iconify-icon icon="lucide:map-pin"></iconify-icon>
-                                Lagos, NG & Remote
-                            </p>
+                        <a href="portfolio.html" class="px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all text-white">
+                            View Portfolio
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Social Proof Bar -->
+                <div class="absolute bottom-12 left-8 md:left-12 flex items-center gap-5">
+                    <div class="flex -space-x-4">
+                        <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-[#E4405F] flex items-center justify-center text-xs text-white" title="Instagram">IG</div>
+                        <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-[#0A66C2] flex items-center justify-center text-xs text-white" title="LinkedIn">IN</div>
+                        <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-[#1DA1F2] flex items justify-center text-xs text-white" title="Twitter/X">X</div>
+                        <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-black flex items-center justify-center text-xs text-white border-white/30" title="TikTok">TK</div>
+                    </div>
+                    <p class="text-xs md:text-sm font-medium leading-tight text-[#888888]">
+                        Multi-platform expertise<br/>Content that converts
+                    </p>
+                </div>
+
+                <div class="absolute bottom-12 right-8 md:right-12 text-right">
+                    <a href="mailto:akandeoluwapelumi15@gmail.com" class="text-white font-medium hover:text-[#FF6B50] transition-colors border-b-2 border-white hover:border-[#FF6B50] pb-1">
+                        akandeoluwapelumi15@gmail.com
+                    </a>
+                    <p class="text-[#555555] text-xs mt-2 tracking-wide">Lagos, NG & Remote · Open to Work</p>
+                </div>
+            </header>
+
+            <!-- Marquee -->
+            <div class="marquee py-8 border-t border-b border-[#1a1a1a]" aria-hidden="true">
+                <div class="marquee-content">
+                    <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
+                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Social Media Strategy</span>
+                    <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
+                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Content Creation</span>
+                    <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
+                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Community Management</span>
+                    <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
+                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Paid Social</span>
+                    <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
+                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Analytics & Reporting</span>
+                    <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
+                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Influencer Marketing</span>
+                    <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
+                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Social Media Strategy</span>
+                    <span class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mx-12">●</span>
+                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] uppercase mx-8">Content Creation</span>
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <section id="about" class="py-32 px-6 md:px-12 max-w-7xl mx-auto" aria-label="About me">
+                <div class="flex items-center gap-3 mb-10">
+                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                    <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">About Me</span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
+                    <div class="lg:col-span-3">
+                        <h2 class="text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight text-white mb-8">
+                            I'm Oluwapelumi Akande — <span class="text-[#444444]">Social Media & Digital Marketing</span> professional.
+                        </h2>
+                        <p class="text-lg text-[#888888] leading-relaxed mb-6 max-w-2xl">
+                            I help fintechs and startups grow their digital presence through strategic social media management, 
+                            compelling content creation, and data-driven campaigns. With certifications from Google in Digital 
+                            Marketing and AltSchool in Product Marketing, I blend analytical rigor with creative storytelling 
+                            to build communities that convert.
+                        </p>
+                        <p class="text-lg text-[#777777] leading-relaxed mb-8 max-w-2xl">
+                            From full-funnel social strategies to viral content campaigns, I've helped brands across fintech, 
+                            SaaS, and B2B sectors achieve measurable growth across Instagram, LinkedIn, Twitter/X, and TikTok.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center gap-3 bg-[#111111] px-5 py-3 rounded-xl">
+                                <iconify-icon icon="lucide:award" class="text-[#FF6B50] text-xl"></iconify-icon>
+                                <span class="text-sm font-medium">Google Digital Marketing</span>
+                            </div>
+                            <div class="flex items-center gap-3 bg-[#111111] px-5 py-3 rounded-xl">
+                                <iconify-icon icon="lucide:award" class="text-[#FF6B50] text-xl"></iconify-icon>
+                                <span class="text-sm font-medium">AltSchool Product Marketing</span>
+                            </div>
+                            <div class="flex items-center gap-3 bg-[#111111] px-5 py-3 rounded-xl">
+                                <iconify-icon icon="lucide:badge-check" class="text-[#FF6B50] text-xl"></iconify-icon>
+                                <span class="text-sm font-medium">Meta Certified</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-2 flex items-center justify-center">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-[#1a1a1a] to-[#111111] flex items-center justify-center relative gradient-border">
+                            <div class="text-center">
+                                <div class="text-6xl font-bold text-white">PA</div>
+                                <p class="text-[#666666] text-sm mt-2 tracking-wide">Social Media & Digital Marketing</p>
+                            </div>
+                            <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-[#FF6B50] rounded-full flex items-center justify-center text-2xl font-bold text-black animate-float">5+</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex gap-4 md:mb-6">
-                    <a href="#" target="_blank" class="w-14 h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all hover:-translate-y-2">
-                        <iconify-icon icon="lucide:linkedin" class="text-xl"></iconify-icon>
-                    </a>
-                    <a href="#" target="_blank" class="w-14 h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all hover:-translate-y-2">
-                        <iconify-icon icon="lucide:twitter" class="text-xl"></iconify-icon>
-                    </a>
-                    <a href="mailto:akandeoluwapelumi15@gmail.com" class="w-14 h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all hover:-translate-y-2">
-                        <iconify-icon icon="lucide:mail" class="text-xl"></iconify-icon>
-                    </a>
-                    <a href="#" target="_blank" class="w-14 h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all hover:-translate-y-2">
-                        <iconify-icon icon="lucide:globe" class="text-xl"></iconify-icon>
-                    </a>
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-16 border-t border-[#1a1a1a]">
+                    <div>
+                        <div class="stat-number text-5xl md:text-6xl font-bold mb-2">50+</div>
+                        <p class="text-[#666666] text-[10px] font-bold uppercase tracking-widest">Campaigns Run</p>
+                    </div>
+                    <div>
+                        <div class="stat-number text-5xl md:text-6xl font-bold mb-2">15+</div>
+                        <p class="text-[#666666] text-[10px] font-bold uppercase tracking-widest">Brands Served</p>
+                    </div>
+                    <div>
+                        <div class="stat-number text-5xl md:text-6xl font-bold mb-2">10M+</div>
+                        <p class="text-[#666666] text-[10px] font-bold uppercase tracking-widest">Impressions Generated</p>
+                    </div>
+                    <div>
+                        <div class="stat-number text-5xl md:text-6xl font-bold mb-2">3.5×</div>
+                        <p class="text-[#666666] text-[10px] font-bold uppercase tracking-widest">Avg. ROAS</p>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="max-w-7xl mx-auto mt-40 pt-10 border-t border-[#111111] flex flex-col md:flex-row justify-between text-[#333333] text-[10px] font-bold uppercase tracking-widest">
-                <p>&copy; 2024 Oluwapelumi Akande. All rights reserved.</p>
-                <div class="flex gap-10 mt-6 md:mt-0">
-                    <a href="#" class="hover:text-[#666666] transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-[#666666] transition-colors">Terms of Service</a>
+            <!-- Services Section -->
+            <section id="services" class="py-32 px-6 md:px-12 max-w-7xl mx-auto" aria-label="Services">
+                <div class="flex items-center gap-3 mb-10">
+                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                    <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">What I Do</span>
                 </div>
-            </div>
-        </footer>
+
+                <h2 class="text-4xl md:text-7xl font-medium leading-[1.05] tracking-tight text-white max-w-5xl mb-24">
+                    Social media services that <span class="text-[#666666]">build communities</span> and drive revenue.
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
+                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] group-hover:text-black transition-all">
+                            <iconify-icon icon="lucide:share-2" class="text-2xl text-white group-hover:text-black"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Social Media Strategy</h3>
+                        <p class="text-[#888888] leading-relaxed">Full-funnel social strategies tailored for fintech and B2B growth — from brand awareness to conversion.</p>
+                    </div>
+                    <div class="bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
+                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] group-hover:text-black transition-all">
+                            <iconify-icon icon="lucide:image" class="text-2xl text-white group-hover:text-black"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Content Creation</h3>
+                        <p class="text-[#888888] leading-relaxed">Scroll-stopping visuals, copy, and video content optimized for each platform's unique audience and algorithm.</p>
+                    </div>
+                    <div class="bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
+                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] group-hover:text-black transition-all">
+                            <iconify-icon icon="lucide:message-square" class="text-2xl text-white group-hover:text-black"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Community Management</h3>
+                        <p class="text-[#888888] leading-relaxed">Building and nurturing engaged online communities that turn followers into brand advocates and customers.</p>
+                    </div>
+                    <div class="bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
+                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] group-hover:text-black transition-all">
+                            <iconify-icon icon="lucide:target" class="text-2xl text-white group-hover:text-black"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Paid Social</h3>
+                        <p class="text-[#888888] leading-relaxed">Data-driven ad campaigns across Meta, LinkedIn, and Twitter with precise targeting and ROAS optimization.</p>
+                    </div>
+                    <div class="bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
+                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] group-hover:text-black transition-all">
+                            <iconify-icon icon="lucide:bar-chart-4" class="text-2xl text-white group-hover:text-black"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Analytics & Reporting</h3>
+                        <p class="text-[#888888] leading-relaxed">Custom dashboards and actionable insights that track what matters and inform smarter content decisions.</p>
+                    </div>
+                    <div class="bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
+                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] group-hover:text-black transition-all">
+                            <iconify-icon icon="lucide:users" class="text-2xl text-white group-hover:text-black"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Influencer Marketing</h3>
+                        <p class="text-[#888888] leading-relaxed">Strategic influencer partnerships and creator campaigns that amplify brand reach and build trust.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Platforms Section -->
+            <section id="platforms" class="py-32 px-6 md:px-12 max-w-7xl mx-auto" aria-label="Platforms">
+                <div class="flex items-center gap-3 mb-10">
+                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                    <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">Platform Expertise</span>
+                </div>
+
+                <h2 class="text-4xl md:text-6xl font-medium leading-[1.05] tracking-tight text-white max-w-4xl mb-20">
+                    I speak the language of <span class="text-[#666666]">every major platform</span>
+                </h2>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="platform-card bg-[#111111] rounded-2xl p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
+                        <div class="platform-icon w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-[#feda75] via-[#fa7e1e] to-[#d62976] flex items-center justify-center transition-transform duration-300">
+                            <iconify-icon icon="lucide:camera" class="text-3xl text-white"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Instagram</h3>
+                        <p class="text-[#777777] text-xs leading-relaxed">Reels, Stories, Carousels, UGC campaigns, and community building.</p>
+                    </div>
+                    <div class="platform-card bg-[#111111] rounded-2xl p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
+                        <div class="platform-icon w-16 h-16 mx-auto mb-5 rounded-2xl bg-[#0A66C2] flex items-center justify-center transition-transform duration-300">
+                            <iconify-icon icon="lucide:briefcase" class="text-3xl text-white"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">LinkedIn</h3>
+                        <p class="text-[#777777] text-xs leading-relaxed">B2B thought leadership, lead gen, and professional community growth.</p>
+                    </div>
+                    <div class="platform-card bg-[#111111] rounded-2xl p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
+                        <div class="platform-icon w-16 h-16 mx-auto mb-5 rounded-2xl bg-black border border-white/10 flex items-center justify-center transition-transform duration-300">
+                            <iconify-icon icon="lucide:music" class="text-3xl text-white"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">TikTok</h3>
+                        <p class="text-[#777777] text-xs leading-relaxed">Viral short-form content, trend-jacking, and creator campaigns.</p>
+                    </div>
+                    <div class="platform-card bg-[#111111] rounded-2xl p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333]">
+                        <div class="platform-icon w-16 h-16 mx-auto mb-5 rounded-2xl bg-[#1DA1F2] flex items-center justify-center transition-transform duration-300">
+                            <iconify-icon icon="lucide:message-circle" class="text-3xl text-white"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">X / Twitter</h3>
+                        <p class="text-[#777777] text-xs leading-relaxed">Real-time engagement, thread campaigns, and brand voice development.</p>
+                    </div>
+                </div>
+
+                <!-- Tools Section -->
+                <div class="mt-20 bg-[#111111] rounded-3xl p-10 md:p-16 border border-[#1a1a1a]">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-2 h-2 rounded-full bg-[#4F46E5] animate-pulse"></div>
+                        <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">Tools & Technologies</span>
+                    </div>
+                    <div class="grid grid-cols-3 md:grid-cols-6 gap-6 md:gap-8">
+                        <div class="text-center group">
+                            <div class="w-14 h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all">
+                                <iconify-icon icon="simple-icons:meta" class="text-2xl text-white"></iconify-icon>
+                            </div>
+                            <p class="text-[#888888] text-[10px] font-bold uppercase tracking-wider">Meta Suite</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-14 h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all">
+                                <iconify-icon icon="simple-icons:googleanalytics" class="text-2xl text-white"></iconify-icon>
+                            </div>
+                            <p class="text-[#888888] text-[10px] font-bold uppercase tracking-wider">Analytics</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-14 h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all">
+                                <iconify-icon icon="simple-icons:hootsuite" class="text-2xl text-white"></iconify-icon>
+                            </div>
+                            <p class="text-[#888888] text-[10px] font-bold uppercase tracking-wider">Hootsuite</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-14 h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all">
+                                <iconify-icon icon="simple-icons:canva" class="text-2xl text-white"></iconify-icon>
+                            </div>
+                            <p class="text-[#888888] text-[10px] font-bold uppercase tracking-wider">Canva</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-14 h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all">
+                                <iconify-icon icon="simple-icons:notion" class="text-2xl text-white"></iconify-icon>
+                            </div>
+                            <p class="text-[#888888] text-[10px] font-bold uppercase tracking-wider">Notion</div>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-14 h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all">
+                                <iconify-icon icon="simple-icons:buffer" class="text-2xl text-white"></iconify-icon>
+                            </div>
+                            <p class="text-[#888888] text-[10px] font-bold uppercase tracking-wider">Buffer</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Preview Section -->
+            <section class="py-32 px-6 md:px-12 max-w-7xl mx-auto" aria-label="Portfolio preview">
+                <div class="flex justify-between items-end mb-20 border-b border-[#222222] pb-10">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                            <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">Portfolio</span>
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white">Selected Work</h2>
+                    </div>
+                    <a href="portfolio.html" class="hidden md:flex items-center gap-2 text-[#888888] hover:text-white transition-colors text-sm font-medium">
+                        View All Projects
+                        <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-32">
+                    <!-- Project 1 -->
+                    <article class="group cursor-pointer">
+                        <a href="portfolio.html">
+                            <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
+                                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop" alt="Social media campaign for fintech brand" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            </div>
+                            <div class="mt-8 flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-3xl font-bold tracking-tight mb-2 group-hover:text-[#FF6B50] transition-colors">FinFlow</h3>
+                                    <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em]">Social Strategy / Fintech</p>
+                                </div>
+                                <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
+                                    <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="group cursor-pointer md:mt-24">
+                        <a href="portfolio.html">
+                            <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
+                                <img src="https://images.unsplash.com/photo-1432889821006-3149403b3405?q=80&w=1000&auto=format&fit=crop" alt="Content marketing campaign" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            </div>
+                            <div class="mt-8 flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-3xl font-bold tracking-tight mb-2 group-hover:text-[#FF6B50] transition-colors">NestCredit</h3>
+                                    <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em]">Content Strategy / Fintech</p>
+                                </div>
+                                <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
+                                    <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="group cursor-pointer">
+                        <a href="portfolio.html">
+                            <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
+                                <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=1000&auto=format&fit=crop" alt="Influencer campaign" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            </div>
+                            <div class="mt-8 flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-3xl font-bold tracking-tight mb-2 group-hover:text-[#FF6B50] transition-colors">VaultEdge</h3>
+                                    <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em]">Paid Social / SaaS</p>
+                                </div>
+                                <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
+                                    <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="group cursor-pointer md:mt-24">
+                        <a href="portfolio.html">
+                            <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Digital marketing dashboard" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            </div>
+                            <div class="mt-8 flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-3xl font-bold tracking-tight mb-2 group-hover:text-[#FF6B50] transition-colors">PaySwift</h3>
+                                    <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em]">Product Launch / Paid Social</p>
+                                </div>
+                                <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
+                                    <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+
+                <div class="mt-20 text-center md:hidden">
+                    <a href="portfolio.html" class="inline-flex items-center gap-2 px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all text-white font-medium">
+                        View All Projects
+                        <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Insights / Blog Section -->
+            <section id="insights" class="py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]" aria-label="Insights">
+                <div class="flex items-center gap-3 mb-10">
+                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                    <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">Insights</span>
+                </div>
+
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20">
+                    <h2 class="text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight text-white max-w-3xl">
+                        Latest thoughts on <span class="text-[#666666]">social media & digital marketing</span>
+                    </h2>
+                    <a href="#" class="hidden md:flex items-center gap-2 text-[#888888] hover:text-white transition-colors text-sm font-medium mt-4 md:mt-0">
+                        All Insights
+                        <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <article class="bg-[#111111] rounded-2xl overflow-hidden group border border-[#1a1a1a] hover:border-[#333333] transition-all">
+                        <a href="#" class="block">
+                            <div class="aspect-[16/9] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1000&auto=format&fit=crop" alt="Social media trends" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-3 text-[#555555] text-[10px] font-bold uppercase tracking-widest mb-3">
+                                    <span>Dec 12, 2024</span>
+                                    <span class="w-1 h-1 rounded-full bg-[#555555]"></span>
+                                    <span>Social Media</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#FF6B50] transition-colors">5 Fintech Social Media Trends to Watch in 2025</h3>
+                                <p class="text-[#777777] text-sm leading-relaxed">From AI-powered content to community-led growth — here's what's shaping fintech social this year.</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="bg-[#111111] rounded-2xl overflow-hidden group border border-[#1a1a1a] hover:border-[#333333] transition-all">
+                        <a href="#" class="block">
+                            <div class="aspect-[16/9] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1000&auto=format&fit=crop" alt="Content strategy" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-3 text-[#555555] text-[10px] font-bold uppercase tracking-widest mb-3">
+                                    <span>Nov 28, 2024</span>
+                                    <span class="w-1 h-1 rounded-full bg-[#555555]"></span>
+                                    <span>Content</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#FF6B50] transition-colors">Building a Content Engine That Actually Converts</h3>
+                                <p class="text-[#777777] text-sm leading-relaxed">How to create a repeatable content system that drives engagement and revenue for B2B brands.</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="bg-[#111111] rounded-2xl overflow-hidden group border border-[#1a1a1a] hover:border-[#333333] transition-all">
+                        <a href="#" class="block">
+                            <div class="aspect-[16/9] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Social media analytics" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-3 text-[#555555] text-[10px] font-bold uppercase tracking-widest mb-3">
+                                    <span>Nov 15, 2024</span>
+                                    <span class="w-1 h-1 rounded-full bg-[#555555]"></span>
+                                    <span>Analytics</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#FF6B50] transition-colors">Beyond Vanity Metrics: What Actually Matters on Social</h3>
+                                <p class="text-[#777777] text-sm leading-relaxed">Stop chasing likes. Here's the metrics framework I use to measure real social media ROI.</p>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+
+                <div class="mt-8 text-center md:hidden">
+                    <a href="#" class="inline-flex items-center gap-2 px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all text-white font-medium">
+                        All Insights
+                        <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section id="testimonials" class="py-32 px-6 md:px-12 max-w-7xl mx-auto" aria-label="Testimonials">
+                <div class="flex items-center gap-3 mb-10">
+                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                    <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">Testimonials</span>
+                </div>
+
+                <h2 class="text-4xl md:text-6xl font-medium leading-[1.05] tracking-tight text-white max-w-4xl mb-20">
+                    What brands say about <span class="text-[#666666]">working with me</span>
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-[#111111] rounded-2xl p-8 border border-[#1a1a1a]">
+                        <div class="flex items-center gap-1 mb-6">
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                        </div>
+                        <p class="text-[#aaaaaa] leading-relaxed mb-8">"Pelumi transformed our social media presence. Our engagement rate tripled and we consistently hit 1M+ impressions monthly. She just gets fintech." </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#4F46E5] to-[#7C3AED] flex items-center justify-center text-sm font-bold">TK</div>
+                            <div>
+                                <p class="text-white text-sm font-semibold">Tunde K.</p>
+                                <p class="text-[#666666] text-xs">CEO, FinFlow</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#111111] rounded-2xl p-8 border border-[#1a1a1a]">
+                        <div class="flex items-center gap-1 mb-6">
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                        </div>
+                        <p class="text-[#aaaaaa] leading-relaxed mb-8">"The product launch campaign Pelumi ran for PaySwift was incredible. We hit 10k users in 30 days and the paid social ROAS was 3.5×. She's a powerhouse."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#EC4899] to-[#F43F5E] flex items-center justify-center text-sm font-bold">AM</div>
+                            <div>
+                                <p class="text-white text-sm font-semibold">Ada M.</p>
+                                <p class="text-[#666666] text-xs">CMO, PaySwift</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#111111] rounded-2xl p-8 border border-[#1a1a1a]">
+                        <div class="flex items-center gap-1 mb-6">
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                        </div>
+                        <p class="text-[#aaaaaa] leading-relaxed mb-8">"Our community grew 5× in 4 months under Pelumi's management. She created a content strategy that actually resonated with our audience. Highly recommend."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#10B981] to-[#3B82F6] flex items-center justify-center text-sm font-bold">CI</div>
+                            <div>
+                                <p class="text-white text-sm font-semibold">Chidi I.</p>
+                                <p class="text-[#666666] text-xs">COO, NestCredit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Clients / Brands Worked With -->
+            <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]" aria-label="Brands worked with">
+                <div class="text-center mb-16">
+                    <div class="flex items-center justify-center gap-3 mb-4">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                        <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">Trusted By</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Brands I've worked with</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+                    <div class="w-36 h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all">
+                        <span class="text-xl font-bold text-[#444444] hover:text-white transition-colors">FinFlow</span>
+                    </div>
+                    <div class="w-36 h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all">
+                        <span class="text-xl font-bold text-[#444444] hover:text-white transition-colors">PaySwift</span>
+                    </div>
+                    <div class="w-36 h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all">
+                        <span class="text-xl font-bold text-[#444444] hover:text-white transition-colors">VaultEdge</span>
+                    </div>
+                    <div class="w-36 h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all">
+                        <span class="text-xl font-bold text-[#444444] hover:text-white transition-colors">NestCredit</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA / Contact Section -->
+            <footer id="contact" class="relative pt-48 pb-32 px-6 md:px-12 border-t border-[#1a1a1a]" role="contentinfo">
+                <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
+                    <div class="flex-1">
+                        <h2 class="text-[14vw] md:text-[10vw] leading-[0.85] font-black tracking-tighter text-white mb-12 select-none">
+                            LET'S<br />CREATE.
+                        </h2>
+                        <div class="flex flex-col gap-6">
+                            <a href="mailto:akandeoluwapelumi15@gmail.com" class="text-3xl md:text-4xl font-semibold hover:text-[#FF6B50] transition-all w-fit break-all">
+                                akandeoluwapelumi15@gmail.com
+                            </a>
+                            <div class="flex items-center gap-4 flex-wrap">
+                                <a href="https://wa.me/234XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="text-[#666666] flex items-center gap-2 hover:text-white transition-colors">
+                                    <iconify-icon icon="lucide:message-circle"></iconify-icon>
+                                    WhatsApp
+                                </a>
+                                <span class="text-[#333333]">/</span>
+                                <p class="text-[#666666] flex items-center gap-2">
+                                    <iconify-icon icon="lucide:map-pin"></iconify-icon>
+                                    Lagos, NG & Remote
+                                </p>
+                                <span class="text-[#333333]">/</span>
+                                <p class="text-[#666666] flex items-center gap-2">
+                                    <iconify-icon icon="lucide:clock"></iconify-icon>
+                                    Response within 24hrs
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 md:mb-6">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-14 h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all hover:-translate-y-2" aria-label="LinkedIn">
+                            <iconify-icon icon="lucide:linkedin" class="text-xl"></iconify-icon>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-14 h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all hover:-translate-y-2" aria-label="X / Twitter">
+                            <iconify-icon icon="lucide:twitter" class="text-xl"></iconify-icon>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-14 h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all hover:-translate-y-2" aria-label="Instagram">
+                            <iconify-icon icon="lucide:instagram" class="text-xl"></iconify-icon>
+                        </a>
+                        <a href="mailto:akandeoluwapelumi15@gmail.com" class="w-14 h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all hover:-translate-y-2" aria-label="Email">
+                            <iconify-icon icon="lucide:mail" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="max-w-7xl mx-auto mt-40 pt-10 border-t border-[#111111] flex flex-col md:flex-row justify-between text-[#333333] text-[10px] font-bold uppercase tracking-widest">
+                    <p>&copy; 2024 Oluwapelumi Akande. Crafted with purpose.</p>
+                    <div class="flex gap-10 mt-6 md:mt-0">
+                        <a href="#" class="hover:text-[#666666] transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-[#666666] transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </footer>
+        </main>
 
     </div>
 </body>
