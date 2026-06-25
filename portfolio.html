@@ -178,8 +178,8 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
         <a href="portfolio.html">Portfolio</a>
         <a href="insights.html">Insights</a>
         <a href="cv.html">CV</a>
-        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><i class="ph ph-sun"></i></button>
         <a class="nav-cta" href="index.html#contact">Let's talk</a>
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><i class="ph ph-sun"></i></button>
       </nav>
     </div>
   </header>
@@ -297,7 +297,7 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
       totop.classList.toggle('show', y > 560);
       if (floatNav) {
         var docH = document.documentElement.scrollHeight;
-        floatNav.classList.toggle('hide', y + vh > docH - 150);
+        floatNav.classList.toggle('hide', y < 300 || y + vh > docH - 150);
       }
     }
     window.addEventListener('scroll', onScroll); onScroll();
