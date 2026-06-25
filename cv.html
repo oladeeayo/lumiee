@@ -60,22 +60,6 @@
             border-radius: 2px;
         }
 
-        .timeline-dot {
-            position: relative;
-        }
-        .timeline-dot::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.6em;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--color-accent);
-            border: 2px solid var(--color-bg);
-            outline: 1px solid #555;
-            box-shadow: 0 0 12px rgba(255, 107, 80, 0.25);
-        }
         .timeline-line {
             position: relative;
         }
@@ -83,7 +67,7 @@
             content: '';
             position: absolute;
             left: 5px;
-            top: 1.6em;
+            top: 0;
             bottom: -0.5em;
             width: 2px;
             background: linear-gradient(to bottom, var(--color-accent), #222 60%);
@@ -118,7 +102,7 @@
             .glass-nav { background: white !important; backdrop-filter: none !important; border: 1px solid #ddd !important; }
             .skill-tag { background: #f5f5f5 !important; border-color: #ddd !important; color: #333 !important; }
             .cv-section-title::before { background: #FF6B50 !important; }
-            .timeline-dot::before { background: #FF6B50 !important; outline-color: #ddd !important; }
+
             a { color: #FF6B50 !important; }
         }
 
@@ -280,99 +264,99 @@
                     <div class="space-y-0">
                         <!-- Switchboard -->
                         <div class="timeline-line pl-8 pb-8">
-                            <div class="timeline-dot">
+                            <div>
                                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                     <h3 class="text-base md:text-lg font-bold text-white">Switchboard Communications</h3>
                                     <span class="inline-block text-[10px] font-semibold text-black bg-[#FF6B50] px-2.5 py-0.5 rounded-full mt-1 md:mt-0 w-fit">Current</span>
                                 </div>
                                 <p class="text-sm text-[#aaaaaa] font-medium mb-3">Client Success & Digital Marketing Executive <span class="text-[#555555]">· United Kingdom · Mar 2026 – Present</span></p>
                                 <ul class="space-y-2">
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Act as the central operational link between clients, internal management, and the technical/web development team, keeping projects aligned and delivery on schedule.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Execute digital marketing across social, email, and content channels to grow visibility and engagement for the agency and its clients.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Own client relationships and customer service end to end — onboarding, day-to-day queries, updates, and retention.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Coordinate administrative, scheduling, and reporting tasks that keep daily operations running smoothly.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Support website project delivery, tracking deliverables and timelines between clients and the development team.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Act as the central operational link between clients, internal management, and the technical/web development team, keeping projects aligned and delivery on schedule.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Execute digital marketing across social, email, and content channels to grow visibility and engagement for the agency and its clients.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Own client relationships and customer service end to end — onboarding, day-to-day queries, updates, and retention.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Coordinate administrative, scheduling, and reporting tasks that keep daily operations running smoothly.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Support website project delivery, tracking deliverables and timelines between clients and the development team.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <!-- Temlio -->
                         <div class="timeline-line pl-8 pb-8">
-                            <div class="timeline-dot">
+                            <div>
                                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                     <h3 class="text-base md:text-lg font-bold text-white">Temlio Communication</h3>
                                     <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">Oct 2024 – Nov 2025</span>
                                 </div>
                                 <p class="text-sm text-[#aaaaaa] font-medium mb-3">Executive Administrator <span class="text-[#555555]">· Lagos, Nigeria</span></p>
                                 <ul class="space-y-2">
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Coordinated executive schedules, meetings, and appointments, ensuring smooth daily operations with no scheduling conflicts.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Managed email correspondence and filtered priority communications, cutting executive response time by roughly 30%.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Served as the communication bridge between customers, internal teams, and leadership for efficient service delivery.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Compiled and analyzed customer feedback reports, surfacing insights that improved service quality.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Coordinated executive schedules, meetings, and appointments, ensuring smooth daily operations with no scheduling conflicts.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Managed email correspondence and filtered priority communications, cutting executive response time by roughly 30%.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Served as the communication bridge between customers, internal teams, and leadership for efficient service delivery.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Compiled and analyzed customer feedback reports, surfacing insights that improved service quality.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <!-- Bytelabs -->
                         <div class="timeline-line pl-8 pb-8">
-                            <div class="timeline-dot">
+                            <div>
                                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                     <h3 class="text-base md:text-lg font-bold text-white">Bytelabs Technologies (Billa / Watu)</h3>
                                     <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">Apr 2023 – Sep 2024</span>
                                 </div>
                                 <p class="text-sm text-[#aaaaaa] font-medium mb-3">Business Development Manager <span class="text-[#555555]">· Ibadan, Nigeria</span></p>
                                 <ul class="space-y-2">
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Directed client relationships across the Billa and Watu fintech platforms, maintaining strong retention through proactive engagement.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Managed social media and content for Billa, increasing product visibility and supporting customer acquisition and adoption.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Ran outreach and lead generation (LinkedIn, email) using Sales Navigator and Zoho CRM, lifting lead generation and conversion.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Collaborated with product, design, and operations teams to onboard clients and implement service improvements from customer feedback.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Directed client relationships across the Billa and Watu fintech platforms, maintaining strong retention through proactive engagement.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Managed social media and content for Billa, increasing product visibility and supporting customer acquisition and adoption.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Ran outreach and lead generation (LinkedIn, email) using Sales Navigator and Zoho CRM, lifting lead generation and conversion.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Collaborated with product, design, and operations teams to onboard clients and implement service improvements from customer feedback.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <!-- Davodani -->
                         <div class="timeline-line pl-8 pb-8">
-                            <div class="timeline-dot">
+                            <div>
                                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                     <h3 class="text-base md:text-lg font-bold text-white">Davodani Microfinance Bank</h3>
                                     <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">Feb 2021 – Apr 2022</span>
                                 </div>
                                 <p class="text-sm text-[#aaaaaa] font-medium mb-3">Customer Service Officer <span class="text-[#555555]">· Lagos, Nigeria</span></p>
                                 <ul class="space-y-2">
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Processed account opening and daily transactions with a high accuracy rate while ensuring regulatory compliance.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Resolved customer complaints professionally and educated customers on banking products and digital banking.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Partnered with the operations team to streamline account management and reduce turnaround time.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Processed account opening and daily transactions with a high accuracy rate while ensuring regulatory compliance.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Resolved customer complaints professionally and educated customers on banking products and digital banking.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Partnered with the operations team to streamline account management and reduce turnaround time.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <!-- Coronation -->
                         <div class="timeline-line pl-8 pb-8">
-                            <div class="timeline-dot">
+                            <div>
                                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                     <h3 class="text-base md:text-lg font-bold text-white">Coronation Insurance Plc</h3>
                                     <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">Oct 2020 – Jan 2021</span>
                                 </div>
                                 <p class="text-sm text-[#aaaaaa] font-medium mb-3">Contact Center Agent (Contract) <span class="text-[#555555]">· Lagos, Nigeria</span></p>
                                 <ul class="space-y-2">
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Handled inbound calls on policies, premiums, claims, and renewals, coordinating across underwriting and claims for timely processing.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Improved team efficiency through documented best practices and knowledge sharing.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Handled inbound calls on policies, premiums, claims, and renewals, coordinating across underwriting and claims for timely processing.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Improved team efficiency through documented best practices and knowledge sharing.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <!-- OPay -->
                         <div class="pl-8">
-                            <div class="timeline-dot">
+                            <div>
                                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                     <h3 class="text-base md:text-lg font-bold text-white">OPay</h3>
                                     <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">May 2018 – Mar 2020</span>
                                 </div>
                                 <p class="text-sm text-[#aaaaaa] font-medium mb-3">Customer Service Representative <span class="text-[#555555]">· Lagos, Nigeria</span></p>
                                 <ul class="space-y-2">
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Handled 80+ daily customer inquiries via phone and in-app chat with high transaction accuracy.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Coordinated with technical, operations, and fraud teams to resolve complex issues and reduce escalation time.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed">Authored step-by-step guides and knowledge-based content that cut resolution time for common issues.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Handled 80+ daily customer inquiries via phone and in-app chat with high transaction accuracy.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Coordinated with technical, operations, and fraud teams to resolve complex issues and reduce escalation time.</li>
+                                    <li class="text-sm text-[#888888] leading-relaxed">Authored step-by-step guides and knowledge-based content that cut resolution time for common issues.</li>
                                 </ul>
                             </div>
                         </div>
