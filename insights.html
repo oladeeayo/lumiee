@@ -25,6 +25,17 @@
   --shadow-lg:0 2px 8px rgba(21,18,12,.07), 0 28px 64px rgba(21,18,12,.14);
   --maxw:820px;
 }
+[data-theme="dark"]{
+  --ink:#F7F3EA; --ink-card:#E6DCC8; --ink-line:rgba(20,17,12,.15);
+  --on-dark:#14110C; --on-dark-mut:#4C4534;
+  --paper:#1C1813; --paper-2:#231E18; --card:#2C2620;
+  --text:#F0EBDF; --body:#B7AD99; --muted:#7A7160;
+  --gold:#E9AE3E; --gold-deep:#D89B2B; --gold-soft:#3A2E18;
+  --green:#3DB88E;
+  --line:#3D362C; --line-soft:#2D2820;
+  --shadow:0 1px 2px rgba(0,0,0,.2), 0 12px 36px rgba(0,0,0,.3);
+  --shadow-lg:0 2px 8px rgba(0,0,0,.25), 0 28px 64px rgba(0,0,0,.4);
+}
 *{margin:0; padding:0; box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--paper); color:var(--body); font-family:'Inter',system-ui,sans-serif; font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden}
@@ -100,12 +111,13 @@ article.post:last-child{border-bottom:none; padding-bottom:0}
 .cta-section .btn:hover{background:#E9AE3E}
 
 /* FLOATING NAV */
-.float-nav{position:fixed; bottom:24px; left:50%; transform:translateX(-50%); z-index:55; background:rgba(20,17,12,.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid var(--ink-line); border-radius:16px; padding:8px 12px; display:flex; align-items:center; gap:4px; box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.float-nav{position:fixed; bottom:24px; left:50%; transform:translateX(-50%); z-index:55; background:rgba(20,17,12,.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid var(--ink-line); border-radius:16px; padding:8px 12px; display:flex; align-items:center; gap:4px; box-shadow:0 8px 32px rgba(0,0,0,.3); transition:opacity .3s ease, transform .3s ease}
 .float-nav a{width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--on-dark-mut); font-size:18px; transition:all .15s ease}
 .float-nav a:hover{background:rgba(216,155,43,.15); color:var(--gold)}
 .float-nav .divider{width:1px; height:24px; background:var(--ink-line); margin:0 6px}
 .float-nav .float-cta{padding:8px 16px; background:var(--gold); color:var(--ink)!important; font-weight:700; font-size:13px; border-radius:10px; width:auto}
 .float-nav .float-cta:hover{background:#E9AE3E; transform:none}
+.float-nav.hide{opacity:0;transform:translateX(-50%) translateY(10px);pointer-events:none}
 @media (max-width:860px){.float-nav{bottom:16px}}
 @media (max-width:600px){.float-nav{display:none}}
 
@@ -136,6 +148,9 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
   html{scroll-behavior:auto}
   .reveal{opacity:1; transform:none; transition:none}
 }
+.theme-btn{background:none;border:none;cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--on-dark-mut);font-size:19px;transition:color .15s ease;border-radius:10px}
+.theme-btn:hover{color:var(--gold);background:rgba(216,155,43,.1)}
+@media(max-width:860px){.theme-btn{margin-left:auto}}
 </style>
 </head>
 <body id="top">
@@ -149,8 +164,8 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
         <a href="portfolio.html">Portfolio</a>
         <a href="insights.html">Insights</a>
         <a href="cv.html">CV</a>
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><i class="ph ph-sun"></i></button>
         <a class="nav-cta" href="index.html#contact">Let's talk</a>
-      </nav>
       </nav>
     </div>
   </header>
@@ -330,11 +345,30 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
     burger.addEventListener('click',function(){navLinks.classList.toggle('open'); burger.classList.toggle('open');});
     navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){navLinks.classList.remove('open'); burger.classList.remove('open');});});
     var totop=document.getElementById('totop');
-    function onScroll(){totop.classList.toggle('show',window.scrollY>560);} window.addEventListener('scroll',onScroll); onScroll();
+    var floatNav=document.getElementById('floatNav');
+    function onScroll(){
+      var y=window.scrollY;
+      var vh=window.innerHeight;
+      totop.classList.toggle('show',y>560);
+      if(floatNav){var docH=document.documentElement.scrollHeight;floatNav.classList.toggle('hide',y+vh>docH-150);}
+    }
+    window.addEventListener('scroll',onScroll); onScroll();
     totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:reduced?'auto':'smooth'});});
 
     var revealEls=document.querySelectorAll('.page-hdr,.post,.cta-section');
     if('IntersectionObserver'in window&&!reduced){revealEls.forEach(function(el){el.classList.add('reveal');});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});revealEls.forEach(function(el){io.observe(el);});}
+    // Theme toggle
+    var themeBtn = document.getElementById('themeBtn');
+    if (themeBtn) {
+      var saved = localStorage.getItem('theme') || 'light';
+      if (saved === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); themeBtn.innerHTML = '<i class="ph ph-moon"></i>'; }
+      themeBtn.addEventListener('click', function() {
+        var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        themeBtn.innerHTML = isDark ? '<i class="ph ph-sun"></i>' : '<i class="ph ph-moon"></i>';
+      });
+    }
   </script>
 </body>
 </html>

@@ -26,6 +26,17 @@
   --shadow-lg:0 2px 8px rgba(21,18,12,.07), 0 28px 64px rgba(21,18,12,.14);
   --maxw:1160px;
 }
+[data-theme="dark"]{
+  --ink:#F7F3EA; --ink-card:#E6DCC8; --ink-line:rgba(20,17,12,.15);
+  --on-dark:#14110C; --on-dark-mut:#4C4534;
+  --paper:#1C1813; --paper-2:#231E18; --card:#2C2620;
+  --text:#F0EBDF; --body:#B7AD99; --muted:#7A7160;
+  --gold:#E9AE3E; --gold-deep:#D89B2B; --gold-soft:#3A2E18;
+  --green:#3DB88E;
+  --line:#3D362C; --line-soft:#2D2820;
+  --shadow:0 1px 2px rgba(0,0,0,.2), 0 12px 36px rgba(0,0,0,.3);
+  --shadow-lg:0 2px 8px rgba(0,0,0,.25), 0 28px 64px rgba(0,0,0,.4);
+}
 *{margin:0; padding:0; box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--paper); color:var(--body); font-family:'Inter',system-ui,sans-serif; font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden}
@@ -305,6 +316,9 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
   .reveal{opacity:1; transform:none; transition:none}
   .blob,.chip,.marquee-track,.svc-ic{animation:none!important; transition:none!important}
 }
+.theme-btn{background:none;border:none;cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--on-dark-mut);font-size:19px;transition:color .15s ease;border-radius:10px}
+.theme-btn:hover{color:var(--gold);background:rgba(216,155,43,.1)}
+@media(max-width:860px){.theme-btn{margin-left:auto}}
 </style>
 </head>
 <body id="top">
@@ -318,6 +332,7 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
         <a href="portfolio.html">Portfolio</a>
         <a href="insights.html">Insights</a>
         <a href="cv.html">CV</a>
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><i class="ph ph-sun"></i></button>
         <a class="nav-cta" href="#contact">Let's talk</a>
       </nav>
     </div>
@@ -496,7 +511,12 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
       <div class="container">
         <div class="sec-head center"><span class="eyebrow">Track record</span><h2>Where I've worked.</h2></div>
         <div class="logos">
-          <span class="logo">OPay</span><span class="logo">Coronation Insurance</span><span class="logo">DavoDani MFB</span><span class="logo">Bytelabs</span><span class="logo">Temlio</span><span class="logo">Switchboard</span>
+          <a class="logo" href="https://www.opayweb.com/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=www.opayweb.com&sz=32" alt="" width="20" height="20" style="vertical-align:middle;margin-right:6px" loading="lazy">OPay</a>
+          <a class="logo" href="https://coronation.ng/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=coronation.ng&sz=32" alt="" width="20" height="20" style="vertical-align:middle;margin-right:6px" loading="lazy">Coronation Insurance</a>
+          <a class="logo" href="https://davodanimfb.com/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=davodanimfb.com&sz=32" alt="" width="20" height="20" style="vertical-align:middle;margin-right:6px" loading="lazy">DavoDani MFB</a>
+          <a class="logo" href="https://www.bytelabs.ng/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=bytelabs.ng&sz=32" alt="" width="20" height="20" style="vertical-align:middle;margin-right:6px" loading="lazy">Bytelabs</a>
+          <a class="logo" href="https://switchboard.uk/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=switchboard.uk&sz=32" alt="" width="20" height="20" style="vertical-align:middle;margin-right:6px" loading="lazy">Switchboard</a>
+          <span class="logo">Temlio</span>
         </div>
       </div>
     </section>
@@ -594,18 +614,16 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
     // Scroll — totop + float nav hide
     var totop = document.getElementById('totop');
     var floatNav = document.getElementById('floatNav');
-    var contactSec = document.getElementById('contact');
 
     function onScroll() {
       var y = window.scrollY;
+      var vh = window.innerHeight;
       totop.classList.toggle('show', y > 560);
 
-      // Hide float nav when overlapping contact
-      if (contactSec) {
-        var contactTop = contactSec.offsetTop;
-        var contactH = contactSec.offsetHeight;
-        var vh = window.innerHeight;
-        floatNav.classList.toggle('hide', y + vh > contactTop + contactH - 80);
+      // Hide float nav when within 150px of page bottom
+      if (floatNav) {
+        var docH = document.documentElement.scrollHeight;
+        floatNav.classList.toggle('hide', y + vh > docH - 150);
       }
     }
     window.addEventListener('scroll', onScroll);
@@ -669,6 +687,18 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
       }, { threshold: 0.4 });
       io2.observe(statsSec);
     } else { countEls.forEach(animateCount); }
+    // Theme toggle
+    var themeBtn = document.getElementById('themeBtn');
+    if (themeBtn) {
+      var saved = localStorage.getItem('theme') || 'light';
+      if (saved === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); themeBtn.innerHTML = '<i class="ph ph-moon"></i>'; }
+      themeBtn.addEventListener('click', function() {
+        var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        themeBtn.innerHTML = isDark ? '<i class="ph ph-sun"></i>' : '<i class="ph ph-moon"></i>';
+      });
+    }
   </script>
 </body>
 </html>
