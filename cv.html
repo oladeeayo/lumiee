@@ -68,12 +68,13 @@
             position: absolute;
             left: 0;
             top: 0.6em;
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background: var(--color-accent);
             border: 2px solid var(--color-bg);
-            outline: 1px solid #333;
+            outline: 1px solid #555;
+            box-shadow: 0 0 12px rgba(255, 107, 80, 0.25);
         }
         .timeline-line {
             position: relative;
@@ -81,25 +82,27 @@
         .timeline-line::after {
             content: '';
             position: absolute;
-            left: 4px;
-            top: 1.5em;
+            left: 5px;
+            top: 1.6em;
             bottom: -0.5em;
-            width: 1px;
-            background: #222;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--color-accent), #222 60%);
         }
         .timeline-line:last-child::after { display: none; }
 
         .skill-tag {
-            background: #111;
-            border: 1px solid #222;
-            padding: 0.4rem 0.9rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 0.35rem 0.85rem;
             border-radius: 999px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 500;
-            color: #aaa;
+            color: #999;
             transition: all 0.3s ease;
+            letter-spacing: 0.01em;
         }
         .skill-tag:hover {
+            background: rgba(255, 107, 80, 0.1);
             border-color: var(--color-accent);
             color: white;
         }
@@ -174,16 +177,18 @@
             <!-- Header -->
             <header class="relative pt-16 pb-12 md:pb-16 px-4 md:px-12" role="banner">
                 <div class="absolute inset-0 z-0 pointer-events-none">
-                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_#1a1a1a_0%,_#050505_70%)] opacity-40"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_#1a1a1a_0%,_#050505_70%)] opacity-60"></div>
+                    <div class="absolute top-1/3 left-1/4 w-64 h-64 bg-[#FF6B50] rounded-full blur-[100px] opacity-10"></div>
                 </div>
                 <div class="max-w-4xl mx-auto relative z-10 text-center reveal">
                     <div class="flex items-center justify-center gap-3 mb-4">
                         <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0"></div>
                         <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Curriculum Vitae</span>
                     </div>
+                    <div class="w-20 h-20 mx-auto mb-5 rounded-full bg-gradient-to-br from-[#FF6B50] to-[#E55A40] flex items-center justify-center text-2xl font-bold text-black shadow-lg shadow-[#FF6B50]/20">PA</div>
                     <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-3">Oluwapelumi Akande</h1>
-                    <p class="text-lg md:text-xl text-[#FF6B50] font-medium mb-5">Client Success & Digital Marketing Executive</p>
-                    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[#888888]">
+                    <p class="text-lg md:text-xl text-[#FF6B50] font-medium mb-6">Client Success & Digital Marketing Executive</p>
+                    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-[#888888]">
                         <a href="mailto:akandeoluwapelumi15@gmail.com" class="hover:text-[#FF6B50] transition-colors flex items-center gap-2">
                             <i class="ph ph-envelope text-base"></i>akandeoluwapelumi15@gmail.com
                         </a>
@@ -196,6 +201,15 @@
                         <span class="flex items-center gap-2">
                             <i class="ph ph-map-pin text-base"></i>Lagos, Nigeria
                         </span>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 text-xs text-[#555555]">
+                        <span class="flex items-center gap-1.5"><span class="text-[#FF6B50] font-bold">5+</span> Years Experience</span>
+                        <span class="w-1 h-1 rounded-full bg-[#333333]"></span>
+                        <span class="flex items-center gap-1.5"><span class="text-[#FF6B50] font-bold">15+</span> Brands Served</span>
+                        <span class="w-1 h-1 rounded-full bg-[#333333]"></span>
+                        <span class="flex items-center gap-1.5">Fintech &middot; Banking &middot; Insurance</span>
+                        <span class="w-1 h-1 rounded-full bg-[#333333]"></span>
+                        <span class="flex items-center gap-1.5">Google &amp; AltSchool Certified</span>
                     </div>
                 </div>
             </header>
@@ -218,9 +232,9 @@
                     <h2 class="cv-section-title text-lg md:text-xl font-bold text-white mb-5">Core Skills</h2>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a]">
+                        <div class="bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:-translate-y-0.5">
                             <h3 class="text-sm font-bold text-[#FF6B50] mb-3 flex items-center gap-2">
-                                <i class="ph ph-handshake"></i>Client Success
+                                <i class="ph ph-handshake text-lg"></i>Client Success
                             </h3>
                             <div class="flex flex-wrap gap-2">
                                 <span class="skill-tag">Relationship Management</span>
@@ -230,9 +244,9 @@
                                 <span class="skill-tag">Stakeholder Coordination</span>
                             </div>
                         </div>
-                        <div class="bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a]">
+                        <div class="bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:-translate-y-0.5">
                             <h3 class="text-sm font-bold text-[#FF6B50] mb-3 flex items-center gap-2">
-                                <i class="ph ph-megaphone"></i>Marketing
+                                <i class="ph ph-megaphone text-lg"></i>Marketing
                             </h3>
                             <div class="flex flex-wrap gap-2">
                                 <span class="skill-tag">Digital & Social Media</span>
@@ -243,9 +257,9 @@
                                 <span class="skill-tag">Analytics & Reporting</span>
                             </div>
                         </div>
-                        <div class="bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a]">
+                        <div class="bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:-translate-y-0.5">
                             <h3 class="text-sm font-bold text-[#FF6B50] mb-3 flex items-center gap-2">
-                                <i class="ph ph-gear"></i>Operations & Tools
+                                <i class="ph ph-gear text-lg"></i>Operations & Tools
                             </h3>
                             <div class="flex flex-wrap gap-2">
                                 <span class="skill-tag">Calendar & Project Coordination</span>
@@ -265,100 +279,100 @@
 
                     <div class="space-y-0">
                         <!-- Switchboard -->
-                        <div class="timeline-line pl-7 pb-8">
+                        <div class="timeline-line pl-8 pb-8">
                             <div class="timeline-dot">
                                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                     <h3 class="text-base md:text-lg font-bold text-white">Switchboard Communications</h3>
-                                    <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">Mar 2026 – Present</span>
+                                    <span class="inline-block text-[10px] font-semibold text-black bg-[#FF6B50] px-2.5 py-0.5 rounded-full mt-1 md:mt-0 w-fit">Current</span>
                                 </div>
-                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Client Success & Digital Marketing Executive — <span class="text-[#666666]">United Kingdom</span></p>
-                                <ul class="space-y-1.5">
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Act as the central operational link between clients, internal management, and the technical/web development team, keeping projects aligned and delivery on schedule.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Execute digital marketing across social, email, and content channels to grow visibility and engagement for the agency and its clients.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Own client relationships and customer service end to end — onboarding, day-to-day queries, updates, and retention.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Coordinate administrative, scheduling, and reporting tasks that keep daily operations running smoothly.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Support website project delivery, tracking deliverables and timelines between clients and the development team.</li>
+                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Client Success & Digital Marketing Executive <span class="text-[#555555]">· United Kingdom · Mar 2026 – Present</span></p>
+                                <ul class="space-y-2">
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Act as the central operational link between clients, internal management, and the technical/web development team, keeping projects aligned and delivery on schedule.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Execute digital marketing across social, email, and content channels to grow visibility and engagement for the agency and its clients.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Own client relationships and customer service end to end — onboarding, day-to-day queries, updates, and retention.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Coordinate administrative, scheduling, and reporting tasks that keep daily operations running smoothly.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Support website project delivery, tracking deliverables and timelines between clients and the development team.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <!-- Temlio -->
-                        <div class="timeline-line pl-7 pb-8">
+                        <div class="timeline-line pl-8 pb-8">
                             <div class="timeline-dot">
                                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                     <h3 class="text-base md:text-lg font-bold text-white">Temlio Communication</h3>
                                     <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">Oct 2024 – Nov 2025</span>
                                 </div>
-                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Executive Administrator — <span class="text-[#666666]">Lagos, Nigeria</span></p>
-                                <ul class="space-y-1.5">
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Coordinated executive schedules, meetings, and appointments, ensuring smooth daily operations with no scheduling conflicts.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Managed email correspondence and filtered priority communications, cutting executive response time by roughly 30%.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Served as the communication bridge between customers, internal teams, and leadership for efficient service delivery.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Compiled and analyzed customer feedback reports, surfacing insights that improved service quality.</li>
+                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Executive Administrator <span class="text-[#555555]">· Lagos, Nigeria</span></p>
+                                <ul class="space-y-2">
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Coordinated executive schedules, meetings, and appointments, ensuring smooth daily operations with no scheduling conflicts.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Managed email correspondence and filtered priority communications, cutting executive response time by roughly 30%.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Served as the communication bridge between customers, internal teams, and leadership for efficient service delivery.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Compiled and analyzed customer feedback reports, surfacing insights that improved service quality.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <!-- Bytelabs -->
-                        <div class="timeline-line pl-7 pb-8">
+                        <div class="timeline-line pl-8 pb-8">
                             <div class="timeline-dot">
                                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                     <h3 class="text-base md:text-lg font-bold text-white">Bytelabs Technologies (Billa / Watu)</h3>
                                     <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">Apr 2023 – Sep 2024</span>
                                 </div>
-                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Business Development Manager — <span class="text-[#666666]">Ibadan, Nigeria</span></p>
-                                <ul class="space-y-1.5">
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Directed client relationships across the Billa and Watu fintech platforms, maintaining strong retention through proactive engagement.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Managed social media and content for Billa, increasing product visibility and supporting customer acquisition and adoption.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Ran outreach and lead generation (LinkedIn, email) using Sales Navigator and Zoho CRM, lifting lead generation and conversion.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Collaborated with product, design, and operations teams to onboard clients and implement service improvements from customer feedback.</li>
+                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Business Development Manager <span class="text-[#555555]">· Ibadan, Nigeria</span></p>
+                                <ul class="space-y-2">
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Directed client relationships across the Billa and Watu fintech platforms, maintaining strong retention through proactive engagement.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Managed social media and content for Billa, increasing product visibility and supporting customer acquisition and adoption.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Ran outreach and lead generation (LinkedIn, email) using Sales Navigator and Zoho CRM, lifting lead generation and conversion.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Collaborated with product, design, and operations teams to onboard clients and implement service improvements from customer feedback.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <!-- Davodani -->
-                        <div class="timeline-line pl-7 pb-8">
+                        <div class="timeline-line pl-8 pb-8">
                             <div class="timeline-dot">
                                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                     <h3 class="text-base md:text-lg font-bold text-white">Davodani Microfinance Bank</h3>
                                     <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">Feb 2021 – Apr 2022</span>
                                 </div>
-                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Customer Service Officer — <span class="text-[#666666]">Lagos, Nigeria</span></p>
-                                <ul class="space-y-1.5">
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Processed account opening and daily transactions with a high accuracy rate while ensuring regulatory compliance.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Resolved customer complaints professionally and educated customers on banking products and digital banking.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Partnered with the operations team to streamline account management and reduce turnaround time.</li>
+                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Customer Service Officer <span class="text-[#555555]">· Lagos, Nigeria</span></p>
+                                <ul class="space-y-2">
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Processed account opening and daily transactions with a high accuracy rate while ensuring regulatory compliance.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Resolved customer complaints professionally and educated customers on banking products and digital banking.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Partnered with the operations team to streamline account management and reduce turnaround time.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <!-- Coronation -->
-                        <div class="timeline-line pl-7 pb-8">
+                        <div class="timeline-line pl-8 pb-8">
                             <div class="timeline-dot">
                                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                     <h3 class="text-base md:text-lg font-bold text-white">Coronation Insurance Plc</h3>
                                     <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">Oct 2020 – Jan 2021</span>
                                 </div>
-                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Contact Center Agent (Contract) — <span class="text-[#666666]">Lagos, Nigeria</span></p>
-                                <ul class="space-y-1.5">
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Handled inbound calls on policies, premiums, claims, and renewals, coordinating across underwriting and claims for timely processing.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Improved team efficiency through documented best practices and knowledge sharing.</li>
+                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Contact Center Agent (Contract) <span class="text-[#555555]">· Lagos, Nigeria</span></p>
+                                <ul class="space-y-2">
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Handled inbound calls on policies, premiums, claims, and renewals, coordinating across underwriting and claims for timely processing.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Improved team efficiency through documented best practices and knowledge sharing.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <!-- OPay -->
-                        <div class="pl-7">
+                        <div class="pl-8">
                             <div class="timeline-dot">
                                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                     <h3 class="text-base md:text-lg font-bold text-white">OPay</h3>
                                     <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">May 2018 – Mar 2020</span>
                                 </div>
-                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Customer Service Representative — <span class="text-[#666666]">Lagos, Nigeria</span></p>
-                                <ul class="space-y-1.5">
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Handled 80+ daily customer inquiries via phone and in-app chat with high transaction accuracy.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Coordinated with technical, operations, and fraud teams to resolve complex issues and reduce escalation time.</li>
-                                    <li class="text-sm text-[#888888] flex items-start gap-2"><span class="text-[#FF6B50] mt-1.5 shrink-0">•</span> Authored step-by-step guides and knowledge-based content that cut resolution time for common issues.</li>
+                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Customer Service Representative <span class="text-[#555555]">· Lagos, Nigeria</span></p>
+                                <ul class="space-y-2">
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Handled 80+ daily customer inquiries via phone and in-app chat with high transaction accuracy.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Coordinated with technical, operations, and fraud teams to resolve complex issues and reduce escalation time.</li>
+                                    <li class="text-sm text-[#888888] flex items-start gap-2 leading-relaxed"><span class="text-[#FF6B50] mt-1 shrink-0 font-bold leading-none">—</span> Authored step-by-step guides and knowledge-based content that cut resolution time for common issues.</li>
                                 </ul>
                             </div>
                         </div>
@@ -370,10 +384,17 @@
                     <!-- Education -->
                     <section class="reveal">
                         <h2 class="cv-section-title text-lg md:text-xl font-bold text-white mb-5">Education</h2>
-                        <div class="bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a]">
-                            <h3 class="text-base font-bold text-white">Bachelor of Arts, Mass Communication</h3>
-                            <p class="text-sm text-[#aaaaaa]">ESCAE University, Porto-Novo</p>
-                            <p class="text-xs text-[#666666] mt-1">NYSC completed</p>
+                        <div class="bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-[#1a1a1a] flex items-center justify-center shrink-0">
+                                    <i class="ph ph-graduation-cap text-lg text-[#FF6B50]"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-base font-bold text-white">Bachelor of Arts, Mass Communication</h3>
+                                    <p class="text-sm text-[#aaaaaa]">ESCAE University, Porto-Novo</p>
+                                    <p class="text-xs text-[#666666] mt-1">NYSC completed</p>
+                                </div>
+                            </div>
                         </div>
                     </section>
 
@@ -381,23 +402,25 @@
                     <section class="reveal">
                         <h2 class="cv-section-title text-lg md:text-xl font-bold text-white mb-5">Certifications</h2>
                         <div class="space-y-3">
-                            <a href="https://learndigital.withgoogle.com/link/1qsdpcedm9s" target="_blank" rel="noopener noreferrer" class="block bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 group">
-                                <div class="flex items-start justify-between gap-4">
-                                    <div class="min-w-0">
-                                        <h3 class="text-sm font-bold text-white group-hover:text-[#FF6B50] transition-colors">Fundamentals of Digital Marketing</h3>
-                                        <p class="text-xs text-[#888888] mt-1">Google (Google Digital Garage)</p>
-                                    </div>
-                                    <i class="ph ph-arrow-up-right text-lg text-[#555555] group-hover:text-[#FF6B50] transition-colors shrink-0 mt-0.5"></i>
+                            <a href="https://learndigital.withgoogle.com/link/1qsdpcedm9s" target="_blank" rel="noopener noreferrer" class="flex items-start gap-4 bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] hover:-translate-y-0.5 transition-all duration-300 group">
+                                <div class="w-10 h-10 rounded-lg bg-[#1a1a1a] flex items-center justify-center shrink-0 group-hover:bg-[#FF6B50] transition-all duration-300">
+                                    <i class="ph ph-certificate text-lg text-[#FF6B50] group-hover:text-black transition-colors duration-300"></i>
                                 </div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-sm font-bold text-white group-hover:text-[#FF6B50] transition-colors">Fundamentals of Digital Marketing</h3>
+                                    <p class="text-xs text-[#888888] mt-1">Google (Google Digital Garage)</p>
+                                </div>
+                                <i class="ph ph-arrow-up-right text-lg text-[#555555] group-hover:text-[#FF6B50] transition-colors shrink-0 mt-0.5"></i>
                             </a>
-                            <a href="https://drive.google.com/file/d/1f1iX2mTFo_u6xNxpGzlVzLQlNg1VjsEp/view" target="_blank" rel="noopener noreferrer" class="block bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 group">
-                                <div class="flex items-start justify-between gap-4">
-                                    <div class="min-w-0">
-                                        <h3 class="text-sm font-bold text-white group-hover:text-[#FF6B50] transition-colors">Product Marketing</h3>
-                                        <p class="text-xs text-[#888888] mt-1">AltSchool Africa</p>
-                                    </div>
-                                    <i class="ph ph-arrow-up-right text-lg text-[#555555] group-hover:text-[#FF6B50] transition-colors shrink-0 mt-0.5"></i>
+                            <a href="https://drive.google.com/file/d/1f1iX2mTFo_u6xNxpGzlVzLQlNg1VjsEp/view" target="_blank" rel="noopener noreferrer" class="flex items-start gap-4 bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] hover:-translate-y-0.5 transition-all duration-300 group">
+                                <div class="w-10 h-10 rounded-lg bg-[#1a1a1a] flex items-center justify-center shrink-0 group-hover:bg-[#FF6B50] transition-all duration-300">
+                                    <i class="ph ph-certificate text-lg text-[#FF6B50] group-hover:text-black transition-colors duration-300"></i>
                                 </div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-sm font-bold text-white group-hover:text-[#FF6B50] transition-colors">Product Marketing</h3>
+                                    <p class="text-xs text-[#888888] mt-1">AltSchool Africa</p>
+                                </div>
+                                <i class="ph ph-arrow-up-right text-lg text-[#555555] group-hover:text-[#FF6B50] transition-colors shrink-0 mt-0.5"></i>
                             </a>
                         </div>
                     </section>
@@ -442,6 +465,7 @@
                     <div class="flex gap-6 md:gap-8 text-[#333333] text-xs md:text-sm font-medium">
                         <a href="index.html" class="hover:text-[#666666] transition-colors">Home</a>
                         <a href="portfolio.html" class="hover:text-[#666666] transition-colors">Portfolio</a>
+                        <a href="cv.html" class="hover:text-[#666666] transition-colors">CV</a>
                         <a href="insights.html" class="hover:text-[#666666] transition-colors">Insights</a>
                     </div>
                 </div>
