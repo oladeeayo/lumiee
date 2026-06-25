@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 <style>
 :root{
   --ink:#14110C; --ink-card:#211B13; --ink-line:rgba(247,243,234,.12);
@@ -34,90 +35,113 @@ img{max-width:100%; display:block}
 .display{font-family:'Bricolage Grotesque',system-ui,sans-serif; font-weight:700; letter-spacing:-0.02em; line-height:1.02}
 
 /* NAV */
-.nav{position:sticky; top:0; z-index:60; background:rgba(20,17,12,.72); backdrop-filter:blur(12px); border-bottom:1px solid var(--ink-line)}
+.nav{position:sticky; top:0; z-index:60; background:rgba(20,17,12,.72); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--ink-line)}
 .nav-inner{display:flex; align-items:center; justify-content:space-between; height:72px}
 .brand{display:flex; align-items:center; gap:12px; color:var(--on-dark)}
-.monogram{width:40px; height:40px; border-radius:12px; flex-shrink:0; background:var(--gold); color:var(--ink); display:flex; align-items:center; justify-content:center; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:17px}
+.monogram{width:40px; height:40px; border-radius:12px; flex-shrink:0; background:var(--gold); color:var(--ink); display:flex; align-items:center; justify-content:center; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:17px; transition:transform .2s ease}
+.brand:hover .monogram{transform:rotate(-8deg) scale(1.05)}
 .brand b{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; letter-spacing:-0.01em}
 .nav-links{display:flex; align-items:center; gap:30px}
-.nav-links a{font-size:15px; font-weight:500; color:var(--on-dark-mut); transition:color .15s ease}
+.nav-links a{font-size:15px; font-weight:500; color:var(--on-dark-mut); position:relative; transition:color .15s ease}
+.nav-links a::after{content:''; position:absolute; left:0; bottom:-2px; width:0; height:1.5px; background:var(--gold); transition:width .2s ease; border-radius:2px}
 .nav-links a:hover{color:var(--on-dark)}
+.nav-links a:hover::after{width:100%}
 .nav-cta{background:var(--gold); color:var(--ink)!important; font-weight:700!important; padding:10px 20px; border-radius:999px; transition:transform .12s ease, background .15s ease}
-.nav-cta:hover{transform:translateY(-1px)}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{transform:translateY(-2px)!important; background:#E9AE3E!important}
 .burger{display:none; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer; padding:6px}
-.burger span{width:24px; height:2px; background:var(--on-dark); border-radius:2px}
+.burger span{width:24px; height:2px; background:var(--on-dark); border-radius:2px; transition:transform .2s ease, opacity .2s ease}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media (max-width:860px){
-  .nav-links{position:fixed; inset:72px 0 auto 0; flex-direction:column; gap:0; background:var(--ink); border-bottom:1px solid var(--ink-line); padding:8px 0; transform:translateY(-130%); transition:transform .28s ease}
+  .nav-links{position:fixed; inset:72px 0 auto 0; flex-direction:column; gap:0; background:var(--ink); border-bottom:1px solid var(--ink-line); padding:8px 0; transform:translateY(-130%); transition:transform .28s cubic-bezier(.4,0,.2,1)}
   .nav-links.open{transform:translateY(0)}
-  .nav-links a{width:100%; padding:15px 26px}
-  .nav-cta{border-radius:0; margin:8px 26px}
+  .nav-links a{width:100%; padding:15px 26px; border-bottom:1px solid var(--ink-line)}
+  .nav-links a::after{display:none}
+  .nav-cta{margin:8px 26px; border-radius:12px!important; text-align:center}
   .burger{display:flex}
 }
 
 /* PAGE HEADER */
 .page-hdr{padding:100px 0 0}
+.page-hdr .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-deep)}
+.page-hdr .eyebrow::before{content:"";width:24px;height:2px;background:var(--gold);border-radius:2px}
 .page-hdr h1{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:clamp(42px,7vw,72px); color:var(--text); letter-spacing:-0.02em; line-height:1.02; margin-top:18px}
 .page-hdr .sub{color:var(--muted); font-size:18px; max-width:520px; margin-top:16px}
 
 /* FILTERS */
 .filters{display:flex; flex-wrap:wrap; gap:11px; margin:48px 0}
 .filter{font-family:inherit; font-size:14.5px; font-weight:600; color:var(--body); background:var(--card); border:1px solid var(--line); padding:10px 22px; border-radius:999px; cursor:pointer; transition:.16s}
-.filter:hover{border-color:var(--gold)} .filter.active{background:var(--ink); color:var(--on-dark); border-color:var(--ink)}
+.filter:hover{border-color:var(--gold); transform:translateY(-1px)}
+.filter.active{background:var(--ink); color:var(--on-dark); border-color:var(--ink)}
 
 /* WORK GRID */
 .work-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:32px}
-.work{background:var(--card); border:1px solid var(--line); border-radius:22px; overflow:hidden; box-shadow:var(--shadow); transition:transform .25s ease, box-shadow .25s ease}
+.work{background:var(--card); border:1px solid var(--line); border-radius:22px; overflow:hidden; box-shadow:var(--shadow); transition:transform .25s ease, box-shadow .25s ease; display:flex; flex-direction:column}
 .work.hide{display:none}
 .work:hover{transform:translateY(-6px); box-shadow:var(--shadow-lg)}
-.work-visual{height:220px; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center}
+.work-visual{height:220px; position:relative; overflow:hidden}
 .work-visual img{width:100%; height:100%; object-fit:cover; transition:transform .4s ease}
 .work:hover .work-visual img{transform:scale(1.05)}
-.work-visual .vic{width:74px; height:74px; border-radius:20px; background:rgba(255,255,255,.12); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center; color:var(--gold); transition:transform .4s ease}
-.work:hover .work-visual .vic{transform:rotate(-6deg) scale(1.08)}
-.work-visual .vic svg{width:34px; height:34px; stroke:currentColor; stroke-width:1.7; fill:none; stroke-linecap:round; stroke-linejoin:round}
-.work-top{padding:22px 28px 0; display:flex; align-items:center; justify-content:space-between; gap:10px}
-.work-tag{font-size:11.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); background:var(--gold-soft); padding:5px 12px; border-radius:999px}
-.work-body{padding:14px 28px 28px}
-.work h3{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:var(--text); font-size:22px}
-.work p{font-size:15px; color:var(--body); margin-top:10px; max-width:500px}
+.work-visual .overlay{position:absolute; inset:0; background:linear-gradient(180deg,transparent 50%,rgba(21,18,12,.7))}
+.work-top{position:absolute; bottom:0; left:0; right:0; padding:14px 22px; z-index:2}
+.work-tag{font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); background:var(--gold); padding:4px 12px; border-radius:999px}
+.work-body{padding:22px 26px 28px; flex:1; display:flex; flex-direction:column}
+.work h3{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:var(--text); font-size:21px}
+.work p{font-size:15px; color:var(--body); margin-top:10px; flex:1}
 .work-metrics{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
 .chip-m{font-size:12.5px; font-weight:600; color:var(--text); background:var(--paper-2); border:1px solid var(--line); border-radius:9px; padding:6px 11px}
 .chip-m b{color:var(--gold-deep); font-family:'Bricolage Grotesque',sans-serif}
-.work-tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+.work-tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
 .work-tag-s{font-size:12px; font-weight:500; color:var(--muted); background:var(--paper); border:1px solid var(--line-soft); border-radius:999px; padding:4px 12px}
 @media (max-width:900px){.work-grid{grid-template-columns:1fr}}
 
 /* RESULTS */
-.results{background:var(--ink); color:var(--on-dark); padding:80px 0}
-.results .eyebrow{color:var(--gold)}
-.results-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center}
+.results{background:var(--ink); color:var(--on-dark); padding:80px 0; margin-top:100px}
+.results .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);justify-content:center}
+.results .eyebrow::before{content:"";width:24px;height:2px;background:var(--gold);border-radius:2px}
+.results-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; margin-top:40px}
 .results .num{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(40px,5.6vw,58px); color:var(--gold); line-height:1}
 .results .cap{font-size:14px; color:var(--on-dark-mut); margin-top:8px}
 @media (max-width:680px){.results-grid{grid-template-columns:repeat(2,1fr); gap:38px 24px}}
 
 /* CTA */
-.cta-section{background:var(--paper); padding:80px 0; text-align:center}
+.cta-section{padding:80px 0; text-align:center}
 .cta-section h2{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:var(--text); font-size:clamp(30px,4.8vw,46px); letter-spacing:-0.02em; line-height:1.08; max-width:600px; margin:0 auto}
 .cta-section p{color:var(--muted); font-size:17px; margin-top:16px; max-width:480px; margin-left:auto; margin-right:auto}
 .cta-row{display:flex; flex-wrap:wrap; gap:13px; justify-content:center; margin-top:32px}
-.btn{display:inline-flex; align-items:center; gap:9px; font-size:15.5px; font-weight:600; padding:14px 26px; border-radius:999px; transition:transform .12s ease, background .15s ease, color .15s ease, border-color .15s ease}
-.btn:active{transform:scale(.98)}
+.btn{display:inline-flex; align-items:center; gap:9px; font-size:15.5px; font-weight:600; padding:14px 26px; border-radius:999px; transition:transform .12s ease, background .15s ease, color .15s ease, border-color .15s ease; cursor:pointer}
+.btn:active{transform:scale(.96)}
 .btn-primary{background:var(--gold); color:var(--ink); border:1px solid var(--gold)}
-.btn-primary:hover{background:#E9AE3E}
+.btn-primary:hover{background:#E9AE3E; transform:translateY(-2px)}
 .btn-outline{background:transparent; color:var(--text); border:1px solid var(--line)}
-.btn-outline:hover{border-color:var(--gold); color:var(--gold)}
+.btn-outline:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-2px)}
 
 /* FOOTER */
 footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
 .foot-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px}
-.foot-inner a{color:var(--on-dark-mut); font-size:14px; transition:color .15s ease}
+.foot-inner a{color:var(--on-dark-mut); transition:color .15s ease}
 .foot-inner a:hover{color:var(--gold)}
-.foot-inner .fl{display:flex; gap:22px}
+.foot-links{display:flex; gap:18px; font-size:14px}
+.foot-social{display:flex; gap:10px}
+.foot-social a{width:36px; height:36px; border-radius:50%; border:1px solid var(--ink-line); display:flex; align-items:center; justify-content:center; font-size:15px; transition:all .15s ease}
+.foot-social a:hover{background:var(--gold); border-color:var(--gold); color:var(--ink)}
+
+/* FLOATING NAV */
+.float-nav{position:fixed; bottom:24px; left:50%; transform:translateX(-50%); z-index:55; background:rgba(20,17,12,.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid var(--ink-line); border-radius:16px; padding:8px 12px; display:flex; align-items:center; gap:4px; box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.float-nav a{width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--on-dark-mut); font-size:18px; transition:all .15s ease}
+.float-nav a:hover{background:rgba(216,155,43,.15); color:var(--gold)}
+.float-nav .divider{width:1px; height:24px; background:var(--ink-line); margin:0 6px}
+.float-nav .float-cta{padding:8px 16px; background:var(--gold); color:var(--ink)!important; font-weight:700; font-size:13px; border-radius:10px; width:auto}
+.float-nav .float-cta:hover{background:#E9AE3E; transform:none}
+@media (max-width:860px){.float-nav{bottom:16px}}
+@media (max-width:600px){.float-nav{display:none}}
 
 /* BACK TO TOP */
-.totop{position:fixed; right:24px; bottom:24px; width:48px; height:48px; border-radius:50%; background:var(--gold); color:var(--ink); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-lg); opacity:0; pointer-events:none; transform:translateY(10px); transition:.25s; z-index:55}
+.totop{position:fixed; right:24px; bottom:84px; width:46px; height:46px; border-radius:50%; background:var(--gold); color:var(--ink); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-lg); opacity:0; pointer-events:none; transform:translateY(10px); transition:.25s; z-index:54; font-size:20px}
 .totop.show{opacity:1; pointer-events:auto; transform:none}
-.totop svg{width:21px; height:21px; stroke:currentColor; stroke-width:2.2; fill:none; stroke-linecap:round; stroke-linejoin:round}
+.totop:active{transform:scale(.92)!important}
 
 /* MOTION */
 .reveal{opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease}
@@ -147,7 +171,7 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
   <main>
     <div class="container">
       <header class="page-hdr">
-        <span class="eyebrow" style="display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-deep)"><span style="content:'';width:24px;height:2px;background:var(--gold);border-radius:2px;display:inline-block"></span>Portfolio</span>
+        <span class="eyebrow">Portfolio</span>
         <h1>Selected work — real projects, <span style="color:var(--gold)">real numbers.</span></h1>
         <p class="sub">A curated portfolio of social media campaigns, content strategies, and client success work that delivered measurable results.</p>
       </header>
@@ -161,46 +185,40 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
 
       <div class="work-grid">
         <article class="work" data-cat="social">
-          <div class="work-visual" style="background:linear-gradient(135deg,#2A2118,#5A4424)"><span class="vic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg></span></div>
-          <div class="work-top"><span class="work-tag">Social Media</span></div>
-          <div class="work-body"><h3>Billa — social &amp; content</h3><p>Owned content, design, and every social channel for the fintech product at Bytelabs. Built a branded community, increased product visibility, and supported customer acquisition and adoption.</p><div class="work-tags"><span class="work-tag-s">Instagram</span><span class="work-tag-s">Content Design</span><span class="work-tag-s">Community</span></div><div class="work-metrics"><span class="chip-m"><b>+15%</b> visibility</span><span class="chip-m"><b>↑</b> acquisition</span><span class="chip-m"><b>↑</b> adoption</span></div></div>
+          <div class="work-visual"><img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=800&auto=format&fit=crop" alt="Billa social media" loading="lazy" /><div class="overlay"></div><div class="work-top"><span class="work-tag">Social Media</span></div></div>
+          <div class="work-body"><h3>Billa — social &amp; content</h3><p>Owned content, design, and every social channel for the fintech product at Bytelabs. Built a branded community, increased product visibility, and supported customer acquisition and adoption.</p><div class="work-tags"><span class="work-tag-s"><i class="ph ph-instagram-logo" style="margin-right:4px;font-size:11px"></i>Instagram</span><span class="work-tag-s">Content Design</span><span class="work-tag-s">Community</span></div><div class="work-metrics"><span class="chip-m"><b>+15%</b> visibility</span><span class="chip-m"><b>↑</b> acquisition</span><span class="chip-m"><b>↑</b> adoption</span></div></div>
         </article>
 
         <article class="work" data-cat="success">
-          <div class="work-visual" style="background:linear-gradient(135deg,#13211C,#26543F)"><span class="vic"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></span></div>
-          <div class="work-top"><span class="work-tag">Client Success</span></div>
-          <div class="work-body"><h3>Watu — API client acquisition</h3><p>Pursued API prospects at Bytelabs using Sales Navigator and Zoho CRM. Ran tailored LinkedIn and email outreach, and collaborated with product and sales to convert interest into clients.</p><div class="work-tags"><span class="work-tag-s">LinkedIn</span><span class="work-tag-s">Lead Gen</span><span class="work-tag-s">CRM</span></div><div class="work-metrics"><span class="chip-m"><b>+30%</b> leads</span><span class="chip-m"><b>25%</b> conversion</span><span class="chip-m"><b>20%</b> response</span></div></div>
+          <div class="work-visual"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800&auto=format&fit=crop" alt="Watu lead generation" loading="lazy" /><div class="overlay"></div><div class="work-top"><span class="work-tag">Client Success</span></div></div>
+          <div class="work-body"><h3>Watu — API client acquisition</h3><p>Pursued API prospects at Bytelabs using Sales Navigator and Zoho CRM. Ran tailored LinkedIn and email outreach, and collaborated with product and sales teams to convert interest into clients.</p><div class="work-tags"><span class="work-tag-s"><i class="ph ph-linkedin-logo" style="margin-right:4px;font-size:11px"></i>LinkedIn</span><span class="work-tag-s">Lead Gen</span><span class="work-tag-s">CRM</span></div><div class="work-metrics"><span class="chip-m"><b>+30%</b> leads</span><span class="chip-m"><b>25%</b> conversion</span><span class="chip-m"><b>20%</b> response</span></div></div>
         </article>
 
         <article class="work" data-cat="success">
-          <div class="work-visual" style="background:linear-gradient(135deg,#2A2118,#5A4424)"><span class="vic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span></div>
-          <div class="work-top"><span class="work-tag">Client Success</span></div>
-          <div class="work-body"><h3>DavoDani — service &amp; compliance</h3><p>Handled account opening and daily banking transactions at DavoDani Microfinance Bank with a focus on accuracy and regulatory compliance, resolved inquiries fast, and streamlined account management with the operations team.</p><div class="work-tags"><span class="work-tag-s">Banking</span><span class="work-tag-s">Compliance</span><span class="work-tag-s">Operations</span></div><div class="work-metrics"><span class="chip-m"><b>98%</b> compliance</span><span class="chip-m"><b>99%</b> accuracy</span><span class="chip-m"><b>−20%</b> turnaround</span></div></div>
+          <div class="work-visual"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop" alt="DavoDani banking" loading="lazy" /><div class="overlay"></div><div class="work-top"><span class="work-tag">Client Success</span></div></div>
+          <div class="work-body"><h3>DavoDani — service &amp; compliance</h3><p>Handled account opening and daily banking transactions at DavoDani Microfinance Bank with a focus on accuracy and regulatory compliance, resolved inquiries fast, and streamlined account management.</p><div class="work-tags"><span class="work-tag-s">Banking</span><span class="work-tag-s">Compliance</span><span class="work-tag-s">Operations</span></div><div class="work-metrics"><span class="chip-m"><b>98%</b> compliance</span><span class="chip-m"><b>99%</b> accuracy</span><span class="chip-m"><b>−20%</b> turnaround</span></div></div>
         </article>
 
         <article class="work" data-cat="social">
-          <div class="work-visual" style="background:linear-gradient(135deg,#13211C,#26543F)"><span class="vic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span></div>
-          <div class="work-top"><span class="work-tag">Social Media</span></div>
+          <div class="work-visual"><img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=800&auto=format&fit=crop" alt="Switchboard digital marketing" loading="lazy" /><div class="overlay"></div><div class="work-top"><span class="work-tag">Social Media</span></div></div>
           <div class="work-body"><h3>Switchboard — digital marketing</h3><p>Execute digital marketing across social, email, and content channels for the agency and its clients. Own client relationships end to end — onboarding, day-to-day queries, updates, and retention.</p><div class="work-tags"><span class="work-tag-s">Social</span><span class="work-tag-s">Email</span><span class="work-tag-s">Content</span></div></div>
         </article>
 
         <article class="work" data-cat="content">
-          <div class="work-visual" style="background:linear-gradient(135deg,#2A2118,#5A4424)"><span class="vic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></span></div>
-          <div class="work-top"><span class="work-tag">Content</span></div>
+          <div class="work-visual"><img src="https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=800&auto=format&fit=crop" alt="Billa content creation" loading="lazy" /><div class="overlay"></div><div class="work-top"><span class="work-tag">Content</span></div></div>
           <div class="work-body"><h3>Billa — content creation</h3><p>Designed and produced scroll-stopping visuals and copy for Instagram, LinkedIn, and Twitter. Tuned content for each platform's audience and algorithm, driving engagement and brand consistency.</p><div class="work-tags"><span class="work-tag-s">Canva</span><span class="work-tag-s">Copywriting</span><span class="work-tag-s">Design</span></div><div class="work-metrics"><span class="chip-m"><b>↑</b> engagement</span><span class="chip-m"><b>↑</b> followers</span></div></div>
         </article>
 
         <article class="work" data-cat="success">
-          <div class="work-visual" style="background:linear-gradient(135deg,#13211C,#26543F)"><span class="vic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 2 4-5"/></svg></span></div>
-          <div class="work-top"><span class="work-tag">Client Success</span></div>
+          <div class="work-visual"><img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?q=80&w=800&auto=format&fit=crop" alt="Temlio executive admin" loading="lazy" /><div class="overlay"></div><div class="work-top"><span class="work-tag">Client Success</span></div></div>
           <div class="work-body"><h3>Temlio — executive admin &amp; service</h3><p>Coordinated executive schedules, communications, and customer feedback reporting. Cut executive response time ~30% and surfaced insights from customer feedback that improved service quality.</p><div class="work-tags"><span class="work-tag-s">Admin</span><span class="work-tag-s">Reporting</span><span class="work-tag-s">Coordination</span></div><div class="work-metrics"><span class="chip-m"><b>−30%</b> response time</span><span class="chip-m"><b>↑</b> service quality</span></div></div>
         </article>
       </div>
     </div>
 
     <!-- RESULTS -->
-    <section class="results" style="margin-top:100px">
-      <div class="container">
+    <section class="results">
+      <div class="container"><span class="eyebrow">Overall Results</span>
         <div class="results-grid">
           <div><div class="num">50+</div><div class="cap">Campaigns executed</div></div>
           <div><div class="num">15+</div><div class="cap">Brands served</div></div>
@@ -216,34 +234,53 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
         <h2>Ready to grow your brand?</h2>
         <p>Let's create a social media strategy that drives real results for your business.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="index.html#contact">Start a project</a>
-          <a class="btn btn-outline" href="index.html">Back to home</a>
+          <a class="btn btn-primary" href="index.html#contact"><i class="ph ph-paper-plane-tilt"></i> Start a project</a>
+          <a class="btn btn-outline" href="index.html"><i class="ph ph-house-simple"></i> Back to home</a>
         </div>
       </div>
     </section>
   </main>
 
+  <nav class="float-nav" id="floatNav" aria-label="Quick navigation">
+    <a href="index.html" aria-label="Home" title="Home"><i class="ph ph-house-simple"></i></a>
+    <a href="index.html#about" aria-label="About" title="About"><i class="ph ph-user"></i></a>
+    <a href="index.html#services" aria-label="Services" title="Services"><i class="ph ph-package"></i></a>
+    <span class="divider"></span>
+    <a href="portfolio.html" aria-label="Portfolio" title="Portfolio" style="color:var(--gold)"><i class="ph ph-folder-open"></i></a>
+    <a href="insights.html" aria-label="Insights" title="Insights"><i class="ph ph-pen-nib"></i></a>
+    <a href="cv.html" aria-label="CV" title="CV"><i class="ph ph-file-text"></i></a>
+    <span class="divider"></span>
+    <a class="float-cta" href="index.html#contact"><i class="ph ph-chat-dots"></i> Let's talk</a>
+  </nav>
+
   <footer>
     <div class="container foot-inner">
       <p>&copy; <span id="yr"></span> Oluwapelumi Akande · Social &amp; Digital Marketing</p>
-      <div class="fl"><a href="cv.html">CV</a><a href="#top">Back to top</a></div>
+      <div class="foot-social">
+        <a href="https://wa.me/2348027184325" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+        <a href="https://www.linkedin.com/in/oluwapelumi-akande-94b00a1b5/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="mailto:akandeoluwapelumi15@gmail.com" aria-label="Email"><i class="ph ph-envelope"></i></a>
+      </div>
+      <div class="foot-links"><a href="cv.html">CV</a><a href="#top">Back to top</a></div>
     </div>
   </footer>
 
-  <button class="totop" id="totop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg></button>
+  <button class="totop" id="totop" aria-label="Back to top"><i class="ph ph-arrow-up"></i></button>
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
-    var burger=document.getElementById('burger'), navLinks=document.getElementById('navLinks');
-    burger.addEventListener('click',function(){navLinks.classList.toggle('open');});
-    navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){navLinks.classList.remove('open');});});
-    var totop=document.getElementById('totop');
-    function onScroll(){totop.classList.toggle('show',window.scrollY>560);} window.addEventListener('scroll',onScroll); onScroll();
-    totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-    var filters=document.querySelectorAll('.filter'), works=document.querySelectorAll('.work');
-    filters.forEach(function(btn){btn.addEventListener('click',function(){filters.forEach(function(b){b.classList.remove('active');});btn.classList.add('active');var f=btn.getAttribute('data-filter');works.forEach(function(w){w.classList.toggle('hide',!(f==='all'||w.getAttribute('data-cat')===f));});});});
-    var revealEls=document.querySelectorAll('.page-hdr,.work,.results,.cta-section');
-    if('IntersectionObserver'in window&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){revealEls.forEach(function(el){el.classList.add('reveal');});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});revealEls.forEach(function(el){io.observe(el);});}
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var burger = document.getElementById('burger'), navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', function() { navLinks.classList.toggle('open'); burger.classList.toggle('open'); });
+    navLinks.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { navLinks.classList.remove('open'); burger.classList.remove('open'); }); });
+    var totop = document.getElementById('totop');
+    function onScroll() { totop.classList.toggle('show', window.scrollY > 560); }
+    window.addEventListener('scroll', onScroll); onScroll();
+    totop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' }); });
+    var filters = document.querySelectorAll('.filter'), works = document.querySelectorAll('.work');
+    filters.forEach(function(btn) { btn.addEventListener('click', function() { filters.forEach(function(b) { b.classList.remove('active'); }); btn.classList.add('active'); var f = btn.getAttribute('data-filter'); works.forEach(function(w) { w.classList.toggle('hide', !(f === 'all' || w.getAttribute('data-cat') === f)); }); }); });
+    var revealEls = document.querySelectorAll('.page-hdr,.work,.results,.cta-section');
+    if ('IntersectionObserver' in window && !reduced) { revealEls.forEach(function(el) { el.classList.add('reveal'); }); var io = new IntersectionObserver(function(es) { es.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }); revealEls.forEach(function(el) { io.observe(el); }); }
   </script>
 </body>
 </html>
