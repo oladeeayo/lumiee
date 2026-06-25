@@ -45,7 +45,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .hero-text { font-size: 10vw; line-height: 0.85; letter-spacing: -0.05em; }
+        .hero-text { font-size: 8vw; line-height: 0.85; letter-spacing: -0.05em; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
@@ -66,29 +66,75 @@
             background-clip: text;
         }
 
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .reveal-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .project-card {
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .project-card:hover {
+            transform: translateY(-2px);
+        }
+
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { animation-duration: 0.01ms !important; }
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
     </style>
 </head>
 <body>
     <div class="min-h-screen bg-[#050505] overflow-x-hidden">
 
-        <!-- Skip Link -->
         <a href="#portfolio-main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-6 focus:py-3 focus:bg-[#FF6B50] focus:text-black focus:rounded-xl focus:font-bold">Skip to main content</a>
 
         <!-- Navigation -->
         <nav class="fixed top-0 left-0 right-0 z-[100] px-6 py-5 flex items-center justify-between text-sm font-medium tracking-tight" role="navigation" aria-label="Main navigation">
             <div class="flex items-center gap-10">
                 <a href="/" class="flex items-center group" aria-label="Home">
-                    <div class="w-9 h-9 bg-white rounded-xl flex items-center justify-center text-black font-extrabold text-lg transition-transform group-hover:rotate-12">PA</div>
+                    <div class="w-9 h-9 bg-white rounded-xl flex items-center justify-center text-black font-extrabold text-lg transition-transform duration-300 group-hover:rotate-12">PA</div>
                 </a>
                 <div class="hidden lg:flex items-center gap-8 text-[#888888]">
-                    <a href="index.html" class="hover:text-white transition-colors">Home</a>
-                    <a href="index.html#about" class="hover:text-white transition-colors">About</a>
-                    <a href="index.html#services" class="hover:text-white transition-colors">Services</a>
+                    <a href="index.html" class="hover:text-white transition-colors duration-300">Home</a>
+                    <a href="index.html#about" class="hover:text-white transition-colors duration-300">About</a>
+                    <a href="index.html#services" class="hover:text-white transition-colors duration-300">Services</a>
                     <a href="portfolio.html" class="text-white">Portfolio</a>
-                    <a href="index.html#contact" class="hover:text-white transition-colors">Contact</a>
+                    <a href="index.html#contact" class="hover:text-white transition-colors duration-300">Contact</a>
                 </div>
             </div>
             <div class="flex items-center gap-8">
@@ -107,22 +153,22 @@
                 </div>
 
                 <div class="max-w-7xl mx-auto relative z-10">
-                    <div class="flex items-center gap-3 mb-6">
+                    <div class="flex items-center gap-3 mb-6 reveal">
                         <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
-                        <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">Showcase — Volume 01</span>
+                        <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Showcase — Volume 01</span>
                     </div>
 
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
-                        <div>
+                        <div class="reveal-left">
                             <h1 class="hero-text font-bold text-white leading-none">
-                                <span class="block">CAM<span class="text-[#FF6B50]">PAIGNS</span></span>
+                                <span class="block">Cam<span class="text-[#FF6B50]">paigns</span></span>
                             </h1>
                         </div>
-                        <div class="pb-4">
+                        <div class="pb-4 reveal-right">
                             <p class="text-lg text-[#888888] leading-relaxed max-w-lg">
                                 A curated portfolio of <span class="text-white font-medium">social media campaigns, content strategies, and digital marketing projects</span> that delivered measurable results for fintechs and startups.
                             </p>
-                            <div class="flex flex-wrap items-center gap-6 mt-8 text-[#666666] text-xs font-bold uppercase tracking-widest">
+                            <div class="flex flex-wrap items-center gap-6 mt-8 text-[#666666] text-xs font-medium">
                                 <span class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-400"></iconify-icon> 50+ Campaigns</span>
                                 <span class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-400"></iconify-icon> 15+ Brands</span>
                                 <span class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-400"></iconify-icon> 10M+ Impressions</span>
@@ -135,11 +181,11 @@
             <!-- Filter Tabs -->
             <div class="px-6 md:px-12 max-w-7xl mx-auto pb-12" role="tablist" aria-label="Filter projects by category">
                 <div class="flex flex-wrap items-center gap-3 border-b border-[#222222] pb-6">
-                    <button role="tab" aria-selected="true" class="filter-btn active px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold uppercase tracking-widest transition-all" data-filter="all">All Work</button>
-                    <button role="tab" aria-selected="false" class="filter-btn px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold uppercase tracking-widest hover:border-white transition-all" data-filter="social">Social Media</button>
-                    <button role="tab" aria-selected="false" class="filter-btn px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold uppercase tracking-widest hover:border-white transition-all" data-filter="content">Content Strategy</button>
-                    <button role="tab" aria-selected="false" class="filter-btn px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold uppercase tracking-widest hover:border-white transition-all" data-filter="paid">Paid Social</button>
-                    <button role="tab" aria-selected="false" class="filter-btn px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold uppercase tracking-widest hover:border-white transition-all" data-filter="launch">Product Launch</button>
+                    <button role="tab" aria-selected="true" class="filter-btn active px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold tracking-wide transition-all duration-300" data-filter="all">All Work</button>
+                    <button role="tab" aria-selected="false" class="filter-btn px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold tracking-wide hover:border-white transition-all duration-300" data-filter="social">Social Media</button>
+                    <button role="tab" aria-selected="false" class="filter-btn px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold tracking-wide hover:border-white transition-all duration-300" data-filter="content">Content Strategy</button>
+                    <button role="tab" aria-selected="false" class="filter-btn px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold tracking-wide hover:border-white transition-all duration-300" data-filter="paid">Paid Social</button>
+                    <button role="tab" aria-selected="false" class="filter-btn px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold tracking-wide hover:border-white transition-all duration-300" data-filter="launch">Product Launch</button>
                 </div>
             </div>
 
@@ -147,20 +193,20 @@
             <section class="px-6 md:px-12 max-w-7xl mx-auto pb-32" aria-label="Project portfolio">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24" id="project-grid">
 
-                    <!-- Project 1: FinFlow — Social Strategy -->
-                    <div class="project-card group" data-category="social">
+                    <!-- Project 1: FinFlow -->
+                    <div class="project-card group reveal-scale" data-category="social">
                         <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
-                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop" alt="FinFlow social media campaign showcasing Instagram content strategy" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop" alt="FinFlow social media campaign" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold tracking-wide rounded-full">Case Study</span>
                             </div>
                         </div>
                         <div class="mt-8">
                             <div class="flex items-start justify-between mb-3">
                                 <div>
-                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">FinFlow</h3>
-                                    <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">Social Media Strategy / Fintech</p>
+                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors duration-300">FinFlow</h3>
+                                    <p class="text-[#666666] text-xs font-medium mt-1">Social Media Strategy / Fintech</p>
                                 </div>
                                 <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
                                     <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
@@ -170,31 +216,31 @@
                                 Built a full-funnel social media strategy across Instagram, LinkedIn, and Twitter. Grew following by 5×, achieved 1.2M monthly impressions, and tripled community engagement rate.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-5">
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Instagram</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">LinkedIn</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Community</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Instagram</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">LinkedIn</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Community</span>
                             </div>
                             <div class="flex items-center gap-6 mt-5 pt-4 border-t border-[#1a1a1a]">
-                                <div><span class="result-number text-2xl font-bold">5×</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">Follower Growth</p></div>
-                                <div><span class="result-number text-2xl font-bold">1.2M</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">Monthly Impressions</p></div>
+                                <div><span class="result-number text-2xl font-bold">5×</span><p class="text-[#555555] text-[9px] font-medium">Follower Growth</p></div>
+                                <div><span class="result-number text-2xl font-bold">1.2M</span><p class="text-[#555555] text-[9px] font-medium">Monthly Impressions</p></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 2: NestCredit — Content Strategy -->
-                    <div class="project-card group md:mt-24" data-category="content">
+                    <!-- Project 2: NestCredit -->
+                    <div class="project-card group md:mt-24 reveal-scale" style="transition-delay: 0.1s;" data-category="content">
                         <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
-                            <img src="https://images.unsplash.com/photo-1432889821006-3149403b3405?q=80&w=1000&auto=format&fit=crop" alt="NestCredit content strategy project" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1432889821006-3149403b3405?q=80&w=1000&auto=format&fit=crop" alt="NestCredit content strategy" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold tracking-wide rounded-full">Case Study</span>
                             </div>
                         </div>
                         <div class="mt-8">
                             <div class="flex items-start justify-between mb-3">
                                 <div>
-                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">NestCredit</h3>
-                                    <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">Content Strategy / Fintech</p>
+                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors duration-300">NestCredit</h3>
+                                    <p class="text-[#666666] text-xs font-medium mt-1">Content Strategy / Fintech</p>
                                 </div>
                                 <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
                                     <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
@@ -204,31 +250,31 @@
                                 Developed and executed a full content strategy across blog, LinkedIn, Twitter, and email. Organic traffic grew 3×, email open rates hit 42%, and LinkedIn engagement rate increased 4×.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-5">
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Blog</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">LinkedIn</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Email</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Blog</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">LinkedIn</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Email</span>
                             </div>
                             <div class="flex items-center gap-6 mt-5 pt-4 border-t border-[#1a1a1a]">
-                                <div><span class="result-number text-2xl font-bold">3×</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">Traffic Growth</p></div>
-                                <div><span class="result-number text-2xl font-bold">42%</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">Email Open Rate</p></div>
+                                <div><span class="result-number text-2xl font-bold">3×</span><p class="text-[#555555] text-[9px] font-medium">Traffic Growth</p></div>
+                                <div><span class="result-number text-2xl font-bold">42%</span><p class="text-[#555555] text-[9px] font-medium">Email Open Rate</p></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 3: VaultEdge — Paid Social -->
-                    <div class="project-card group" data-category="paid">
+                    <!-- Project 3: VaultEdge -->
+                    <div class="project-card group reveal-scale" style="transition-delay: 0.2s;" data-category="paid">
                         <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
-                            <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=1000&auto=format&fit=crop" alt="VaultEdge paid social campaign" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=1000&auto=format&fit=crop" alt="VaultEdge paid social" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold tracking-wide rounded-full">Case Study</span>
                             </div>
                         </div>
                         <div class="mt-8">
                             <div class="flex items-start justify-between mb-3">
                                 <div>
-                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">VaultEdge</h3>
-                                    <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">Paid Social / SaaS</p>
+                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors duration-300">VaultEdge</h3>
+                                    <p class="text-[#666666] text-xs font-medium mt-1">Paid Social / SaaS</p>
                                 </div>
                                 <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
                                     <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
@@ -238,31 +284,31 @@
                                 Managed a $50k monthly paid social budget across Meta and LinkedIn. Optimized audience targeting and creative, delivering 3.2× ROAS and reducing CPA by 40% quarter-over-quarter.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-5">
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Meta Ads</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">LinkedIn Ads</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Optimization</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Meta Ads</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">LinkedIn Ads</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Optimization</span>
                             </div>
                             <div class="flex items-center gap-6 mt-5 pt-4 border-t border-[#1a1a1a]">
-                                <div><span class="result-number text-2xl font-bold">3.2×</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">ROAS</p></div>
-                                <div><span class="result-number text-2xl font-bold">-40%</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">CPA Reduction</p></div>
+                                <div><span class="result-number text-2xl font-bold">3.2×</span><p class="text-[#555555] text-[9px] font-medium">ROAS</p></div>
+                                <div><span class="result-number text-2xl font-bold">-40%</span><p class="text-[#555555] text-[9px] font-medium">CPA Reduction</p></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 4: PaySwift — Product Launch -->
-                    <div class="project-card group md:mt-24" data-category="launch">
+                    <!-- Project 4: PaySwift -->
+                    <div class="project-card group md:mt-24 reveal-scale" style="transition-delay: 0.3s;" data-category="launch">
                         <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="PaySwift product launch campaign" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="PaySwift product launch" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold tracking-wide rounded-full">Case Study</span>
                             </div>
                         </div>
                         <div class="mt-8">
                             <div class="flex items-start justify-between mb-3">
                                 <div>
-                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">PaySwift</h3>
-                                    <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">Product Launch / Paid Social</p>
+                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors duration-300">PaySwift</h3>
+                                    <p class="text-[#666666] text-xs font-medium mt-1">Product Launch / Paid Social</p>
                                 </div>
                                 <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
                                     <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
@@ -272,31 +318,31 @@
                                 Led a multi-channel product launch campaign across Instagram, LinkedIn, Twitter, and TikTok. Achieved 10k user sign-ups in the first 30 days with a 4.7★ app rating and 3.5× paid social ROAS.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-5">
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">GTM Strategy</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">TikTok</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Influencers</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">GTM Strategy</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">TikTok</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Influencers</span>
                             </div>
                             <div class="flex items-center gap-6 mt-5 pt-4 border-t border-[#1a1a1a]">
-                                <div><span class="result-number text-2xl font-bold">10k</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">Users in 30 Days</p></div>
-                                <div><span class="result-number text-2xl font-bold">3.5×</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">Paid ROAS</p></div>
+                                <div><span class="result-number text-2xl font-bold">10k</span><p class="text-[#555555] text-[9px] font-medium">Users in 30 Days</p></div>
+                                <div><span class="result-number text-2xl font-bold">3.5×</span><p class="text-[#555555] text-[9px] font-medium">Paid ROAS</p></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 5: CrediFlow — Community Management -->
-                    <div class="project-card group" data-category="social">
+                    <!-- Project 5: CrediFlow -->
+                    <div class="project-card group reveal-scale" style="transition-delay: 0.4s;" data-category="social">
                         <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
-                            <img src="https://images.unsplash.com/photo-1559150892-2e7ba7e0e5b0?q=80&w=1000&auto=format&fit=crop" alt="CrediFlow community management project" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1559150892-2e7ba7e0e5b0?q=80&w=1000&auto=format&fit=crop" alt="CrediFlow community management" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold tracking-wide rounded-full">Case Study</span>
                             </div>
                         </div>
                         <div class="mt-8">
                             <div class="flex items-start justify-between mb-3">
                                 <div>
-                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">CrediFlow</h3>
-                                    <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">Community Management / Fintech</p>
+                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors duration-300">CrediFlow</h3>
+                                    <p class="text-[#666666] text-xs font-medium mt-1">Community Management / Fintech</p>
                                 </div>
                                 <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
                                     <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
@@ -306,31 +352,31 @@
                                 Built and managed a thriving online community across Instagram and WhatsApp. Grew community from 0 to 15k members, with 85% weekly active engagement and 50% reduction in customer support tickets.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-5">
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Community</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Instagram</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">WhatsApp</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Community</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Instagram</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">WhatsApp</span>
                             </div>
                             <div class="flex items-center gap-6 mt-5 pt-4 border-t border-[#1a1a1a]">
-                                <div><span class="result-number text-2xl font-bold">15k</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">Community Members</p></div>
-                                <div><span class="result-number text-2xl font-bold">85%</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">Weekly Engagement</p></div>
+                                <div><span class="result-number text-2xl font-bold">15k</span><p class="text-[#555555] text-[9px] font-medium">Community Members</p></div>
+                                <div><span class="result-number text-2xl font-bold">85%</span><p class="text-[#555555] text-[9px] font-medium">Weekly Engagement</p></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 6: SabiPay — TikTok Campaign -->
-                    <div class="project-card group md:mt-24" data-category="launch">
+                    <!-- Project 6: SabiPay -->
+                    <div class="project-card group md:mt-24 reveal-scale" style="transition-delay: 0.5s;" data-category="launch">
                         <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
                             <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1000&auto=format&fit=crop" alt="SabiPay TikTok campaign" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold tracking-wide rounded-full">Case Study</span>
                             </div>
                         </div>
                         <div class="mt-8">
                             <div class="flex items-start justify-between mb-3">
                                 <div>
-                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">SabiPay</h3>
-                                    <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">TikTok Campaign / Fintech</p>
+                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors duration-300">SabiPay</h3>
+                                    <p class="text-[#666666] text-xs font-medium mt-1">TikTok Campaign / Fintech</p>
                                 </div>
                                 <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
                                     <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
@@ -340,31 +386,31 @@
                                 Created a viral TikTok strategy that generated 5M+ views and 50k new app installs in 3 months. Leveraged creator partnerships and trend-jacking to build brand awareness among Gen Z.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-5">
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">TikTok</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Creator Partners</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Viral Content</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">TikTok</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Creator Partners</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Viral Content</span>
                             </div>
                             <div class="flex items-center gap-6 mt-5 pt-4 border-t border-[#1a1a1a]">
-                                <div><span class="result-number text-2xl font-bold">5M+</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">TikTok Views</p></div>
-                                <div><span class="result-number text-2xl font-bold">50k</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">App Installs</p></div>
+                                <div><span class="result-number text-2xl font-bold">5M+</span><p class="text-[#555555] text-[9px] font-medium">TikTok Views</p></div>
+                                <div><span class="result-number text-2xl font-bold">50k</span><p class="text-[#555555] text-[9px] font-medium">App Installs</p></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 7: LendFlow — LinkedIn Lead Gen -->
-                    <div class="project-card group" data-category="paid">
+                    <!-- Project 7: LendFlow -->
+                    <div class="project-card group reveal-scale" style="transition-delay: 0.6s;" data-category="paid">
                         <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
-                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1000&auto=format&fit=crop" alt="LendFlow LinkedIn lead generation campaign" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1000&auto=format&fit=crop" alt="LendFlow LinkedIn lead gen" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold tracking-wide rounded-full">Case Study</span>
                             </div>
                         </div>
                         <div class="mt-8">
                             <div class="flex items-start justify-between mb-3">
                                 <div>
-                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">LendFlow</h3>
-                                    <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">LinkedIn Lead Gen / Fintech</p>
+                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors duration-300">LendFlow</h3>
+                                    <p class="text-[#666666] text-xs font-medium mt-1">LinkedIn Lead Gen / Fintech</p>
                                 </div>
                                 <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
                                     <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
@@ -374,31 +420,31 @@
                                 Designed and executed a LinkedIn lead generation campaign combining thought leadership content, paid ads, and direct outreach. Generated 500+ qualified B2B leads at a 60% lower CPL than industry average.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-5">
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">LinkedIn Ads</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Lead Gen</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">B2B</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">LinkedIn Ads</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Lead Gen</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">B2B</span>
                             </div>
                             <div class="flex items-center gap-6 mt-5 pt-4 border-t border-[#1a1a1a]">
-                                <div><span class="result-number text-2xl font-bold">500+</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">Qualified Leads</p></div>
-                                <div><span class="result-number text-2xl font-bold">-60%</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">CPL vs Industry</p></div>
+                                <div><span class="result-number text-2xl font-bold">500+</span><p class="text-[#555555] text-[9px] font-medium">Qualified Leads</p></div>
+                                <div><span class="result-number text-2xl font-bold">-60%</span><p class="text-[#555555] text-[9px] font-medium">CPL vs Industry</p></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 8: Pulse — Influencer Campaign -->
-                    <div class="project-card group md:mt-24" data-category="launch">
+                    <!-- Project 8: Pulse -->
+                    <div class="project-card group md:mt-24 reveal-scale" style="transition-delay: 0.7s;" data-category="launch">
                         <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
-                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000&auto=format&fit=crop" alt="Pulse influencer marketing campaign" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000&auto=format&fit=crop" alt="Pulse influencer marketing" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                                <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold tracking-wide rounded-full">Case Study</span>
                             </div>
                         </div>
                         <div class="mt-8">
                             <div class="flex items-start justify-between mb-3">
                                 <div>
-                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">Pulse</h3>
-                                    <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">Influencer Marketing / HealthTech</p>
+                                    <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors duration-300">Pulse</h3>
+                                    <p class="text-[#666666] text-xs font-medium mt-1">Influencer Marketing / HealthTech</p>
                                 </div>
                                 <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
                                     <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
@@ -408,13 +454,13 @@
                                 Orchestrated an influencer marketing campaign across Instagram and TikTok partnering with 20+ micro-influencers. Generated 3M+ impressions, 25k referral sign-ups, and a 5.1× earned media value.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-5">
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Influencers</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Instagram</span>
-                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">TikTok</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Influencers</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">Instagram</span>
+                                <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-xs font-medium rounded">TikTok</span>
                             </div>
                             <div class="flex items-center gap-6 mt-5 pt-4 border-t border-[#1a1a1a]">
-                                <div><span class="result-number text-2xl font-bold">3M+</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">Influencer Impressions</p></div>
-                                <div><span class="result-number text-2xl font-bold">5.1×</span><p class="text-[#555555] text-[9px] uppercase tracking-wider">Earned Media Value</p></div>
+                                <div><span class="result-number text-2xl font-bold">3M+</span><p class="text-[#555555] text-[9px] font-medium">Influencer Impressions</p></div>
+                                <div><span class="result-number text-2xl font-bold">5.1×</span><p class="text-[#555555] text-[9px] font-medium">Earned Media Value</p></div>
                             </div>
                         </div>
                     </div>
@@ -425,29 +471,29 @@
             <!-- Results Dashboard -->
             <section class="px-6 md:px-12 max-w-7xl mx-auto pb-24" aria-label="Overall campaign results">
                 <div class="bg-gradient-to-br from-[#111111] to-[#0a0a0a] rounded-3xl p-12 md:p-20 border border-[#1a1a1a]">
-                    <div class="text-center mb-16">
+                    <div class="text-center mb-16 reveal">
                         <div class="flex items-center justify-center gap-3 mb-4">
                             <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
-                            <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">Overall Results</span>
+                            <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Overall Results</span>
                         </div>
                         <h2 class="text-3xl md:text-5xl font-bold text-white">The numbers that <span class="text-[#FF6B50]">speak for themselves</span></h2>
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-                        <div class="text-center">
+                        <div class="text-center reveal-scale">
                             <div class="text-5xl md:text-7xl font-bold text-white mb-2">50+</div>
-                            <p class="text-[#666666] text-[10px] font-bold uppercase tracking-widest">Campaigns Executed</p>
+                            <p class="text-[#666666] text-xs font-medium">Campaigns Executed</p>
                         </div>
-                        <div class="text-center">
+                        <div class="text-center reveal-scale" style="transition-delay: 0.1s;">
                             <div class="text-5xl md:text-7xl font-bold text-white mb-2">15+</div>
-                            <p class="text-[#666666] text-[10px] font-bold uppercase tracking-widest">Brands Served</p>
+                            <p class="text-[#666666] text-xs font-medium">Brands Served</p>
                         </div>
-                        <div class="text-center">
+                        <div class="text-center reveal-scale" style="transition-delay: 0.2s;">
                             <div class="text-5xl md:text-7xl font-bold text-white mb-2">10M+</div>
-                            <p class="text-[#666666] text-[10px] font-bold uppercase tracking-widest">Impressions Generated</p>
+                            <p class="text-[#666666] text-xs font-medium">Impressions Generated</p>
                         </div>
-                        <div class="text-center">
+                        <div class="text-center reveal-scale" style="transition-delay: 0.3s;">
                             <div class="text-5xl md:text-7xl font-bold text-white mb-2">3.5×</div>
-                            <p class="text-[#666666] text-[10px] font-bold uppercase tracking-widest">Avg. ROAS Delivered</p>
+                            <p class="text-[#666666] text-xs font-medium">Avg. ROAS Delivered</p>
                         </div>
                     </div>
                 </div>
@@ -456,21 +502,21 @@
             <!-- CTA -->
             <section class="px-6 md:px-12 max-w-7xl mx-auto pb-32">
                 <div class="bg-gradient-to-br from-[#1a1a1a] to-[#111111] rounded-3xl p-12 md:p-20 text-center border border-[#333333]">
-                    <div class="flex items-center justify-center gap-3 mb-6">
+                    <div class="flex items-center justify-center gap-3 mb-6 reveal">
                         <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
-                        <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">Let's Build Something</span>
+                        <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Let's Build Something</span>
                     </div>
-                    <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
+                    <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 reveal-scale">
                         Ready to grow your brand?
                     </h2>
-                    <p class="text-[#888888] text-lg max-w-xl mx-auto mb-10">
+                    <p class="text-[#888888] text-lg max-w-xl mx-auto mb-10 reveal">
                         Let's create a social media strategy that drives real results for your business.
                     </p>
                     <div class="flex items-center justify-center gap-4 flex-wrap">
-                        <a href="index.html#contact" class="px-8 py-3.5 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold rounded-xl transition-all">
+                        <a href="index.html#contact" class="px-8 py-3.5 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold rounded-xl transition-all duration-300">
                             Start a Project
                         </a>
-                        <a href="index.html" class="px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all text-white">
+                        <a href="index.html" class="px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all duration-300 text-white">
                             Back to Home
                         </a>
                     </div>
@@ -483,34 +529,34 @@
             <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
                 <div class="flex items-center gap-6">
                     <a href="/" class="flex items-center group" aria-label="Home">
-                        <div class="w-8 h-8 bg-white rounded flex items-center justify-center text-black font-extrabold text-lg transition-transform group-hover:rotate-12">PA</div>
+                        <div class="w-8 h-8 bg-white rounded flex items-center justify-center text-black font-extrabold text-lg transition-transform duration-300 group-hover:rotate-12">PA</div>
                     </a>
                     <p class="text-[#555555] text-xs font-medium">&copy; 2024 Oluwapelumi Akande</p>
                 </div>
                 <div class="flex gap-4">
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all" aria-label="LinkedIn">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300" aria-label="LinkedIn">
                         <iconify-icon icon="lucide:linkedin" class="text-lg"></iconify-icon>
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all" aria-label="X / Twitter">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300" aria-label="X / Twitter">
                         <iconify-icon icon="lucide:twitter" class="text-lg"></iconify-icon>
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all" aria-label="Instagram">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300" aria-label="Instagram">
                         <iconify-icon icon="lucide:instagram" class="text-lg"></iconify-icon>
                     </a>
-                    <a href="mailto:akandeoluwapelumi15@gmail.com" class="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all" aria-label="Email">
+                    <a href="mailto:akandeoluwapelumi15@gmail.com" class="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300" aria-label="Email">
                         <iconify-icon icon="lucide:mail" class="text-lg"></iconify-icon>
                     </a>
                 </div>
-                <div class="flex gap-8 text-[#333333] text-[10px] font-bold uppercase tracking-widest">
-                    <a href="#" class="hover:text-[#666666] transition-colors">Privacy</a>
-                    <a href="#" class="hover:text-[#666666] transition-colors">Terms</a>
+                <div class="flex gap-8 text-[#333333] text-xs font-medium">
+                    <a href="#" class="hover:text-[#666666] transition-colors duration-300">Privacy</a>
+                    <a href="#" class="hover:text-[#666666] transition-colors duration-300">Terms</a>
                 </div>
             </div>
         </footer>
 
     </div>
 
-    <!-- Simple Filter Script -->
+    <!-- Filter Script -->
     <script>
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
@@ -520,16 +566,23 @@
                 });
                 this.classList.add('active');
                 this.setAttribute('aria-selected', 'true');
-
                 const filter = this.dataset.filter;
                 document.querySelectorAll('.project-card').forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
                 });
             });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
