@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Oluwapelumi Akande | Client Success & Digital Marketing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        @font-face {
+            font-family: 'Satoshi';
+            src: url('https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/4aed2f49-a476-436f-bae8-f31aa18f46fa/1767920861040-60c1c779/Satoshi-Variable.woff2') format('woff2');
+            font-weight: 300 900;
+            font-display: swap;
+            font-style: normal;
+        }
+
+        :root {
+            --font-satoshi: 'Satoshi', 'Inter', sans-serif;
+            --color-bg: #050505;
+            --color-accent: #FF6B50;
+        }
+
+        body {
+            font-family: var(--font-satoshi);
+            background-color: var(--color-bg);
+            color: #ebebeb;
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background-color: var(--color-accent);
+            color: white;
+        }
+
+        .glass-nav {
+            background: rgba(17, 17, 17, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-text {
+            font-size: 10vw;
+            line-height: 0.9;
+            letter-spacing: -0.05em;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+
+        .project-card {
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .filter-btn.active {
+            background-color: #FF6B50;
+            color: black;
+            border-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen bg-[#050505] overflow-x-hidden">
+
+        <!-- Navigation -->
+        <nav class="fixed top-0 left-0 right-0 z-[100] px-6 py-5 flex items-center justify-between text-sm font-medium tracking-tight">
+            <div class="flex items-center gap-10">
+                <a href="/" class="flex items-center group">
+                    <div class="w-8 h-8 bg-white rounded flex items-center justify-center text-black font-extrabold text-lg transition-transform group-hover:rotate-12">OA</div>
+                </a>
+                <div class="hidden lg:flex items-center gap-8 text-[#888888]">
+                    <a href="index.html#about" class="hover:text-white transition-colors">About</a>
+                    <a href="index.html#services" class="hover:text-white transition-colors">Services</a>
+                    <a href="portfolio.html" class="text-white">Portfolio</a>
+                    <a href="index.html#contact" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-8">
+                <a href="index.html" class="hidden md:block text-[#888888] hover:text-white transition-colors">Home</a>
+                <a href="index.html#contact" class="px-5 py-2.5 bg-[#1a1a1a] hover:bg-white hover:text-black border border-[#333333] rounded-lg transition-all duration-300">
+                    Let's Talk
+                </a>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <header class="relative pt-40 pb-24 px-6 md:px-12">
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_#1a1a1a_0%,_#050505_70%)] opacity-60"></div>
+                <div class="absolute top-20 right-20 w-64 h-64 bg-[#4F46E5] rounded-full blur-[120px] opacity-10"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                    <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">Volume 01 — 2024</span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+                    <div>
+                        <h1 class="hero-text font-bold text-white leading-none">
+                            <span class="block">PORT<span class="text-[#FF6B50]">FOLIO</span></span>
+                        </h1>
+                    </div>
+                    <div class="pb-4">
+                        <p class="text-lg text-[#888888] leading-relaxed max-w-lg">
+                            A curated selection of projects where I've driven <span class="text-white font-medium">customer success, marketing growth, and operational excellence</span> for fintechs and startups.
+                        </p>
+                        <div class="flex items-center gap-6 mt-8 text-[#666666] text-xs font-bold uppercase tracking-widest">
+                            <span class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-400"></iconify-icon> 15+ Clients</span>
+                            <span class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-400"></iconify-icon> 40% Lift</span>
+                            <span class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-400"></iconify-icon> 10k+ Users</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Filter Tabs -->
+        <div class="px-6 md:px-12 max-w-7xl mx-auto pb-12">
+            <div class="flex flex-wrap items-center gap-3 border-b border-[#222222] pb-6">
+                <button class="filter-btn active px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold uppercase tracking-widest transition-all">All Work</button>
+                <button class="filter-btn px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold uppercase tracking-widest hover:border-white transition-all">Fintech</button>
+                <button class="filter-btn px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold uppercase tracking-widest hover:border-white transition-all">SaaS</button>
+                <button class="filter-btn px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold uppercase tracking-widest hover:border-white transition-all">CX Strategy</button>
+                <button class="filter-btn px-6 py-2.5 border border-[#333333] rounded-full text-xs font-bold uppercase tracking-widest hover:border-white transition-all">Product Launch</button>
+            </div>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <section class="px-6 md:px-12 max-w-7xl mx-auto pb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24">
+
+                <!-- Project 1: FinFlow -->
+                <div class="project-card group">
+                    <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="FinFlow Project" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                            <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">FinFlow</h3>
+                                <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">CX Strategy / Fintech</p>
+                            </div>
+                            <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
+                                <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                            </div>
+                        </div>
+                        <p class="text-[#777777] text-sm leading-relaxed max-w-md">
+                            Redesigned the customer onboarding journey, reducing churn by 35% and improving NPS from 42 to 78. Implemented a data-driven CX framework across all touchpoints.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-5">
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Customer Journey</span>
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">NPS</span>
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Retention</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: PaySwift -->
+                <div class="project-card group md:mt-24">
+                    <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="PaySwift Project" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                            <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">PaySwift</h3>
+                                <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">Product Marketing / Launch</p>
+                            </div>
+                            <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
+                                <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                            </div>
+                        </div>
+                        <p class="text-[#777777] text-sm leading-relaxed max-w-md">
+                            Led the go-to-market strategy for a fintech payment product. Achieved 10k user sign-ups in the first 30 days and a 4.7★ app store rating through targeted campaigns.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-5">
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">GTM Strategy</span>
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Campaigns</span>
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Growth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: VaultEdge -->
+                <div class="project-card group">
+                    <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
+                        <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=1000&auto=format&fit=crop" alt="VaultEdge Project" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                            <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">VaultEdge</h3>
+                                <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">Growth Ops / SaaS</p>
+                            </div>
+                            <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
+                                <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                            </div>
+                        </div>
+                        <p class="text-[#777777] text-sm leading-relaxed max-w-md">
+                            Built scalable growth operations systems, automating customer onboarding and reducing manual work by 60%. Drove a 45% increase in monthly active users.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-5">
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Automation</span>
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Operations</span>
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">MAU Growth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: NestCredit -->
+                <div class="project-card group md:mt-24">
+                    <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
+                        <img src="https://images.unsplash.com/photo-1432889821006-3149403b3405?q=80&w=1000&auto=format&fit=crop" alt="NestCredit Project" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                            <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">NestCredit</h3>
+                                <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">Content Strategy / Fintech</p>
+                            </div>
+                            <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
+                                <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                            </div>
+                        </div>
+                        <p class="text-[#777777] text-sm leading-relaxed max-w-md">
+                            Developed a full content strategy from scratch — blog, social, email. Organic traffic grew 3× in 6 months and email engagement hit 42% open rates.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-5">
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Content Strategy</span>
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">SEO</span>
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Email Marketing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: CrediFlow -->
+                <div class="project-card group">
+                    <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
+                        <img src="https://images.unsplash.com/photo-1559150892-2e7ba7e0e5b0?q=80&w=1000&auto=format&fit=crop" alt="CrediFlow Project" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                            <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">CrediFlow</h3>
+                                <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">Client Success / Fintech</p>
+                            </div>
+                            <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
+                                <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                            </div>
+                        </div>
+                        <p class="text-[#777777] text-sm leading-relaxed max-w-md">
+                            Designed and implemented a customer success program that reduced churn by 50% and increased upsell revenue by 30% through proactive engagement and data-driven touchpoints.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-5">
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Customer Success</span>
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Retention</span>
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Upsell</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: SabiPay -->
+                <div class="project-card group md:mt-24">
+                    <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm relative">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000&auto=format&fit=crop" alt="SabiPay Project" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                            <span class="px-3 py-1.5 bg-[#FF6B50] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Case Study</span>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h3 class="text-3xl font-bold tracking-tight group-hover:text-[#FF6B50] transition-colors">SabiPay</h3>
+                                <p class="text-[#666666] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">Digital Marketing / Launch</p>
+                            </div>
+                            <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
+                                <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                            </div>
+                        </div>
+                        <p class="text-[#777777] text-sm leading-relaxed max-w-md">
+                            Orchestrated a multi-channel digital marketing campaign across social, email, and paid channels. Generated 5k qualified leads with a 3.5× ROAS in the first quarter.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-5">
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Digital Marketing</span>
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Paid Ads</span>
+                            <span class="px-3 py-1 bg-[#1a1a1a] text-[#888888] text-[10px] font-bold uppercase tracking-wider rounded">Lead Gen</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- More Projects CTA -->
+        <section class="px-6 md:px-12 max-w-7xl mx-auto pb-32">
+            <div class="bg-gradient-to-br from-[#1a1a1a] to-[#111111] rounded-3xl p-12 md:p-20 text-center border border-[#333333]">
+                <div class="flex items-center justify-center gap-3 mb-6">
+                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                    <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666] uppercase">Let's Build</span>
+                </div>
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
+                    Want to see more?
+                </h2>
+                <p class="text-[#888888] text-lg max-w-xl mx-auto mb-10">
+                    I'm always working on new projects. Reach out and let's discuss how I can help your business grow.
+                </p>
+                <div class="flex items-center justify-center gap-4 flex-wrap">
+                    <a href="index.html#contact" class="px-8 py-3.5 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold rounded-xl transition-all">
+                        Start a Project
+                    </a>
+                    <a href="index.html" class="px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all text-white">
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pb-16 px-6 md:px-12 border-t border-[#1a1a1a] pt-16">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-6">
+                    <a href="/" class="flex items-center group">
+                        <div class="w-8 h-8 bg-white rounded flex items-center justify-center text-black font-extrabold text-lg transition-transform group-hover:rotate-12">OA</div>
+                    </a>
+                    <p class="text-[#555555] text-xs font-medium">&copy; 2024 Oluwapelumi Akande</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" target="_blank" class="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                        <iconify-icon icon="lucide:linkedin" class="text-lg"></iconify-icon>
+                    </a>
+                    <a href="#" target="_blank" class="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                        <iconify-icon icon="lucide:twitter" class="text-lg"></iconify-icon>
+                    </a>
+                    <a href="mailto:akandeoluwapelumi15@gmail.com" class="w-12 h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                        <iconify-icon icon="lucide:mail" class="text-lg"></iconify-icon>
+                    </a>
+                </div>
+                <div class="flex gap-8 text-[#333333] text-[10px] font-bold uppercase tracking-widest">
+                    <a href="#" class="hover:text-[#666666] transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-[#666666] transition-colors">Terms</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
