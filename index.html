@@ -1,881 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oluwapelumi Akande | Social Media & Digital Marketing Manager</title>
-    <meta name="description" content="Oluwapelumi Akande — Social Media & Digital Marketing Manager helping fintechs and startups grow through strategic content, community management, and data-driven campaigns.">
-    <meta name="keywords" content="social media manager, digital marketing, fintech marketing, content strategy, Lagos, Nigeria, social media strategist">
-    <meta name="author" content="Oluwapelumi Akande">
-    <meta property="og:title" content="Oluwapelumi Akande | Social Media & Digital Marketing Manager">
-    <meta property="og:description" content="Helping fintechs and startups grow through strategic social media, content, and digital campaigns.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lumiee.vercel.app">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Oluwapelumi Akande | Social Media & Digital Marketing Manager">
-    <meta name="twitter:description" content="Helping fintechs and startups grow through strategic social media, content, and digital campaigns.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oluwapelumi Akande | Social Media & Digital Marketing</title>
+<meta name="description" content="Oluwapelumi Akande — Social Media & Digital Marketing professional helping fintechs and startups win and keep customers through content, community, and data-driven campaigns." />
+<meta property="og:title" content="Oluwapelumi Akande | Social Media & Digital Marketing" />
+<meta property="og:description" content="Helping fintechs and startups win and keep customers through social, content, and digital campaigns." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#14110C; --ink-card:#211B13; --ink-line:rgba(247,243,234,.12);
+  --on-dark:#F7F3EA; --on-dark-mut:#B7AD99;
+  --paper:#FBF7EF; --paper-2:#F0E8D9; --card:#FFFFFF;
+  --text:#15120C; --body:#4C4534; --muted:#8A806F;
+  --gold:#D89B2B; --gold-deep:#8C6310; --gold-soft:#F4E7C8;
+  --green:#2F9A77;
+  --line:#E6DCC8; --line-soft:#EFE8D9;
+  --shadow:0 1px 2px rgba(21,18,12,.04), 0 12px 36px rgba(21,18,12,.08);
+  --shadow-lg:0 2px 8px rgba(21,18,12,.07), 0 28px 64px rgba(21,18,12,.14);
+  --maxw:1160px;
+}
+*{margin:0; padding:0; box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper); color:var(--body); font-family:'Inter',system-ui,sans-serif; font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+a{color:inherit; text-decoration:none}
+img{max-width:100%; display:block}
+::selection{background:var(--gold-soft)}
+.container{width:100%; max-width:var(--maxw); margin:0 auto; padding:0 26px}
+.display{font-family:'Bricolage Grotesque',system-ui,sans-serif; font-weight:700; letter-spacing:-0.02em; line-height:1.02}
 
-        @font-face {
-            font-family: 'Satoshi';
-            src: url('https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/4aed2f49-a476-436f-bae8-f31aa18f46fa/1767920861040-60c1c779/Satoshi-Variable.woff2') format('woff2');
-            font-weight: 300 900;
-            font-display: swap;
-            font-style: normal;
-        }
+/* NAV */
+.nav{position:sticky; top:0; z-index:60; background:rgba(20,17,12,.72); backdrop-filter:blur(12px); border-bottom:1px solid var(--ink-line)}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; height:72px}
+.brand{display:flex; align-items:center; gap:12px; color:var(--on-dark)}
+.monogram{width:40px; height:40px; border-radius:12px; flex-shrink:0; background:var(--gold); color:var(--ink); display:flex; align-items:center; justify-content:center; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:17px}
+.brand b{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; letter-spacing:-0.01em}
+.nav-links{display:flex; align-items:center; gap:30px}
+.nav-links a{font-size:15px; font-weight:500; color:var(--on-dark-mut); transition:color .15s ease}
+.nav-links a:hover{color:var(--on-dark)}
+.nav-cta{background:var(--gold); color:var(--ink)!important; font-weight:700!important; padding:10px 20px; border-radius:999px; transition:transform .12s ease, background .15s ease}
+.nav-cta:hover{transform:translateY(-1px)}
+.burger{display:none; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer; padding:6px}
+.burger span{width:24px; height:2px; background:var(--on-dark); border-radius:2px}
+@media (max-width:860px){
+  .nav-links{position:fixed; inset:72px 0 auto 0; flex-direction:column; gap:0; background:var(--ink); border-bottom:1px solid var(--ink-line); padding:8px 0; transform:translateY(-130%); transition:transform .28s ease}
+  .nav-links.open{transform:translateY(0)}
+  .nav-links a{width:100%; padding:15px 26px}
+  .nav-cta{border-radius:0; margin:8px 26px}
+  .burger{display:flex}
+}
 
-        :root {
-            --font-satoshi: 'Satoshi', 'Inter', sans-serif;
-            --color-bg: #050505;
-            --color-accent: #FF6B50;
-        }
+/* HERO */
+.hero{background:var(--ink); color:var(--on-dark); position:relative; overflow:hidden; padding:64px 0 70px}
+.blob{position:absolute; border-radius:50%; z-index:0; pointer-events:none; filter:blur(10px)}
+.blob.b1{width:460px; height:460px; top:-130px; right:-80px; background:radial-gradient(circle, rgba(216,155,43,.30), transparent 62%); animation:drift1 19s ease-in-out infinite}
+.blob.b2{width:380px; height:380px; bottom:-150px; left:-120px; background:radial-gradient(circle, rgba(47,154,119,.18), transparent 62%); animation:drift2 23s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(-28px,32px)}}
+@keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(32px,-26px)}}
+.hero-grid{display:grid; grid-template-columns:1.18fr .82fr; gap:36px; align-items:center; position:relative; z-index:2}
+.pill{display:inline-flex; align-items:center; gap:9px; font-size:13px; font-weight:600; letter-spacing:.02em; color:var(--on-dark); background:rgba(247,243,234,.06); border:1px solid var(--ink-line); padding:7px 15px; border-radius:999px}
+.pill .dot{width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 0 3px rgba(47,154,119,.2)}
+.hero h1{margin-top:24px; font-size:clamp(42px,7.4vw,78px); color:var(--on-dark)}
+.hero h1 .g{color:var(--gold)}
+.hero .sub{margin-top:22px; max-width:500px; font-size:18px; color:var(--on-dark-mut)}
+.cta-row{display:flex; flex-wrap:wrap; gap:13px; margin-top:32px}
+.btn{display:inline-flex; align-items:center; gap:9px; font-size:15.5px; font-weight:600; padding:14px 26px; border-radius:999px; transition:transform .12s ease, background .15s ease, color .15s ease, border-color .15s ease}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--gold); color:var(--ink); border:1px solid var(--gold)}
+.btn-primary:hover{background:#E9AE3E}
+.btn-on-dark{background:transparent; color:var(--on-dark); border:1px solid var(--ink-line)}
+.btn-on-dark:hover{border-color:var(--gold); color:var(--gold)}
+.btn svg{width:17px; height:17px; stroke:currentColor; stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round}
+.hero-meta{display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:30px; font-size:14px; color:var(--on-dark-mut)}
+.hero-meta b{color:var(--on-dark); font-weight:600}
 
-        * { box-sizing: border-box; }
+.stage{position:relative; height:498px; display:flex; align-items:flex-end; justify-content:center}
+.stage-disc{position:absolute; bottom:14px; left:50%; transform:translateX(-50%); width:340px; height:340px; border-radius:50%; background:radial-gradient(circle at 50% 38%, rgba(216,155,43,.32), rgba(216,155,43,.06) 58%, transparent 72%)}
+.avatar-cutout{position:relative; z-index:2; width:300px; height:300px; border-radius:50%; object-fit:cover; border:4px solid rgba(216,155,43,.3); box-shadow:0 26px 44px rgba(0,0,0,.45); margin-bottom:40px}
+.chip{position:absolute; z-index:3; width:54px; height:54px; border-radius:15px; background:var(--ink-card); border:1px solid var(--ink-line); box-shadow:0 12px 30px rgba(0,0,0,.35); display:flex; align-items:center; justify-content:center; color:var(--gold)}
+.chip svg{width:25px; height:25px; stroke:currentColor; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round}
+.chip.c1{top:16px; left:4%; animation:floaty 6s ease-in-out infinite}
+.chip.c2{top:80px; right:0%; animation:floaty 7.2s ease-in-out infinite .6s}
+.chip.c3{top:220px; right:-3%; animation:floaty 6.6s ease-in-out infinite 1.1s}
+.chip.c4{bottom:120px; left:-3%; animation:floaty 7.6s ease-in-out infinite .3s}
+.chip.metric{width:auto; height:auto; padding:11px 15px; border-radius:14px; flex-direction:column; align-items:flex-start; gap:0; bottom:24px; right:4%; animation:floaty 8s ease-in-out infinite .4s}
+.chip.metric .v{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:20px; color:var(--gold); line-height:1}
+.chip.metric .l{font-size:10.5px; color:var(--on-dark-mut); letter-spacing:.04em; text-transform:uppercase}
+@media (max-width:1060px){.chip.c3{right:0%}}
+@media (max-width:960px){.chip.c4{left:0%}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr; gap:14px}
+  .stage{order:-1; height:420px}
+  .avatar-cutout{width:240px; height:240px}
+}
 
-        body {
-            font-family: var(--font-satoshi);
-            background-color: var(--color-bg);
-            color: #ebebeb;
-            scroll-behavior: smooth;
-        }
+/* MARQUEE */
+.marquee{background:var(--gold); color:var(--ink); overflow:hidden; padding:14px 0}
+.marquee-track{display:flex; width:max-content; animation:scrollx 28s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-item{display:inline-flex; align-items:center; padding:0 26px; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:18px; white-space:nowrap}
+.marquee-item::after{content:"✦"; margin-left:26px; font-size:13px}
+@keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-        ::selection { background-color: var(--color-accent); color: white; }
+/* SECTION SCAFFOLD */
+section.block{padding:100px 0}
+section.paper2{background:var(--paper-2)}
+.eyebrow{display:inline-flex; align-items:center; gap:9px; font-size:13px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--gold-deep)}
+.eyebrow::before{content:""; width:24px; height:2px; background:var(--gold); border-radius:2px}
+.sec-head{max-width:680px; margin:0 0 56px}
+.sec-head.center{margin-left:auto; margin-right:auto; text-align:center}
+.sec-head.center .eyebrow{justify-content:center}
+.sec-head.center .eyebrow::before{display:none}
+.sec-head h2{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:var(--text); font-size:clamp(30px,4.8vw,46px); letter-spacing:-0.02em; line-height:1.08; margin-top:18px}
+.sec-head p{color:var(--muted); margin-top:16px; font-size:17px}
 
-        .glass-nav {
-            background: rgba(17, 17, 17, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+/* STATS */
+.stats{background:var(--ink); color:var(--on-dark)}
+.stats-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; padding:60px 0}
+.stat .num{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(40px,5.6vw,58px); color:var(--gold); line-height:1}
+.stat .cap{font-size:14px; color:var(--on-dark-mut); margin-top:10px}
+@media (max-width:680px){.stats-grid{grid-template-columns:repeat(2,1fr); gap:38px 24px}}
 
-        .hero-text { font-size: 15vw; line-height: 0.85; letter-spacing: -0.05em; }
-        @media (min-width: 768px) { .hero-text { font-size: 9vw; } }
+/* ABOUT */
+.about-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:54px; align-items:start}
+.about-copy p{color:var(--body); font-size:17px}
+.about-copy p + p{margin-top:16px}
+.badge-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:24px}
+.vbadge{display:inline-flex; align-items:center; gap:8px; font-size:13.5px; font-weight:600; color:var(--text); background:var(--card); border:1px solid var(--line); border-radius:999px; padding:8px 15px; box-shadow:var(--shadow)}
+.vbadge svg{width:15px; height:15px; color:var(--green); stroke:currentColor; stroke-width:2.4; fill:none; stroke-linecap:round; stroke-linejoin:round}
+.about-facts{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:10px 26px; box-shadow:var(--shadow)}
+.fact{display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid var(--line-soft); font-size:15.5px}
+.fact:last-child{border-bottom:none}
+.fact .k{color:var(--muted)} .fact .v{color:var(--text); font-weight:600; text-align:right}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr; gap:34px}}
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .animate-float { animation: float 4s ease-in-out infinite; }
+/* SERVICES */
+.svc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+.svc{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:32px 28px; box-shadow:var(--shadow); transition:transform .22s ease, box-shadow .22s ease}
+.svc:hover{transform:translateY(-6px); box-shadow:var(--shadow-lg)}
+.svc-ic{width:56px; height:56px; border-radius:15px; background:var(--ink); color:var(--gold); display:flex; align-items:center; justify-content:center; margin-bottom:20px; transition:transform .3s ease}
+.svc:hover .svc-ic{transform:rotate(-8deg) scale(1.06)}
+.svc-ic svg{width:27px; height:27px; stroke:currentColor; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round}
+.svc h3{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:var(--text); font-size:20px; margin-bottom:10px}
+.svc p{font-size:14.5px; color:var(--body)}
+@media (max-width:860px){.svc-grid{grid-template-columns:1fr}}
 
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 80, 0.1); }
-            50% { box-shadow: 0 0 40px rgba(255, 107, 80, 0.3); }
-        }
-        .glow-pulse { animation: pulse-glow 3s ease-in-out infinite; }
+/* PLATFORMS */
+.platforms{background:var(--ink); color:var(--on-dark)}
+.plat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+.plat{border:1px solid var(--ink-line); border-radius:20px; padding:30px; background:var(--ink-card); transition:transform .2s ease, border-color .2s ease}
+.plat:hover{transform:translateY(-5px); border-color:rgba(216,155,43,.5)}
+.plat-ic{width:50px; height:50px; border-radius:14px; background:rgba(216,155,43,.14); color:var(--gold); display:flex; align-items:center; justify-content:center; margin-bottom:18px}
+.plat-ic svg{width:24px; height:24px; stroke:currentColor; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round}
+.plat h3{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:19px; color:var(--on-dark); margin-bottom:9px}
+.plat p{font-size:14px; color:var(--on-dark-mut)}
+.tools-row{display:flex; flex-wrap:wrap; gap:11px; margin-top:42px; justify-content:center}
+.tool{font-size:14px; font-weight:600; color:var(--on-dark); background:rgba(247,243,234,.05); border:1px solid var(--ink-line); border-radius:999px; padding:9px 18px}
+@media (max-width:860px){.plat-grid{grid-template-columns:1fr}}
 
-        .marquee { overflow: hidden; white-space: nowrap; }
-        .marquee-content { display: inline-flex; align-items: center; animation: marquee 40s linear infinite; }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+/* WORK */
+.filters{display:flex; flex-wrap:wrap; gap:11px; margin-bottom:36px}
+.filter{font-family:inherit; font-size:14.5px; font-weight:600; color:var(--body); background:var(--card); border:1px solid var(--line); padding:10px 22px; border-radius:999px; cursor:pointer; transition:.16s}
+.filter:hover{border-color:var(--gold)} .filter.active{background:var(--ink); color:var(--on-dark); border-color:var(--ink)}
+.work-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+.work{background:var(--card); border:1px solid var(--line); border-radius:22px; overflow:hidden; box-shadow:var(--shadow); transition:transform .25s ease, box-shadow .25s ease; display:flex; flex-direction:column}
+.work.hide{display:none}
+.work:hover{transform:translateY(-6px); box-shadow:var(--shadow-lg)}
+.work-visual{height:196px; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center}
+.work-visual img{width:100%; height:100%; object-fit:cover; object-position:top center; transition:transform .4s ease}
+.work:hover .work-visual img{transform:scale(1.05)}
+.work-visual .vic{width:74px; height:74px; border-radius:20px; background:rgba(255,255,255,.12); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center; color:var(--gold); transition:transform .4s ease}
+.work:hover .work-visual .vic{transform:rotate(-6deg) scale(1.08)}
+.work-visual .vic svg{width:34px; height:34px; stroke:currentColor; stroke-width:1.7; fill:none; stroke-linecap:round; stroke-linejoin:round}
+.work-top{padding:22px 24px 0; display:flex; align-items:center; justify-content:space-between; gap:10px}
+.work-tag{font-size:11.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); background:var(--gold-soft); padding:5px 12px; border-radius:999px}
+.work-org{font-size:12.5px; color:var(--muted)}
+.work-body{padding:14px 24px 26px; flex:1; display:flex; flex-direction:column}
+.work h3{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:var(--text); font-size:20px}
+.work p{font-size:14.5px; color:var(--body); margin-top:10px; flex:1}
+.work-metrics{display:flex; flex-wrap:wrap; gap:8px; margin-top:20px}
+.chip-m{font-size:12.5px; font-weight:600; color:var(--text); background:var(--paper-2); border:1px solid var(--line); border-radius:9px; padding:6px 11px}
+.chip-m b{color:var(--gold-deep); font-family:'Bricolage Grotesque',sans-serif}
+@media (max-width:900px){.work-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.work-grid{grid-template-columns:1fr}}
 
-        .gradient-border { position: relative; }
-        .gradient-border::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(255,107,80,0.5), rgba(79,70,229,0.3));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
+/* EXPERIENCE */
+.timeline{max-width:820px; position:relative}
+.timeline::before{content:""; position:absolute; left:8px; top:8px; bottom:8px; width:2px; background:linear-gradient(var(--gold),var(--line))}
+.tl-item{position:relative; padding:0 0 34px 42px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:""; position:absolute; left:0; top:6px; width:18px; height:18px; border-radius:50%; background:var(--paper); border:3px solid var(--gold)}
+section.paper2 .tl-item::before{background:var(--paper-2)}
+.tl-when{font-size:13px; font-weight:600; color:var(--gold-deep)}
+.tl-title{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:var(--text); font-size:19px; margin-top:4px}
+.tl-org{font-size:14.5px; color:var(--muted); margin-top:2px}
+.tl-desc{font-size:15px; color:var(--body); margin-top:11px}
 
-        .platform-card:hover .platform-icon { transform: scale(1.1) rotate(-5deg); }
+/* TESTIMONIALS */
+.quotes{display:grid; grid-template-columns:repeat(2,1fr); gap:24px; max-width:960px; margin:0 auto}
+.quote{background:var(--card); border:1px solid var(--line); border-radius:22px; padding:32px; box-shadow:var(--shadow)}
+.quote .mark{font-family:'Bricolage Grotesque',sans-serif; font-size:60px; line-height:.5; color:var(--gold); height:28px}
+.quote p{font-size:16.5px; color:var(--text); line-height:1.6; margin-top:10px}
+.quote .who{margin-top:20px; display:flex; align-items:center; gap:13px}
+.quote .av{width:44px; height:44px; border-radius:50%; background:var(--ink); color:var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:15px}
+.quote .who b{display:block; font-size:15px; color:var(--text)}
+.quote .who span{font-size:13px; color:var(--muted)}
+@media (max-width:820px){.quotes{grid-template-columns:1fr}}
 
-        .stat-number {
-            background: linear-gradient(135deg, #fff 0%, #FF6B50 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+/* WORKED-AT */
+.logos{display:flex; flex-wrap:wrap; justify-content:center; gap:14px; max-width:880px; margin:0 auto}
+.logo{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:18px; color:var(--text); background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 22px; box-shadow:var(--shadow)}
 
-        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
-        .reveal-left.visible { opacity: 1; transform: translateX(0); }
-        .reveal-right { opacity: 0; transform: translateX(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
-        .reveal-right.visible { opacity: 1; transform: translateX(0); }
-        .reveal-scale { opacity: 0; transform: scale(0.95); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
-        .reveal-scale.visible { opacity: 1; transform: scale(1); }
+/* CERTS */
+.cert-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:820px; margin:0 auto}
+a.cert{display:flex; align-items:center; gap:18px; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px; box-shadow:var(--shadow); transition:.2s}
+a.cert:hover{transform:translateY(-4px); box-shadow:var(--shadow-lg)}
+.cert-ic{width:50px; height:50px; flex-shrink:0; border-radius:14px; background:var(--ink); color:var(--gold); display:flex; align-items:center; justify-content:center}
+.cert-ic svg{width:25px; height:25px; stroke:currentColor; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round}
+.cert b{display:block; font-family:'Bricolage Grotesque',sans-serif; font-size:16.5px; color:var(--text); font-weight:700}
+.cert span{display:block; font-size:13.5px; color:var(--muted); margin-top:2px}
+.cert .verified{color:var(--green); font-size:12.5px; font-weight:600; margin-top:5px}
+@media (max-width:600px){.cert-grid{grid-template-columns:1fr}}
 
-        .service-card { transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        .service-card:hover { transform: translateY(-4px); }
-        .project-card { transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        .project-card:hover { transform: translateY(-2px); }
+/* CONTACT */
+.contact{background:var(--ink); color:var(--on-dark)}
+.contact .eyebrow{color:var(--gold)}
+.contact-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:50px; align-items:start}
+.contact h3{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:clamp(32px,5vw,52px); color:var(--on-dark); line-height:1.05; margin-top:18px}
+.contact .lead{color:var(--on-dark-mut); margin-top:16px; font-size:16.5px; max-width:360px}
+.contact-list{margin-top:30px; display:flex; flex-direction:column; gap:16px}
+.ci{display:flex; align-items:center; gap:15px}
+.ci-ic{width:46px; height:46px; border-radius:13px; background:var(--ink-card); border:1px solid var(--ink-line); color:var(--gold); display:flex; align-items:center; justify-content:center; flex-shrink:0}
+.ci-ic svg{width:20px; height:20px; stroke:currentColor; stroke-width:1.9; fill:none; stroke-linecap:round; stroke-linejoin:round}
+.ci small{display:block; font-size:11.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--on-dark-mut); font-weight:600}
+.ci a, .ci span{font-size:15.5px; color:var(--on-dark); font-weight:500}
+.ci a:hover{color:var(--gold)}
+form.contact-form{background:var(--ink-card); border:1px solid var(--ink-line); border-radius:22px; padding:32px}
+.field{margin-bottom:18px}
+.field label{display:block; font-size:14px; font-weight:600; color:var(--on-dark); margin-bottom:8px}
+.field input, .field textarea{width:100%; font-family:inherit; font-size:15.5px; color:var(--on-dark); background:rgba(247,243,234,.04); border:1px solid var(--ink-line); border-radius:12px; padding:13px 15px; transition:border-color .15s ease, box-shadow .15s ease}
+.field input::placeholder, .field textarea::placeholder{color:#857B68}
+.field input:focus, .field textarea:focus{outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(216,155,43,.18)}
+.field textarea{resize:vertical; min-height:130px}
+.hp{position:absolute; left:-9999px}
+form .btn-primary{width:100%; justify-content:center; border:none; cursor:pointer; font-family:inherit; font-size:16px}
+.form-note{font-size:13px; color:var(--on-dark-mut); margin-top:14px; text-align:center}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr; gap:34px}}
 
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-        }
+/* FOOTER */
+footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
+.foot-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px}
+.foot-inner a{color:var(--on-dark-mut); font-size:14px; transition:color .15s ease}
+.foot-inner a:hover{color:var(--gold)}
+.foot-inner .fl{display:flex; gap:22px}
 
-        .mobile-nav-open { max-height: 100vh !important; opacity: 1 !important; }
-    </style>
+/* BACK TO TOP */
+.totop{position:fixed; right:24px; bottom:24px; width:48px; height:48px; border-radius:50%; background:var(--gold); color:var(--ink); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-lg); opacity:0; pointer-events:none; transform:translateY(10px); transition:.25s; z-index:55}
+.totop.show{opacity:1; pointer-events:auto; transform:none}
+.totop svg{width:21px; height:21px; stroke:currentColor; stroke-width:2.2; fill:none; stroke-linecap:round; stroke-linejoin:round}
+
+/* MOTION */
+.reveal{opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1; transform:none; transition:none}
+  .blob,.chip,.marquee-track,.svc-ic{animation:none!important; transition:none!important}
+}
+</style>
 </head>
-<body>
-    <div class="min-h-screen bg-[#050505] overflow-x-hidden">
+<body id="top">
 
-        <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-6 focus:py-3 focus:bg-[#FF6B50] focus:text-black focus:rounded-xl focus:font-bold">Skip to main content</a>
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top"><span class="monogram">OA</span><b>Oluwapelumi Akande</b></a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="insights.html">Insights</a>
+        <a href="cv.html">CV</a>
+        <a class="nav-cta" href="#contact">Let's talk</a>
+      </nav>
+    </div>
+  </header>
 
-        <!-- Navigation -->
-        <nav class="fixed top-0 left-0 right-0 z-[100] px-4 md:px-6 py-4 flex items-center justify-between text-sm font-medium tracking-tight glass-nav" role="navigation" aria-label="Main navigation">
-            <div class="flex items-center gap-10">
-                <a href="/" class="flex items-center group shrink-0" aria-label="Home">
-                    <div class="w-9 h-9 bg-white rounded-xl flex items-center justify-center text-black font-extrabold text-lg transition-transform duration-300 group-hover:rotate-12">PA</div>
-                </a>
-                <div class="hidden lg:flex items-center gap-8 text-[#888888]">
-                    <a href="#about" class="hover:text-white transition-colors duration-300 py-2">About</a>
-                    <a href="#services" class="hover:text-white transition-colors duration-300 py-2">Services</a>
-                    <a href="#platforms" class="hover:text-white transition-colors duration-300 py-2">Platforms</a>
-                    <a href="portfolio.html" class="hover:text-white transition-colors duration-300 py-2">Portfolio</a>
-                    <a href="cv.html" class="hover:text-white transition-colors duration-300 py-2">CV</a>
-                    <a href="insights.html" class="hover:text-white transition-colors duration-300 py-2">Insights</a>
-                    <a href="#contact" class="hover:text-white transition-colors duration-300 py-2">Contact</a>
-                </div>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="#contact" class="hidden sm:inline-flex px-5 py-2.5 bg-[#1a1a1a] hover:bg-white hover:text-black border border-[#333333] rounded-lg transition-all duration-300 text-sm">
-                    Let's Talk
-                </a>
-                <!-- Mobile Menu Toggle -->
-                <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-[#222222] transition-all duration-300" aria-label="Toggle menu" aria-expanded="false">
-                    <i class="ph ph-list text-2xl text-white"></i>
-                </button>
-            </div>
-        </nav>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed top-0 left-0 right-0 z-[90] bg-[#050505] border-b border-[#222222] pt-20 pb-8 px-6 transform -translate-y-full opacity-0 transition-all duration-300 ease-in-out lg:hidden">
-            <div class="flex flex-col gap-2">
-                <a href="#about" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">About</a>
-                <a href="#services" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Services</a>
-                <a href="#platforms" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Platforms</a>
-                <a href="portfolio.html" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Portfolio</a>
-                <a href="cv.html" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">CV</a>
-                <a href="insights.html" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Insights</a>
-                <a href="#contact" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Contact</a>
-                <a href="#contact" class="mt-4 px-6 py-4 bg-[#FF6B50] text-black font-bold rounded-xl text-center">Let's Talk</a>
-            </div>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <span class="blob b1"></span><span class="blob b2"></span>
+      <div class="container hero-grid">
+        <div>
+          <span class="pill"><span class="dot"></span> Available for projects &amp; roles</span>
+          <h1 class="display">Social &amp; digital marketing that <span class="g">wins &amp; keeps</span> customers.</h1>
+          <p class="sub">Hi, I'm Oluwapelumi — I help fintechs and startups grow loyal communities through strategic social media, content, and data-driven campaigns.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Start a project</a>
+            <a class="btn btn-on-dark" href="portfolio.html">View work</a>
+          </div>
+          <div class="hero-meta">
+            <span><b>5+</b> years experience</span>
+            <span><b>Fintech</b> · Banking · Insurance</span>
+            <span><b>Lagos</b>, NG &amp; Remote</span>
+          </div>
         </div>
-
-        <!-- Floating Bottom Nav -->
-        <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[110] hidden md:flex items-center gap-2 p-2 glass-nav rounded-2xl shadow-2xl" role="navigation" aria-label="Quick navigation">
-            <div class="flex items-center gap-1 pr-4 border-r border-[#333333]">
-                <a href="#about" class="p-2.5 hover:bg-[#222222] rounded-xl transition-all duration-300" title="About" aria-label="About">
-                    <i class="ph ph-user text-xl text-white"></i>
-                </a>
-                <a href="#services" class="p-2.5 hover:bg-[#222222] rounded-xl transition-all duration-300" title="Services" aria-label="Services">
-                    <i class="ph ph-package text-xl text-white"></i>
-                </a>
-                <a href="portfolio.html" class="p-2.5 hover:bg-[#222222] rounded-xl transition-all duration-300" title="Portfolio" aria-label="Portfolio">
-                    <i class="ph ph-squares-four text-xl text-white"></i>
-                </a>
-                <a href="cv.html" class="p-2.5 hover:bg-[#222222] rounded-xl transition-all duration-300" title="CV" aria-label="CV">
-                    <i class="ph ph-file-text text-xl text-white"></i>
-                </a>
-                <a href="insights.html" class="p-2.5 hover:bg-[#222222] rounded-xl transition-all duration-300" title="Insights" aria-label="Insights">
-                    <i class="ph ph-pen text-xl text-white"></i>
-                </a>
-            </div>
-            <a href="#contact" class="px-5 py-2.5 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold text-sm tracking-wide rounded-xl transition-all duration-300">Contact</a>
+        <div class="stage">
+          <div class="stage-disc"></div>
+          <div class="avatar-cutout" style="display:flex;align-items:center;justify-content:center;background:var(--ink-card);border:4px solid rgba(216,155,43,.3);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;color:var(--gold)">OA</div>
+          <span class="chip c1"><svg viewBox="0 0 24 24"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
+          <span class="chip c2"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></span>
+          <span class="chip c3"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 2 4-5"/></svg></span>
+          <span class="chip c4"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
+          <span class="chip metric"><span class="v">+30%</span><span class="l">Leads · Watu</span></span>
         </div>
+      </div>
+    </section>
 
-        <main id="main" class="pt-16 md:pt-20">
-            <!-- Hero Section -->
-            <header class="relative min-h-screen w-full flex flex-col items-center justify-center" role="banner">
-                <div class="absolute inset-0 z-0 pointer-events-none">
-                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1a1a1a_0%,_#050505_70%)] opacity-60"></div>
-                    <div class="absolute top-1/4 left-10 w-72 h-72 bg-[#FF6B50] rounded-full blur-[120px] opacity-15"></div>
-                    <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-[#4F46E5] rounded-full blur-[150px] opacity-10"></div>
-                </div>
-
-                <div class="relative z-10 text-center px-4 md:px-6 w-full max-w-5xl mx-auto">
-                    <div class="flex items-center justify-center gap-3 mb-6">
-                        <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0"></div>
-                        <span class="text-[10px] font-bold tracking-[0.3em] text-[#888888]">Available for Projects & Collaborations</span>
-                    </div>
-                    <h1 class="hero-text font-bold text-white leading-none">
-                        <span class="block">Social</span>
-                        <span class="block text-[#FF6B50]">Manager</span>
-                    </h1>
-                    <p class="mt-6 md:mt-8 text-base md:text-xl text-[#888888] max-w-2xl mx-auto leading-relaxed font-light px-2">
-                        Helping fintechs & startups <span class="text-white font-medium">build loyal communities</span> through strategic social media, content, and data-driven digital campaigns.
-                    </p>
-                    <div class="mt-8 md:mt-10 flex items-center justify-center gap-3 md:gap-4 flex-wrap px-2">
-                        <a href="#contact" class="px-6 md:px-8 py-3 md:py-3.5 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold rounded-xl transition-all duration-300 glow-pulse text-sm md:text-base min-h-[48px] flex items-center">
-                            Start a Project
-                        </a>
-                        <a href="portfolio.html" class="px-6 md:px-8 py-3 md:py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all duration-300 text-white text-sm md:text-base min-h-[48px] flex items-center">
-                            View Portfolio
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Social Proof - Mobile adjusts -->
-                <div class="absolute bottom-6 md:bottom-12 left-4 md:left-12 flex items-center gap-3 md:gap-5">
-                    <div class="flex -space-x-3 md:-space-x-4">
-                        <div class="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-[#050505] bg-gradient-to-br from-[#feda75] via-[#fa7e1e] to-[#d62976] flex items-center justify-center" title="Instagram">
-                            <i class="ph ph-instagram-logo text-xs md:text-sm text-white"></i>
-                        </div>
-                        <div class="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-[#050505] bg-[#0A66C2] flex items-center justify-center" title="LinkedIn">
-                            <i class="ph ph-linkedin-logo text-xs md:text-sm text-white"></i>
-                        </div>
-                        <div class="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-[#050505] bg-black border-white/30 flex items-center justify-center" title="TikTok">
-                            <i class="ph ph-tiktok-logo text-xs md:text-sm text-white"></i>
-                        </div>
-                        <div class="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-[#050505] bg-[#1DA1F2] flex items-center justify-center" title="X / Twitter">
-                            <i class="ph ph-twitter-logo text-xs md:text-sm text-white"></i>
-                        </div>
-                    </div>
-                    <p class="hidden sm:block text-xs md:text-sm font-medium leading-tight text-[#888888]">
-                        Multi-platform expertise<br/>Content that converts
-                    </p>
-                </div>
-
-                <div class="absolute bottom-6 md:bottom-12 right-4 md:right-12 text-right">
-                    <a href="mailto:akandeoluwapelumi15@gmail.com" class="text-xs md:text-base text-white font-medium hover:text-[#FF6B50] transition-colors duration-300 border-b-2 border-white hover:border-[#FF6B50] pb-0.5 md:pb-1">
-                        akandeoluwapelumi15@gmail.com
-                    </a>
-                    <p class="text-[#555555] text-[10px] md:text-xs mt-1 md:mt-2 tracking-wide">Lagos, NG & Remote · Open to Work</p>
-                </div>
-            </header>
-
-            <!-- Marquee -->
-            <div class="marquee py-6 md:py-8 border-t border-b border-[#1a1a1a]" aria-hidden="true">
-                <div class="marquee-content">
-                    <i class="ph ph-share-network text-xl md:text-2xl text-[#FF6B50] mx-4 md:mx-6"></i>
-                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Social Media Strategy</span>
-                    <i class="ph ph-image text-xl md:text-2xl text-[#4F46E5] mx-4 md:mx-6"></i>
-                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Content Creation</span>
-                    <i class="ph ph-chat-circle-dots text-xl md:text-2xl text-[#10B981] mx-4 md:mx-6"></i>
-                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Community Management</span>
-                    <i class="ph ph-crosshair text-xl md:text-2xl text-[#EC4899] mx-4 md:mx-6"></i>
-                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Paid Social</span>
-                    <i class="ph ph-chart-bar text-xl md:text-2xl text-[#F59E0B] mx-4 md:mx-6"></i>
-                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Analytics & Reporting</span>
-                    <i class="ph ph-users text-xl md:text-2xl text-[#3B82F6] mx-4 md:mx-6"></i>
-                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Influencer Marketing</span>
-                    <i class="ph ph-share-network text-xl md:text-2xl text-[#FF6B50] mx-4 md:mx-6"></i>
-                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Social Media Strategy</span>
-                    <i class="ph ph-image text-xl md:text-2xl text-[#4F46E5] mx-4 md:mx-6"></i>
-                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Content Creation</span>
-                    <i class="ph ph-chat-circle-dots text-xl md:text-2xl text-[#10B981] mx-4 md:mx-6"></i>
-                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Community Management</span>
-                </div>
-            </div>
-
-            <!-- About Section -->
-            <section id="about" class="py-20 md:py-32 px-4 md:px-12 max-w-7xl mx-auto scroll-mt-24" aria-label="About me">
-                <div class="flex items-center gap-3 mb-10 reveal">
-                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
-                    <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">About Me</span>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 md:gap-16">
-                    <div class="lg:col-span-3 reveal-left">
-                        <h2 class="text-3xl md:text-5xl font-bold leading-[1.05] tracking-tight text-white mb-6 md:mb-8">
-                            I'm Oluwapelumi Akande — <span class="text-[#444444]">Social Media & Digital Marketing</span> professional.
-                        </h2>
-                        <p class="text-base md:text-lg text-[#888888] leading-relaxed mb-4 md:mb-6 max-w-2xl">
-                            I help fintechs and startups grow their digital presence through strategic social media management, 
-                            compelling content creation, and data-driven campaigns. With certifications from Google in Digital 
-                            Marketing and AltSchool in Product Marketing, I blend analytical rigor with creative storytelling 
-                            to build communities that convert.
-                        </p>
-                        <p class="text-base md:text-lg text-[#777777] leading-relaxed mb-6 md:mb-8 max-w-2xl">
-                            From full-funnel social strategies to viral content campaigns, I've helped brands across fintech, 
-                            SaaS, and B2B sectors achieve measurable growth across Instagram, LinkedIn, Twitter/X, and TikTok.
-                        </p>
-                        <div class="flex flex-wrap gap-3 md:gap-4 reveal">
-                            <div class="flex items-center gap-3 bg-[#111111] px-4 md:px-5 py-3 rounded-xl hover:bg-[#1a1a1a] transition-all duration-300">
-                                <i class="ph ph-award text-[#FF6B50] text-xl"></i>
-                                <span class="text-xs md:text-sm font-medium">Google Digital Marketing</span>
-                            </div>
-                            <div class="flex items-center gap-3 bg-[#111111] px-4 md:px-5 py-3 rounded-xl hover:bg-[#1a1a1a] transition-all duration-300">
-                                <i class="ph ph-award text-[#FF6B50] text-xl"></i>
-                                <span class="text-xs md:text-sm font-medium">AltSchool Product Marketing</span>
-                            </div>
-                            <div class="flex items-center gap-3 bg-[#111111] px-4 md:px-5 py-3 rounded-xl hover:bg-[#1a1a1a] transition-all duration-300">
-                                <i class="ph ph-seal-check text-[#FF6B50] text-xl"></i>
-                                <span class="text-xs md:text-sm font-medium">Meta Certified</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-2 flex items-center justify-center mt-6 lg:mt-0 reveal-right">
-                        <div class="w-56 h-56 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-[#1a1a1a] to-[#111111] flex items-center justify-center relative gradient-border">
-                            <div class="text-center">
-                                <div class="text-5xl md:text-6xl font-bold text-white">PA</div>
-                                <p class="text-[#666666] text-xs md:text-sm mt-2 tracking-wide">Social Media & Digital Marketing</p>
-                            </div>
-                            <div class="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-14 h-14 md:w-16 md:h-16 bg-[#FF6B50] rounded-full flex items-center justify-center text-xl md:text-2xl font-bold text-black animate-float">5+</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-16 md:mt-24 pt-12 md:pt-16 border-t border-[#1a1a1a]">
-                    <div class="reveal-scale text-center md:text-left">
-                        <div class="stat-number text-4xl md:text-5xl font-bold mb-1 md:mb-2">50+</div>
-                        <p class="text-[#666666] text-xs md:text-sm font-medium">Campaigns Run</p>
-                    </div>
-                    <div class="reveal-scale text-center md:text-left" style="transition-delay: 0.1s;">
-                        <div class="stat-number text-4xl md:text-5xl font-bold mb-1 md:mb-2">15+</div>
-                        <p class="text-[#666666] text-xs md:text-sm font-medium">Brands Served</p>
-                    </div>
-                    <div class="reveal-scale text-center md:text-left" style="transition-delay: 0.2s;">
-                        <div class="stat-number text-4xl md:text-5xl font-bold mb-1 md:mb-2">10M+</div>
-                        <p class="text-[#666666] text-xs md:text-sm font-medium">Impressions Generated</p>
-                    </div>
-                    <div class="reveal-scale text-center md:text-left" style="transition-delay: 0.3s;">
-                        <div class="stat-number text-4xl md:text-5xl font-bold mb-1 md:mb-2">3.5×</div>
-                        <p class="text-[#666666] text-xs md:text-sm font-medium">Avg. ROAS</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Services Section -->
-            <section id="services" class="py-20 md:py-32 px-4 md:px-12 max-w-7xl mx-auto scroll-mt-24" aria-label="Services">
-                <div class="flex items-center gap-3 mb-10 reveal">
-                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
-                    <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">What I Do</span>
-                </div>
-
-                <h2 class="text-3xl md:text-5xl font-medium leading-[1.05] tracking-tight text-white max-w-5xl mb-16 md:mb-20 reveal-left">
-                    Social media services that <span class="text-[#444444]">build communities</span> and drive revenue.
-                </h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                    <div class="service-card bg-[#111111] rounded-2xl p-6 md:p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale">
-                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
-                            <i class="ph ph-share-network text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
-                        </div>
-                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">Social Media Strategy</h3>
-                        <p class="text-[#888888] text-sm md:text-base leading-relaxed">Full-funnel social strategies tailored for fintech and B2B growth — from brand awareness to conversion.</p>
-                    </div>
-                    <div class="service-card bg-[#111111] rounded-2xl p-6 md:p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.1s;">
-                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
-                            <i class="ph ph-image text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
-                        </div>
-                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">Content Creation</h3>
-                        <p class="text-[#888888] text-sm md:text-base leading-relaxed">Scroll-stopping visuals, copy, and video content optimized for each platform's unique audience and algorithm.</p>
-                    </div>
-                    <div class="service-card bg-[#111111] rounded-2xl p-6 md:p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.2s;">
-                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
-                            <i class="ph ph-chat-circle-dots text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
-                        </div>
-                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">Community Management</h3>
-                        <p class="text-[#888888] text-sm md:text-base leading-relaxed">Building and nurturing engaged online communities that turn followers into brand advocates and customers.</p>
-                    </div>
-                    <div class="service-card bg-[#111111] rounded-2xl p-6 md:p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.3s;">
-                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
-                            <i class="ph ph-crosshair text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
-                        </div>
-                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">Paid Social</h3>
-                        <p class="text-[#888888] text-sm md:text-base leading-relaxed">Data-driven ad campaigns across Meta, LinkedIn, and Twitter with precise targeting and ROAS optimization.</p>
-                    </div>
-                    <div class="service-card bg-[#111111] rounded-2xl p-6 md:p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.4s;">
-                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
-                            <i class="ph ph-chart-bar text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
-                        </div>
-                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">Analytics & Reporting</h3>
-                        <p class="text-[#888888] text-sm md:text-base leading-relaxed">Custom dashboards and actionable insights that track what matters and inform smarter content decisions.</p>
-                    </div>
-                    <div class="service-card bg-[#111111] rounded-2xl p-6 md:p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.5s;">
-                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
-                            <i class="ph ph-users text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
-                        </div>
-                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">Influencer Marketing</h3>
-                        <p class="text-[#888888] text-sm md:text-base leading-relaxed">Strategic influencer partnerships and creator campaigns that amplify brand reach and build trust.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Platforms Section -->
-            <section id="platforms" class="py-20 md:py-32 px-4 md:px-12 max-w-7xl mx-auto scroll-mt-24" aria-label="Platforms">
-                <div class="flex items-center gap-3 mb-10 reveal">
-                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
-                    <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Platform Expertise</span>
-                </div>
-
-                <h2 class="text-3xl md:text-5xl font-medium leading-[1.05] tracking-tight text-white max-w-4xl mb-16 md:mb-20 reveal-left">
-                    I speak the language of <span class="text-[#444444]">every major platform</span>
-                </h2>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
-                    <div class="platform-card bg-[#111111] rounded-2xl p-6 md:p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale">
-                        <div class="platform-icon w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-5 rounded-2xl bg-gradient-to-br from-[#feda75] via-[#fa7e1e] to-[#d62976] flex items-center justify-center transition-transform duration-300">
-                            <i class="ph ph-instagram-logo text-2xl md:text-3xl text-white"></i>
-                        </div>
-                        <h3 class="text-base md:text-xl font-bold text-white mb-2">Instagram</h3>
-                        <p class="text-[#777777] text-xs leading-relaxed">Reels, Stories, Carousels, UGC campaigns, and community building.</p>
-                    </div>
-                    <div class="platform-card bg-[#111111] rounded-2xl p-6 md:p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.1s;">
-                        <div class="platform-icon w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-5 rounded-2xl bg-[#0A66C2] flex items-center justify-center transition-transform duration-300">
-                            <i class="ph ph-linkedin-logo text-2xl md:text-3xl text-white"></i>
-                        </div>
-                        <h3 class="text-base md:text-xl font-bold text-white mb-2">LinkedIn</h3>
-                        <p class="text-[#777777] text-xs leading-relaxed">B2B thought leadership, lead gen, and professional community growth.</p>
-                    </div>
-                    <div class="platform-card bg-[#111111] rounded-2xl p-6 md:p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.2s;">
-                        <div class="platform-icon w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-5 rounded-2xl bg-black border border-white/10 flex items-center justify-center transition-transform duration-300">
-                            <i class="ph ph-tiktok-logo text-2xl md:text-3xl text-white"></i>
-                        </div>
-                        <h3 class="text-base md:text-xl font-bold text-white mb-2">TikTok</h3>
-                        <p class="text-[#777777] text-xs leading-relaxed">Viral short-form content, trend-jacking, and creator campaigns.</p>
-                    </div>
-                    <div class="platform-card bg-[#111111] rounded-2xl p-6 md:p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.3s;">
-                        <div class="platform-icon w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-5 rounded-2xl bg-[#1DA1F2] flex items-center justify-center transition-transform duration-300">
-                            <i class="ph ph-twitter-logo text-2xl md:text-3xl text-white"></i>
-                        </div>
-                        <h3 class="text-base md:text-xl font-bold text-white mb-2">X / Twitter</h3>
-                        <p class="text-[#777777] text-xs leading-relaxed">Real-time engagement, thread campaigns, and brand voice development.</p>
-                    </div>
-                </div>
-
-                <!-- Tools -->
-                <div class="mt-16 md:mt-20 bg-[#111111] rounded-2xl md:rounded-3xl p-8 md:p-16 border border-[#1a1a1a] reveal-scale">
-                    <div class="flex items-center gap-3 mb-8">
-                        <div class="w-2 h-2 rounded-full bg-[#4F46E5] animate-pulse shrink-0"></div>
-                        <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Tools & Technologies</span>
-                    </div>
-                    <div class="grid grid-cols-3 md:grid-cols-6 gap-6 md:gap-8">
-                        <div class="text-center group">
-                            <div class="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
-                                <i class="ph ph-meta-logo text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-300"></i>
-                            </div>
-                            <p class="text-[#888888] text-xs font-medium">Meta Suite</p>
-                        </div>
-                        <div class="text-center group">
-                            <div class="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
-                                <i class="ph ph-chart-bar text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-300"></i>
-                            </div>
-                            <p class="text-[#888888] text-xs font-medium">Analytics</p>
-                        </div>
-                        <div class="text-center group">
-                            <div class="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
-                                <i class="ph ph-layout text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-300"></i>
-                            </div>
-                            <p class="text-[#888888] text-xs font-medium">Hootsuite</p>
-                        </div>
-                        <div class="text-center group">
-                            <div class="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
-                                <i class="ph ph-paint-brush text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-300"></i>
-                            </div>
-                            <p class="text-[#888888] text-xs font-medium">Canva</p>
-                        </div>
-                        <div class="text-center group">
-                            <div class="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
-                                <i class="ph ph-file-text text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-300"></i>
-                            </div>
-                            <p class="text-[#888888] text-xs font-medium">Notion</p>
-                        </div>
-                        <div class="text-center group">
-                            <div class="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
-                                <i class="ph ph-calendar text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-300"></i>
-                            </div>
-                            <p class="text-[#888888] text-xs font-medium">Buffer</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Portfolio Preview -->
-            <section class="py-20 md:py-32 px-4 md:px-12 max-w-7xl mx-auto scroll-mt-24" aria-label="Portfolio preview">
-                <div class="flex justify-between items-end mb-16 md:mb-20 border-b border-[#222222] pb-8 md:pb-10">
-                    <div>
-                        <div class="flex items-center gap-3 mb-4 reveal">
-                            <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
-                            <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Portfolio</span>
-                        </div>
-                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white reveal-left">Selected Work</h2>
-                    </div>
-                    <a href="portfolio.html" class="hidden md:flex items-center gap-2 text-[#888888] hover:text-white transition-colors duration-300 text-sm font-medium shrink-0">
-                        View All Projects
-                        <i class="ph ph-arrow-right text-lg"></i>
-                    </a>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-20 md:gap-y-32">
-                    <article class="project-card group cursor-pointer reveal-scale">
-                        <a href="portfolio.html">
-                            <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
-                                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop" alt="Social media campaign for fintech brand" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
-                            </div>
-                            <div class="mt-6 md:mt-8 flex justify-between items-start gap-4">
-                                <div class="min-w-0">
-                                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight mb-1 md:mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">FinFlow</h3>
-                                    <p class="text-[#666666] text-xs md:text-sm font-medium">Social Strategy / Fintech</p>
-                                </div>
-                                <div class="p-2.5 md:p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300 shrink-0">
-                                    <i class="ph ph-arrow-up-right text-xl md:text-2xl"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="project-card group cursor-pointer md:mt-24 reveal-scale" style="transition-delay: 0.1s;">
-                        <a href="portfolio.html">
-                            <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
-                                <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1000&auto=format&fit=crop" alt="Content marketing campaign" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
-                            </div>
-                            <div class="mt-6 md:mt-8 flex justify-between items-start gap-4">
-                                <div class="min-w-0">
-                                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight mb-1 md:mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">NestCredit</h3>
-                                    <p class="text-[#666666] text-xs md:text-sm font-medium">Content Strategy / Fintech</p>
-                                </div>
-                                <div class="p-2.5 md:p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300 shrink-0">
-                                    <i class="ph ph-arrow-up-right text-xl md:text-2xl"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="project-card group cursor-pointer reveal-scale" style="transition-delay: 0.2s;">
-                        <a href="portfolio.html">
-                            <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
-                                <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=1000&auto=format&fit=crop" alt="Influencer campaign" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
-                            </div>
-                            <div class="mt-6 md:mt-8 flex justify-between items-start gap-4">
-                                <div class="min-w-0">
-                                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight mb-1 md:mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">VaultEdge</h3>
-                                    <p class="text-[#666666] text-xs md:text-sm font-medium">Paid Social / SaaS</p>
-                                </div>
-                                <div class="p-2.5 md:p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300 shrink-0">
-                                    <i class="ph ph-arrow-up-right text-xl md:text-2xl"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="project-card group cursor-pointer md:mt-24 reveal-scale" style="transition-delay: 0.3s;">
-                        <a href="portfolio.html">
-                            <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Digital marketing dashboard" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
-                            </div>
-                            <div class="mt-6 md:mt-8 flex justify-between items-start gap-4">
-                                <div class="min-w-0">
-                                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight mb-1 md:mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">PaySwift</h3>
-                                    <p class="text-[#666666] text-xs md:text-sm font-medium">Product Launch / Paid Social</p>
-                                </div>
-                                <div class="p-2.5 md:p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300 shrink-0">
-                                    <i class="ph ph-arrow-up-right text-xl md:text-2xl"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                </div>
-
-                <div class="mt-16 md:mt-20 text-center md:hidden reveal">
-                    <a href="portfolio.html" class="inline-flex items-center gap-2 px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all duration-300 text-white font-medium min-h-[48px]">
-                        View All Projects
-                        <i class="ph ph-arrow-right text-lg"></i>
-                    </a>
-                </div>
-            </section>
-
-            <!-- Insights / Blog -->
-            <section id="insights" class="py-20 md:py-32 px-4 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a] scroll-mt-24" aria-label="Insights">
-                <div class="flex items-center gap-3 mb-10 reveal">
-                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
-                    <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Insights</span>
-                </div>
-
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-20">
-                    <h2 class="text-3xl md:text-5xl font-bold leading-[1.05] tracking-tight text-white max-w-3xl reveal-left">
-                        Latest thoughts on <span class="text-[#444444]">social media & digital marketing</span>
-                    </h2>
-                    <a href="insights.html" class="hidden md:flex items-center gap-2 text-[#888888] hover:text-white transition-colors duration-300 text-sm font-medium mt-4 md:mt-0">
-                        All Insights
-                        <i class="ph ph-arrow-right text-lg"></i>
-                    </a>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                    <article class="bg-[#111111] rounded-2xl overflow-hidden group border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale">
-                        <a href="insights.html#post-1" class="block">
-                            <div class="aspect-[16/9] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1000&auto=format&fit=crop" alt="Social media trends" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
-                            </div>
-                            <div class="p-5 md:p-6">
-                                <div class="flex items-center gap-3 text-[#555555] text-xs font-medium mb-3">
-                                    <span>Dec 12, 2024</span>
-                                    <span class="w-1 h-1 rounded-full bg-[#555555] shrink-0"></span>
-                                    <span>Social Media</span>
-                                </div>
-                                <h3 class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">5 Fintech Social Media Trends to Watch in 2025</h3>
-                                <p class="text-[#777777] text-sm leading-relaxed">From AI-powered content to community-led growth — here's what's shaping fintech social this year.</p>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="bg-[#111111] rounded-2xl overflow-hidden group border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale" style="transition-delay: 0.1s;">
-                        <a href="insights.html#post-2" class="block">
-                            <div class="aspect-[16/9] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1000&auto=format&fit=crop" alt="Content strategy" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
-                            </div>
-                            <div class="p-5 md:p-6">
-                                <div class="flex items-center gap-3 text-[#555555] text-xs font-medium mb-3">
-                                    <span>Nov 28, 2024</span>
-                                    <span class="w-1 h-1 rounded-full bg-[#555555] shrink-0"></span>
-                                    <span>Content</span>
-                                </div>
-                                <h3 class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">Building a Content Engine That Actually Converts</h3>
-                                <p class="text-[#777777] text-sm leading-relaxed">How to create a repeatable content system that drives engagement and revenue for B2B brands.</p>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="bg-[#111111] rounded-2xl overflow-hidden group border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale" style="transition-delay: 0.2s;">
-                        <a href="insights.html#post-3" class="block">
-                            <div class="aspect-[16/9] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Social media analytics" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
-                            </div>
-                            <div class="p-5 md:p-6">
-                                <div class="flex items-center gap-3 text-[#555555] text-xs font-medium mb-3">
-                                    <span>Nov 15, 2024</span>
-                                    <span class="w-1 h-1 rounded-full bg-[#555555] shrink-0"></span>
-                                    <span>Analytics</span>
-                                </div>
-                                <h3 class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">Beyond Vanity Metrics: What Actually Matters on Social</h3>
-                                <p class="text-[#777777] text-sm leading-relaxed">Stop chasing likes. Here's the metrics framework I use to measure real social media ROI.</p>
-                            </div>
-                        </a>
-                    </article>
-                </div>
-
-                <div class="mt-8 md:mt-10 text-center md:hidden reveal">
-                    <a href="insights.html" class="inline-flex items-center gap-2 px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all duration-300 text-white font-medium min-h-[48px]">
-                        All Insights
-                        <i class="ph ph-arrow-right text-lg"></i>
-                    </a>
-                </div>
-            </section>
-
-            <!-- Testimonials -->
-            <section id="testimonials" class="py-20 md:py-32 px-4 md:px-12 max-w-7xl mx-auto scroll-mt-24" aria-label="Testimonials">
-                <div class="flex items-center gap-3 mb-10 reveal">
-                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
-                    <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Testimonials</span>
-                </div>
-
-                <h2 class="text-3xl md:text-5xl font-medium leading-[1.05] tracking-tight text-white max-w-4xl mb-16 md:mb-20 reveal-left">
-                    What brands say about <span class="text-[#444444]">working with me</span>
-                </h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                    <div class="bg-[#111111] rounded-2xl p-6 md:p-8 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale">
-                        <div class="flex items-center gap-1 mb-5 md:mb-6">
-                            <i class="ph ph-star text-yellow-500 text-lg fill-yellow-500"></i>
-                            <i class="ph ph-star text-yellow-500 text-lg fill-yellow-500"></i>
-                            <i class="ph ph-star text-yellow-500 text-lg fill-yellow-500"></i>
-                            <i class="ph ph-star text-yellow-500 text-lg fill-yellow-500"></i>
-                            <i class="ph ph-star text-yellow-500 text-lg fill-yellow-500"></i>
-                        </div>
-                        <p class="text-[#aaaaaa] text-sm md:text-base leading-relaxed mb-6 md:mb-8">"Pelumi transformed our social media presence. Our engagement rate tripled and we consistently hit 1M+ impressions monthly. She just gets fintech."</p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#4F46E5] to-[#7C3AED] flex items-center justify-center text-sm font-bold shrink-0">TK</div>
-                            <div class="min-w-0">
-                                <p class="text-white text-sm font-semibold">Tunde K.</p>
-                                <p class="text-[#666666] text-xs">CEO, FinFlow</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-[#111111] rounded-2xl p-6 md:p-8 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale" style="transition-delay: 0.1s;">
-                        <div class="flex items-center gap-1 mb-5 md:mb-6">
-                            <i class="ph ph-star text-yellow-500 text-lg"></i>
-                            <i class="ph ph-star text-yellow-500 text-lg"></i>
-                            <i class="ph ph-star text-yellow-500 text-lg"></i>
-                            <i class="ph ph-star text-yellow-500 text-lg"></i>
-                            <i class="ph ph-star text-yellow-500 text-lg"></i>
-                        </div>
-                        <p class="text-[#aaaaaa] text-sm md:text-base leading-relaxed mb-6 md:mb-8">"The product launch campaign Pelumi ran for PaySwift was incredible. We hit 10k users in 30 days and the paid social ROAS was 3.5×. She's a powerhouse."</p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#EC4899] to-[#F43F5E] flex items-center justify-center text-sm font-bold shrink-0">AM</div>
-                            <div class="min-w-0">
-                                <p class="text-white text-sm font-semibold">Ada M.</p>
-                                <p class="text-[#666666] text-xs">CMO, PaySwift</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-[#111111] rounded-2xl p-6 md:p-8 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale" style="transition-delay: 0.2s;">
-                        <div class="flex items-center gap-1 mb-5 md:mb-6">
-                            <i class="ph ph-star text-yellow-500 text-lg"></i>
-                            <i class="ph ph-star text-yellow-500 text-lg"></i>
-                            <i class="ph ph-star text-yellow-500 text-lg"></i>
-                            <i class="ph ph-star text-yellow-500 text-lg"></i>
-                            <i class="ph ph-star text-yellow-500 text-lg"></i>
-                        </div>
-                        <p class="text-[#aaaaaa] text-sm md:text-base leading-relaxed mb-6 md:mb-8">"Our community grew 5× in 4 months under Pelumi's management. She created a content strategy that actually resonated with our audience. Highly recommend."</p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#10B981] to-[#3B82F6] flex items-center justify-center text-sm font-bold shrink-0">CI</div>
-                            <div class="min-w-0">
-                                <p class="text-white text-sm font-semibold">Chidi I.</p>
-                                <p class="text-[#666666] text-xs">COO, NestCredit</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Trusted By -->
-            <section class="py-16 md:py-24 px-4 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]" aria-label="Brands worked with">
-                <div class="text-center mb-12 md:mb-16 reveal">
-                    <div class="flex items-center justify-center gap-3 mb-4">
-                        <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
-                        <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Trusted By</span>
-                    </div>
-                    <h2 class="text-2xl md:text-4xl font-bold text-white">Brands I've worked with</h2>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 items-center justify-items-center">
-                    <div class="w-full max-w-[160px] h-14 md:h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:bg-[#161616]">
-                        <span class="text-lg md:text-xl font-bold text-[#444444] hover:text-white transition-colors duration-300">FinFlow</span>
-                    </div>
-                    <div class="w-full max-w-[160px] h-14 md:h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:bg-[#161616]">
-                        <span class="text-lg md:text-xl font-bold text-[#444444] hover:text-white transition-colors duration-300">PaySwift</span>
-                    </div>
-                    <div class="w-full max-w-[160px] h-14 md:h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:bg-[#161616]">
-                        <span class="text-lg md:text-xl font-bold text-[#444444] hover:text-white transition-colors duration-300">VaultEdge</span>
-                    </div>
-                    <div class="w-full max-w-[160px] h-14 md:h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:bg-[#161616]">
-                        <span class="text-lg md:text-xl font-bold text-[#444444] hover:text-white transition-colors duration-300">NestCredit</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CTA / Contact -->
-            <footer id="contact" class="relative pt-32 md:pt-48 pb-20 md:pb-32 px-4 md:px-12 border-t border-[#1a1a1a] scroll-mt-24" role="contentinfo">
-                <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-12 md:gap-16">
-                    <div class="flex-1 w-full reveal-left">
-                        <h2 class="text-[15vw] md:text-[10vw] leading-[0.85] font-black tracking-tighter text-white mb-10 md:mb-12 select-none">
-                            Let's<br />Create.
-                        </h2>
-                        <div class="flex flex-col gap-4 md:gap-6">
-                            <a href="mailto:akandeoluwapelumi15@gmail.com" class="text-2xl md:text-4xl font-semibold hover:text-[#FF6B50] transition-all duration-300 w-fit break-all">
-                                akandeoluwapelumi15@gmail.com
-                            </a>
-                            <div class="flex flex-wrap items-center gap-3 md:gap-4">
-                    <a href="https://wa.me/2348027184325" target="_blank" rel="noopener noreferrer" class="text-[#666666] flex items-center gap-2 hover:text-white transition-colors duration-300 text-sm md:text-base">
-                        <i class="ph ph-whatsapp-logo"></i>
-                        WhatsApp
-                    </a>
-                                <span class="text-[#333333] text-sm">/</span>
-                                <p class="text-[#666666] flex items-center gap-2 text-sm md:text-base">
-                                    <i class="ph ph-map-pin"></i>
-                                    Lagos, NG & Remote
-                                </p>
-                                <span class="text-[#333333] text-sm">/</span>
-                                <p class="text-[#666666] flex items-center gap-2 text-sm md:text-base">
-                                    <i class="ph ph-clock"></i>
-                                    Response within 24hrs
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3 md:gap-4 md:mb-6 reveal-right">
-                        <a href="https://www.linkedin.com/in/oluwapelumi-akande-94b00a1b5/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-2" aria-label="LinkedIn">
-                            <i class="ph ph-linkedin-logo text-lg md:text-xl"></i>
-                        </a>
-                        <a href="https://x.com/oladeeayo" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-2" aria-label="X / Twitter">
-                            <i class="ph ph-twitter-logo text-lg md:text-xl"></i>
-                        </a>
-                        <a href="https://instagram.com/oladeeayo" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-2" aria-label="Instagram">
-                            <i class="ph ph-instagram-logo text-lg md:text-xl"></i>
-                        </a>
-                        <a href="mailto:akandeoluwapelumi15@gmail.com" class="w-12 h-12 md:w-14 md:h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-2" aria-label="Email">
-                            <i class="ph ph-envelope text-lg md:text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="max-w-7xl mx-auto mt-24 md:mt-40 pt-8 md:pt-10 border-t border-[#111111] flex flex-col md:flex-row justify-between text-[#333333] text-xs md:text-sm font-medium gap-4 md:gap-0">
-                    <p>&copy; 2024 Oluwapelumi Akande. Crafted with purpose.</p>
-                    <div class="flex gap-6 md:gap-10">
-                        <a href="cv.html" class="hover:text-[#666666] transition-colors duration-300">CV</a>
-                        <a href="portfolio.html" class="hover:text-[#666666] transition-colors duration-300">Portfolio</a>
-                    </div>
-                </div>
-            </footer>
-        </main>
-
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="mq">
+        <span class="marquee-item">Social Strategy</span><span class="marquee-item">Content Creation</span><span class="marquee-item">Community Management</span><span class="marquee-item">Lead Generation</span><span class="marquee-item">Client Success</span><span class="marquee-item">Campaign Execution</span><span class="marquee-item">Analytics &amp; Reporting</span>
+      </div>
     </div>
 
-    <!-- Mobile Menu Toggle -->
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let menuOpen = false;
+    <!-- STATS -->
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat"><div class="num" data-count="30" data-prefix="+" data-suffix="%">0</div><div class="cap">Lead growth at Watu</div></div>
+        <div class="stat"><div class="num" data-count="98" data-suffix="%">0</div><div class="cap">Compliance at DavoDani</div></div>
+        <div class="stat"><div class="num" data-count="15" data-prefix="+" data-suffix="%">0</div><div class="cap">Visibility lift at Billa</div></div>
+        <div class="stat"><div class="num" data-count="5" data-suffix="+">0</div><div class="cap">Years experience</div></div>
+      </div>
+    </section>
 
-        menuBtn.addEventListener('click', () => {
-            menuOpen = !menuOpen;
-            mobileMenu.classList.toggle('translate-y-0', menuOpen);
-            mobileMenu.classList.toggle('-translate-y-full', !menuOpen);
-            mobileMenu.classList.toggle('opacity-100', menuOpen);
-            mobileMenu.classList.toggle('opacity-0', !menuOpen);
-            menuBtn.setAttribute('aria-expanded', menuOpen);
-            menuBtn.innerHTML = menuOpen ? '<i class="ph ph-x text-2xl text-white"></i>' : '<i class="ph ph-list text-2xl text-white"></i>';
-            document.body.style.overflow = menuOpen ? 'hidden' : '';
-        });
+    <!-- ABOUT -->
+    <section class="block" id="about">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">About me</span>
+          <h2>I'm Oluwapelumi Akande — a social &amp; digital marketing professional with a client-success backbone.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>I help fintechs and startups grow their digital presence through strategic social media, compelling content, and data-driven campaigns — then keep the customers I help win. With over five years across fintech, banking, and insurance, I work at the seam between clients, marketing, and the teams that build the product.</p>
+            <p>At Bytelabs I owned all of Billa's social and content and built its online community; on Watu I ran lead generation and outreach that lifted leads 30%. I blend creative storytelling with the operational discipline to onboard, support, and retain the people those campaigns bring in.</p>
+            <div class="badge-row">
+              <span class="vbadge"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Google — Digital Marketing</span>
+              <span class="vbadge"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> AltSchool — Product Marketing</span>
+            </div>
+          </div>
+          <div class="about-facts">
+            <div class="fact"><span class="k">Name</span><span class="v">Oluwapelumi Akande</span></div>
+            <div class="fact"><span class="k">Focus</span><span class="v">Social &amp; Digital Marketing</span></div>
+            <div class="fact"><span class="k">Also</span><span class="v">Client Success &amp; Retention</span></div>
+            <div class="fact"><span class="k">Experience</span><span class="v">5+ years</span></div>
+            <div class="fact"><span class="k">Industries</span><span class="v">Fintech · Banking · Insurance</span></div>
+            <div class="fact"><span class="k">Location</span><span class="v">Lagos, NG &amp; Remote</span></div>
+            <div class="fact"><span class="k">Status</span><span class="v" style="color:var(--green)">Open to work</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                menuOpen = false;
-                mobileMenu.classList.add('-translate-y-full', 'opacity-0');
-                mobileMenu.classList.remove('translate-y-0', 'opacity-100');
-                menuBtn.setAttribute('aria-expanded', 'false');
-                menuBtn.innerHTML = '<i class="ph ph-list text-2xl text-white"></i>';
-                document.body.style.overflow = '';
-            });
-        });
-    </script>
+    <!-- SERVICES -->
+    <section class="block paper2" id="services">
+      <div class="container">
+        <div class="sec-head center">
+          <span class="eyebrow">What I do</span>
+          <h2>Services that build communities and keep customers.</h2>
+        </div>
+        <div class="svc-grid">
+          <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div><h3>Social Media Strategy</h3><p>Full-funnel social plans for fintech and startup growth — from awareness to conversion, mapped to each platform.</p></div>
+          <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div><h3>Content Creation</h3><p>Scroll-stopping visuals and copy, designed in Canva and tuned for each platform's audience and algorithm.</p></div>
+          <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div><h3>Community Management</h3><p>Building and nurturing engaged communities that turn followers into loyal customers and advocates.</p></div>
+          <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Lead Generation</h3><p>Targeted LinkedIn and email outreach with Sales Navigator and Zoho CRM that turns cold prospects into clients.</p></div>
+          <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></div><h3>Client Success &amp; Retention</h3><p>Onboarding, multi-channel support, and conflict resolution that keep customers engaged long after the sale.</p></div>
+          <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 2 4-5"/></svg></div><h3>Analytics &amp; Reporting</h3><p>Turning feedback and campaign data into clear reports that show what worked and inform the next move.</p></div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Scroll Reveal -->
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    <!-- PLATFORMS -->
+    <section class="block platforms" id="platforms">
+      <div class="container">
+        <div class="sec-head center">
+          <span class="eyebrow" style="color:var(--gold)">Channels</span>
+          <h2 style="color:var(--on-dark)">Where I do the work.</h2>
+        </div>
+        <div class="plat-grid">
+          <div class="plat"><div class="plat-ic"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></div><h3>Instagram</h3><p>Content, carousels, community building and ad campaigns — the home of my Billa work.</p></div>
+          <div class="plat"><div class="plat-ic"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-10h4v2"/><rect x="2" y="9" width="4" height="11"/><circle cx="4" cy="4" r="2"/></svg></div><h3>LinkedIn</h3><p>B2B outreach and lead generation with Sales Navigator — turning connections into onboarded clients.</p></div>
+          <div class="plat"><div class="plat-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><h3>Email &amp; Community</h3><p>Direct outreach, follow-up, and the day-to-day relationship work that keeps customers loyal.</p></div>
+        </div>
+        <div class="tools-row">
+          <span class="tool">HubSpot</span><span class="tool">Zoho CRM</span><span class="tool">Zendesk</span><span class="tool">Canva</span><span class="tool">Meta Business Suite</span><span class="tool">Sales Navigator</span><span class="tool">Google Workspace</span><span class="tool">Microsoft 365</span>
+        </div>
+      </div>
+    </section>
 
-        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+    <!-- WORK -->
+    <section class="block" id="work">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">Portfolio</span>
+          <h2>Selected work — real projects, real numbers.</h2>
+        </div>
+        <div class="filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="marketing">Marketing</button>
+          <button class="filter" data-filter="success">Client Success</button>
+        </div>
+        <div class="work-grid">
+          <article class="work" data-cat="marketing">
+            <div class="work-visual" style="background:linear-gradient(135deg,#2A2118,#5A4424)"><span class="vic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg></span></div>
+            <div class="work-top"><span class="work-tag">Social</span><span class="work-org">Bytelabs · Billa</span></div>
+            <div class="work-body"><h3>Billa — social &amp; content</h3><p>Owned content, design, and every social channel for the fintech product, building a branded community and lifting visibility.</p><div class="work-metrics"><span class="chip-m"><b>+15%</b> visibility</span><span class="chip-m"><b>↑</b> acquisition</span><span class="chip-m"><b>↑</b> adoption</span></div></div>
+          </article>
+          <article class="work" data-cat="marketing">
+            <div class="work-visual" style="background:linear-gradient(135deg,#13211C,#26543F)"><span class="vic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg></span></div>
+            <div class="work-top"><span class="work-tag">Lead Gen</span><span class="work-org">Bytelabs · Watu</span></div>
+            <div class="work-body"><h3>Watu — API client acquisition</h3><p>Pursued API prospects with Sales Navigator and Zoho CRM, ran tailored LinkedIn and email outreach, and worked with product and sales to convert interest into clients.</p><div class="work-metrics"><span class="chip-m"><b>+30%</b> leads</span><span class="chip-m"><b>25%</b> conversion</span><span class="chip-m"><b>20%</b> response</span></div></div>
+          </article>
+          <article class="work" data-cat="success">
+            <div class="work-visual" style="background:linear-gradient(135deg,#2A2118,#5A4424)"><span class="vic"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></span></div>
+            <div class="work-top"><span class="work-tag">Client Success</span><span class="work-org">DavoDani MFB</span></div>
+            <div class="work-body"><h3>DavoDani — service &amp; compliance</h3><p>Handled account opening and daily banking with a focus on accuracy and compliance, resolved inquiries fast, and cut turnaround with the operations team.</p><div class="work-metrics"><span class="chip-m"><b>98%</b> compliance</span><span class="chip-m"><b>99%</b> accuracy</span><span class="chip-m"><b>−20%</b> turnaround</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <!-- Auto-hide floating nav over buttons -->
-    <script>
-        const floatNav = document.querySelector('.fixed.bottom-6');
-        if (floatNav) {
-            const btnSections = [
-                document.querySelector('header'),
-                document.querySelector('#services'),
-                document.querySelector('#contact')
-            ].filter(Boolean);
-            floatNav.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-            const checkNav = () => {
-                let shouldHide = false;
-                for (const el of btnSections) {
-                    const r = el.getBoundingClientRect();
-                    if (r.bottom > 0 && r.top < window.innerHeight) {
-                        shouldHide = true;
-                        break;
-                    }
-                }
-                floatNav.style.opacity = shouldHide ? '0' : '1';
-                floatNav.style.pointerEvents = shouldHide ? 'none' : 'auto';
-                floatNav.style.transform = shouldHide ? 'translateX(-50%) translateY(20px)' : 'translateX(-50%) translateY(0)';
-            };
-            window.addEventListener('scroll', checkNav, { passive: true });
-            checkNav();
-        }
-    </script>
+    <!-- EXPERIENCE -->
+    <section class="block paper2" id="experience">
+      <div class="container">
+        <div class="sec-head"><span class="eyebrow">Career</span><h2>Six roles, one through-line: customers.</h2></div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-when">Mar 2026 — Present · United Kingdom · Remote</div><div class="tl-title">Client Success &amp; Digital Marketing Executive</div><div class="tl-org">Switchboard Communications</div><div class="tl-desc">The link between clients, management, and the web team — owning relationships end to end, running digital marketing, and keeping website projects on schedule.</div></div>
+          <div class="tl-item"><div class="tl-when">Oct 2024 — Nov 2025 · Lagos, Nigeria</div><div class="tl-title">Executive Administrator</div><div class="tl-org">Temlio Communication</div><div class="tl-desc">Coordinated executive schedules and communications, cut response time ~30%, and turned customer feedback into reports that improved service quality.</div></div>
+          <div class="tl-item"><div class="tl-when">Apr 2023 — Sep 2024 · Ibadan, Nigeria</div><div class="tl-title">Business Development Manager</div><div class="tl-org">Bytelabs Technologies (Billa / Watu)</div><div class="tl-desc">Directed client relationships across two fintech platforms, ran lead generation and outreach, and managed Billa's social, content, and community.</div></div>
+          <div class="tl-item"><div class="tl-when">Feb 2021 — Apr 2022 · Lagos, Nigeria</div><div class="tl-title">Customer Service Officer</div><div class="tl-org">DavoDani Microfinance Bank</div><div class="tl-desc">Processed account opening and transactions with high accuracy and full compliance, resolved complaints, and streamlined account management.</div></div>
+          <div class="tl-item"><div class="tl-when">Oct 2020 — Jan 2021 · Lagos, Nigeria</div><div class="tl-title">Contact Center Agent · Contract</div><div class="tl-org">Coronation Insurance Plc</div><div class="tl-desc">Handled policy, premium, claims, and renewal calls, coordinating across underwriting and claims, and documented best practices for the team.</div></div>
+          <div class="tl-item"><div class="tl-when">May 2018 — Mar 2020 · Lagos, Nigeria</div><div class="tl-title">Customer Service Representative</div><div class="tl-org">OPay</div><div class="tl-desc">Handled 80+ daily inquiries by phone and chat, coordinated with technical and fraud teams, and wrote guides that cut resolution time.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="block" id="testimonials">
+      <div class="container">
+        <div class="sec-head center"><span class="eyebrow">Praise</span><h2>What people say.</h2></div>
+        <div class="quotes">
+          <div class="quote"><div class="mark">"</div><p>Thank you for running an Instagram ad that delivered real results — our sales skyrocketed. Truly impressed with the impact and the ROI.</p><div class="who"><span class="av">OO</span><div><b>Olutoyin Ogunleye</b><span>Client</span></div></div></div>
+          <div class="quote"><div class="mark">"</div><p>A highly motivated, results-oriented professional. As a business developer she reads market dynamics well and has a real talent for building client relationships — it moved our projects forward.</p><div class="who"><span class="av">PR</span><div><b>Professional reference</b><span>Former colleague</span></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKED AT -->
+    <section class="block paper2" id="worked">
+      <div class="container">
+        <div class="sec-head center"><span class="eyebrow">Track record</span><h2>Where I've worked.</h2></div>
+        <div class="logos">
+          <span class="logo">OPay</span><span class="logo">Coronation Insurance</span><span class="logo">DavoDani MFB</span><span class="logo">Bytelabs</span><span class="logo">Temlio</span><span class="logo">Switchboard</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTS -->
+    <section class="block" id="certifications">
+      <div class="container">
+        <div class="sec-head center"><span class="eyebrow">Credentials</span><h2>Certifications.</h2></div>
+        <div class="cert-grid">
+          <a class="cert" href="https://learndigital.withgoogle.com/link/1qsdpcedm9s" target="_blank" rel="noopener"><span class="cert-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5"/></svg></span><span><b>Fundamentals of Digital Marketing</b><span>Google Digital Garage</span><span class="verified">✓ Verify on Google</span></span></a>
+          <a class="cert" href="https://drive.google.com/file/d/1f1iX2mTFo_u6xNxpGzlVzLQlNg1VjsEp/view" target="_blank" rel="noopener"><span class="cert-ic"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/></svg></span><span><b>Product Marketing — Diploma</b><span>AltSchool Africa</span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="block contact" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <span class="eyebrow">Contact</span>
+            <h3>Let's create something.</h3>
+            <p class="lead">Hiring, collaborating, or want to talk social and marketing? Send a note — or reach me directly.</p>
+            <div class="contact-list">
+              <div class="ci"><span class="ci-ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span><div><small>WhatsApp</small><a href="https://wa.me/2348027184325" target="_blank" rel="noopener">+234 802 7184 325</a></div></div>
+              <div class="ci"><span class="ci-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><small>Email</small><a href="mailto:akandeoluwapelumi15@gmail.com">akandeoluwapelumi15@gmail.com</a></div></div>
+              <div class="ci"><span class="ci-ic"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-10h4v2"/><rect x="2" y="9" width="4" height="11"/><circle cx="4" cy="4" r="2"/></svg></span><div><small>LinkedIn</small><a href="https://www.linkedin.com/in/oluwapelumi-akande-94b00a1b5/" target="_blank" rel="noopener">oluwapelumi-akande</a></div></div>
+            </div>
+          </div>
+          <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hp"><label>Don't fill this out: <input name="bot-field" /></label></p>
+            <div class="field"><label for="cname">Name</label><input id="cname" type="text" name="name" placeholder="Your name" required /></div>
+            <div class="field"><label for="cemail">Email</label><input id="cemail" type="email" name="email" placeholder="you@email.com" required /></div>
+            <div class="field"><label for="cmsg">Message</label><textarea id="cmsg" name="message" placeholder="Tell me about the role or project…" required></textarea></div>
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <p class="form-note">Works once deployed on Netlify (Forms is on by default).</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot-inner">
+      <p>&copy; <span id="yr"></span> Oluwapelumi Akande · Social &amp; Digital Marketing</p>
+      <div class="fl"><a href="cv.html">CV</a><a href="#top">Back to top</a></div>
+    </div>
+  </footer>
+
+  <button class="totop" id="totop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg></button>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var mq = document.getElementById('mq'); if (mq && !reduced){ mq.innerHTML += mq.innerHTML; }
+    var burger=document.getElementById('burger'), navLinks=document.getElementById('navLinks');
+    burger.addEventListener('click',function(){navLinks.classList.toggle('open');});
+    navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){navLinks.classList.remove('open');});});
+    var nav=document.getElementById('nav'), totop=document.getElementById('totop');
+    function onScroll(){var y=window.scrollY; totop.classList.toggle('show',y>560);} window.addEventListener('scroll',onScroll); onScroll();
+    totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:reduced?'auto':'smooth'});});
+    var filters=document.querySelectorAll('.filter'), works=document.querySelectorAll('.work');
+    filters.forEach(function(btn){btn.addEventListener('click',function(){filters.forEach(function(b){b.classList.remove('active');});btn.classList.add('active');var f=btn.getAttribute('data-filter');works.forEach(function(w){w.classList.toggle('hide',!(f==='all'||w.getAttribute('data-cat')===f));});});});
+    function animateCount(el){var t=+el.getAttribute('data-count'),s=el.getAttribute('data-suffix')||'',p=el.getAttribute('data-prefix')||'';if(reduced){el.textContent=p+t+s;return;}var dur=1300,st=null;function step(ts){if(!st)st=ts;var k=Math.min((ts-st)/dur,1);el.textContent=p+Math.round(k*t)+s;if(k<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+    var revealEls=document.querySelectorAll('.sec-head,.about-copy,.about-facts,.svc,.plat,.work,.tl-item,.quote,.logo,.cert,.contact-form');
+    if('IntersectionObserver'in window&&!reduced){revealEls.forEach(function(el){el.classList.add('reveal');});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});revealEls.forEach(function(el){io.observe(el);});}
+    var countEls=document.querySelectorAll('[data-count]'),counted=false,statsSec=document.querySelector('.stats');
+    if('IntersectionObserver'in window&&statsSec){var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!counted){counted=true;countEls.forEach(animateCount);io2.disconnect();}});},{threshold:0.4});io2.observe(statsSec);}else{countEls.forEach(animateCount);}
+  </script>
 </body>
 </html>

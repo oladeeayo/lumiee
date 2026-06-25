@@ -1,498 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV — Oluwapelumi Akande | Client Success & Digital Marketing</title>
-    <meta name="description" content="Curriculum Vitae of Oluwapelumi Akande — Client Success & Digital Marketing Executive with 5+ years in fintech, banking, and insurance.">
-    <meta property="og:title" content="CV — Oluwapelumi Akande">
-    <meta property="og:description" content="Client Success & Digital Marketing Executive">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CV — Oluwapelumi Akande | Client Success & Digital Marketing</title>
+<meta name="description" content="Curriculum Vitae of Oluwapelumi Akande — Client Success & Digital Marketing Executive with 5+ years in fintech, banking, and insurance." />
+<meta property="og:title" content="CV — Oluwapelumi Akande" />
+<meta property="og:description" content="Client Success & Digital Marketing Executive" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#14110C; --ink-card:#211B13; --ink-line:rgba(247,243,234,.12);
+  --on-dark:#F7F3EA; --on-dark-mut:#B7AD99;
+  --paper:#FBF7EF; --paper-2:#F0E8D9; --card:#FFFFFF;
+  --text:#15120C; --body:#4C4534; --muted:#8A806F;
+  --gold:#D89B2B; --gold-deep:#8C6310; --gold-soft:#F4E7C8;
+  --green:#2F9A77;
+  --line:#E6DCC8; --line-soft:#EFE8D9;
+  --shadow:0 1px 2px rgba(21,18,12,.04), 0 12px 36px rgba(21,18,12,.08);
+  --shadow-lg:0 2px 8px rgba(21,18,12,.07), 0 28px 64px rgba(21,18,12,.14);
+  --maxw:860px;
+}
+*{margin:0; padding:0; box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper); color:var(--body); font-family:'Inter',system-ui,sans-serif; font-size:16.5px; line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+a{color:inherit; text-decoration:none}
+img{max-width:100%; display:block}
+::selection{background:var(--gold-soft)}
+.container{width:100%; max-width:var(--maxw); margin:0 auto; padding:0 26px}
 
-        @font-face {
-            font-family: 'Satoshi';
-            src: url('https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/4aed2f49-a476-436f-bae8-f31aa18f46fa/1767920861040-60c1c779/Satoshi-Variable.woff2') format('woff2');
-            font-weight: 300 900;
-            font-display: swap;
-            font-style: normal;
-        }
+/* NAV */
+.nav{position:sticky; top:0; z-index:60; background:rgba(20,17,12,.72); backdrop-filter:blur(12px); border-bottom:1px solid var(--ink-line)}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; height:72px}
+.brand{display:flex; align-items:center; gap:12px; color:var(--on-dark)}
+.monogram{width:40px; height:40px; border-radius:12px; flex-shrink:0; background:var(--gold); color:var(--ink); display:flex; align-items:center; justify-content:center; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:17px}
+.brand b{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; letter-spacing:-0.01em}
+.nav-links{display:flex; align-items:center; gap:30px}
+.nav-links a{font-size:15px; font-weight:500; color:var(--on-dark-mut); transition:color .15s ease}
+.nav-links a:hover{color:var(--on-dark)}
+.nav-cta{background:var(--gold); color:var(--ink)!important; font-weight:700!important; padding:10px 20px; border-radius:999px; transition:transform .12s ease, background .15s ease}
+.nav-cta:hover{transform:translateY(-1px)}
+.burger{display:none; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer; padding:6px}
+.burger span{width:24px; height:2px; background:var(--on-dark); border-radius:2px}
+@media (max-width:860px){
+  .nav-links{position:fixed; inset:72px 0 auto 0; flex-direction:column; gap:0; background:var(--ink); border-bottom:1px solid var(--ink-line); padding:8px 0; transform:translateY(-130%); transition:transform .28s ease}
+  .nav-links.open{transform:translateY(0)}
+  .nav-links a{width:100%; padding:15px 26px}
+  .nav-cta{border-radius:0; margin:8px 26px}
+  .burger{display:flex}
+}
 
-        :root {
-            --font-satoshi: 'Satoshi', 'Inter', sans-serif;
-            --color-bg: #050505;
-            --color-accent: #FF6B50;
-        }
+/* CV HEADER */
+.cv-hdr{padding:80px 0 0; text-align:center}
+.cv-hdr .avatar{width:80px; height:80px; border-radius:50%; background:var(--ink); color:var(--gold); display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:28px; border:3px solid var(--gold-soft)}
+.cv-hdr h1{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:clamp(34px,5vw,48px); color:var(--text); letter-spacing:-0.02em; line-height:1.02}
+.cv-hdr .title{color:var(--gold-deep); font-weight:600; font-size:17px; margin-top:6px}
+.cv-hdr .meta{display:flex; flex-wrap:wrap; justify-content:center; gap:8px 24px; margin-top:18px; font-size:14px; color:var(--muted)}
+.cv-hdr .meta a{color:var(--body); font-weight:500; transition:color .15s ease}
+.cv-hdr .meta a:hover{color:var(--gold)}
+.cv-hdr .stats{display:flex; flex-wrap:wrap; justify-content:center; gap:8px 24px; margin-top:14px; font-size:13px; color:var(--muted)}
+.cv-hdr .stats b{color:var(--gold-deep); font-family:'Bricolage Grotesque',sans-serif; font-weight:700}
 
-        * { box-sizing: border-box; }
+/* CV BODY */
+.cv-body{padding:60px 0 40px}
+.cv-section{margin-bottom:44px}
+.cv-section-title{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:20px; color:var(--text); display:flex; align-items:center; gap:12px; margin-bottom:16px}
+.cv-section-title::before{content:""; width:24px; height:3px; background:var(--gold); border-radius:2px; flex-shrink:0}
+.cv-section p{color:var(--body); font-size:15.5px}
+.cv-section p + p{margin-top:12px}
 
-        body {
-            font-family: var(--font-satoshi);
-            background-color: var(--color-bg);
-            color: #ebebeb;
-            scroll-behavior: smooth;
-        }
+/* SKILL CARDS */
+.skill-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+.skill-card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px; box-shadow:var(--shadow); transition:transform .2s ease, box-shadow .2s ease}
+.skill-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg)}
+.skill-card h3{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:14px; color:var(--gold-deep); margin-bottom:12px}
+.skill-card .tags{display:flex; flex-wrap:wrap; gap:6px}
+.skill-card .tags span{font-size:12px; font-weight:500; color:var(--body); background:var(--paper); border:1px solid var(--line-soft); border-radius:999px; padding:4px 11px}
+@media (max-width:700px){.skill-grid{grid-template-columns:1fr}}
 
-        ::selection { background-color: var(--color-accent); color: white; }
+/* TIMELINE */
+.timeline{position:relative; padding-left:0}
+.tl-item{position:relative; padding:0 0 30px 36px; border-left:2px solid var(--line)}
+.tl-item:last-child{padding-bottom:0; border-left-color:transparent}
+.tl-item::before{content:""; position:absolute; left:-7px; top:6px; width:12px; height:12px; border-radius:50%; background:var(--gold); border:2px solid var(--paper)}
+.tl-item:last-child::before{background:var(--green)}
+.tl-when{font-size:12.5px; font-weight:600; color:var(--gold-deep)}
+.tl-title{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:17px; color:var(--text); margin-top:3px}
+.tl-org{font-size:14px; color:var(--muted); margin-top:1px}
+.tl-desc{font-size:14.5px; color:var(--body); margin-top:10px}
+.tl-desc ul{padding-left:18px; margin-top:6px}
+.tl-desc li{font-size:14px; color:var(--body); margin-bottom:4px}
 
-        .glass-nav {
-            background: rgba(17, 17, 17, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+/* EDUCATION / CERTS GRID */
+.edu-cert-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.edu-card, .cert-card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px; box-shadow:var(--shadow)}
+.edu-card h3, .cert-card h3{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:15px; color:var(--text); margin-top:10px}
+.edu-card p, .cert-card p{font-size:13.5px; color:var(--muted); margin-top:2px}
+.edu-card .ic, .cert-card .ic{width:44px; height:44px; border-radius:12px; background:var(--ink); color:var(--gold); display:flex; align-items:center; justify-content:center}
+.edu-card .ic svg, .cert-card .ic svg{width:22px; height:22px; stroke:currentColor; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round}
+a.cert-card{transition:.2s}
+a.cert-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg)}
+.cert-card .go{color:var(--muted); font-size:13px; margin-top:6px; display:flex; align-items:center; gap:4px}
+.cert-card .go svg{width:14px; height:14px; stroke:currentColor; stroke-width:2; fill:none}
+@media (max-width:600px){.edu-cert-grid{grid-template-columns:1fr}}
 
-        .cv-section-title {
-            position: relative;
-            padding-left: 1.25rem;
-        }
-        .cv-section-title::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.35em;
-            width: 3px;
-            height: 1.2em;
-            background: var(--color-accent);
-            border-radius: 2px;
-        }
+/* CTA */
+.cta-section{padding:60px 0; text-align:center}
+.cta-section h2{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:var(--text); font-size:clamp(26px,4vw,38px); letter-spacing:-0.02em; line-height:1.08}
+.cta-section p{color:var(--muted); font-size:15.5px; margin-top:10px; max-width:420px; margin-left:auto; margin-right:auto}
+.cta-row{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:28px}
+.btn{display:inline-flex; align-items:center; gap:8px; font-size:15px; font-weight:600; padding:12px 24px; border-radius:999px; transition:transform .12s ease, background .15s ease, border-color .15s ease}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--gold); color:var(--ink); border:1px solid var(--gold)}
+.btn-primary:hover{background:#E9AE3E}
+.btn-outline{background:transparent; color:var(--text); border:1px solid var(--line)}
+.btn-outline:hover{border-color:var(--gold)}
 
-        .timeline-line {
-            position: relative;
-        }
-        .timeline-line::after {
-            content: '';
-            position: absolute;
-            left: 5px;
-            top: 0;
-            bottom: -0.5em;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--color-accent), #222 60%);
-        }
-        .timeline-line:last-child::after { display: none; }
+/* FOOTER */
+footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
+.foot-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px}
+.foot-inner a{color:var(--on-dark-mut); font-size:14px; transition:color .15s ease}
+.foot-inner a:hover{color:var(--gold)}
+.foot-inner .fl{display:flex; gap:22px}
 
-        .skill-tag {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            padding: 0.35rem 0.85rem;
-            border-radius: 999px;
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: #999;
-            transition: all 0.3s ease;
-            letter-spacing: 0.01em;
-        }
-        .skill-tag:hover {
-            background: rgba(255, 107, 80, 0.1);
-            border-color: var(--color-accent);
-            color: white;
-        }
+/* BACK TO TOP */
+.totop{position:fixed; right:24px; bottom:24px; width:48px; height:48px; border-radius:50%; background:var(--gold); color:var(--ink); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-lg); opacity:0; pointer-events:none; transform:translateY(10px); transition:.25s; z-index:55}
+.totop.show{opacity:1; pointer-events:auto; transform:none}
+.totop svg{width:21px; height:21px; stroke:currentColor; stroke-width:2.2; fill:none; stroke-linecap:round; stroke-linejoin:round}
 
-        .print-only { display: none; }
-        @media print {
-            .no-print { display: none !important; }
-            .print-only { display: block !important; }
-            body { background: white !important; color: #111 !important; }
-            .text-white, .text-[#888888], .text-[#aaaaaa], .text-[#777777], .text-[#555555] { color: #333 !important; }
-            .border-[#222222], .border-[#1a1a1a], .border-[#333333], .border-t, .border-b { border-color: #ddd !important; }
-            .bg-[#050505], .bg-[#111111], .bg-[#1a1a1a], .bg-gradient-to-br { background: white !important; }
-            .glass-nav { background: white !important; backdrop-filter: none !important; border: 1px solid #ddd !important; }
-            .skill-tag { background: #f5f5f5 !important; border-color: #ddd !important; color: #333 !important; }
-            .cv-section-title::before { background: #FF6B50 !important; }
+/* PRINT */
+@media print{
+  .no-print{display:none!important}
+  body{background:white!important; color:#111!important}
+  .tl-item::before{background:var(--gold)!important; border-color:white!important}
+}
 
-            a { color: #FF6B50 !important; }
-        }
-
-        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-        }
-    </style>
+/* MOTION */
+.reveal{opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1; transform:none; transition:none}
+}
+</style>
 </head>
-<body>
-    <div class="min-h-screen bg-[#050505] overflow-x-hidden">
+<body id="top">
 
-        <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-6 focus:py-3 focus:bg-[#FF6B50] focus:text-black focus:rounded-xl focus:font-bold">Skip to main content</a>
-
-        <!-- Navigation -->
-        <nav class="fixed top-0 left-0 right-0 z-[100] px-4 md:px-6 py-4 flex items-center justify-between text-sm font-medium tracking-tight glass-nav no-print" role="navigation" aria-label="Main navigation">
-            <div class="flex items-center gap-10">
-                <a href="/" class="flex items-center group shrink-0" aria-label="Home">
-                    <div class="w-9 h-9 bg-white rounded-xl flex items-center justify-center text-black font-extrabold text-lg transition-transform duration-300 group-hover:rotate-12">PA</div>
-                </a>
-                <div class="hidden lg:flex items-center gap-8 text-[#888888]">
-                    <a href="index.html" class="hover:text-white transition-colors duration-300 py-2">Home</a>
-                    <a href="portfolio.html" class="hover:text-white transition-colors duration-300 py-2">Portfolio</a>
-                    <a href="cv.html" class="text-white py-2">CV</a>
-                    <a href="insights.html" class="hover:text-white transition-colors duration-300 py-2">Insights</a>
-                    <a href="index.html#contact" class="hover:text-white transition-colors duration-300 py-2">Contact</a>
-                </div>
-            </div>
-            <div class="flex items-center gap-4">
-                <button onclick="window.print()" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 bg-[#1a1a1a] hover:bg-white hover:text-black border border-[#333333] rounded-lg transition-all duration-300 text-sm" title="Download as PDF">
-                    <i class="ph ph-download-simple text-base"></i>
-                    <span class="hidden md:inline">Download PDF</span>
-                </button>
-                <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-[#222222] transition-all duration-300" aria-label="Toggle menu" aria-expanded="false">
-                    <i class="ph ph-list text-2xl text-white"></i>
-                </button>
-            </div>
-        </nav>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed top-0 left-0 right-0 z-[90] bg-[#050505] border-b border-[#222222] pt-20 pb-8 px-6 transform -translate-y-full opacity-0 transition-all duration-300 ease-in-out lg:hidden no-print">
-            <div class="flex flex-col gap-2">
-                <a href="index.html" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Home</a>
-                <a href="portfolio.html" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Portfolio</a>
-                <a href="cv.html" class="mobile-nav-link text-lg font-medium text-white py-4 border-b border-[#1a1a1a]">CV</a>
-                <a href="insights.html" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Insights</a>
-                <a href="index.html#contact" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 transition-colors duration-300">Contact</a>
-                <button onclick="window.print()" class="mt-4 px-6 py-4 bg-[#FF6B50] text-black font-bold rounded-xl text-center">Download PDF</button>
-            </div>
-        </div>
-
-        <main id="main" class="pt-20 md:pt-24">
-
-            <!-- Header -->
-            <header class="relative pt-16 pb-12 md:pb-16 px-4 md:px-12" role="banner">
-                <div class="absolute inset-0 z-0 pointer-events-none">
-                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_#1a1a1a_0%,_#050505_70%)] opacity-60"></div>
-                    <div class="absolute top-1/3 left-1/4 w-64 h-64 bg-[#FF6B50] rounded-full blur-[100px] opacity-10"></div>
-                </div>
-                <div class="max-w-4xl mx-auto relative z-10 text-center reveal">
-                    <div class="flex items-center justify-center gap-3 mb-4">
-                        <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0"></div>
-                        <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Curriculum Vitae</span>
-                    </div>
-                    <div class="w-20 h-20 mx-auto mb-5 rounded-full bg-gradient-to-br from-[#FF6B50] to-[#E55A40] flex items-center justify-center text-2xl font-bold text-black shadow-lg shadow-[#FF6B50]/20">PA</div>
-                    <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-3">Oluwapelumi Akande</h1>
-                    <p class="text-lg md:text-xl text-[#FF6B50] font-medium mb-6">Client Success & Digital Marketing Executive</p>
-                    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-[#888888]">
-                        <a href="mailto:akandeoluwapelumi15@gmail.com" class="hover:text-[#FF6B50] transition-colors flex items-center gap-2">
-                            <i class="ph ph-envelope text-base"></i>akandeoluwapelumi15@gmail.com
-                        </a>
-                        <a href="tel:+2348027184325" class="hover:text-[#FF6B50] transition-colors flex items-center gap-2">
-                            <i class="ph ph-phone text-base"></i>+234 802 7184 325
-                        </a>
-                        <a href="https://www.linkedin.com/in/oluwapelumi-akande-94b00a1b5/" target="_blank" rel="noopener noreferrer" class="hover:text-[#FF6B50] transition-colors flex items-center gap-2">
-                            <i class="ph ph-linkedin-logo text-base"></i>linkedin.com/in/oluwapelumi-akande
-                        </a>
-                        <span class="flex items-center gap-2">
-                            <i class="ph ph-map-pin text-base"></i>Lagos, Nigeria
-                        </span>
-                    </div>
-                    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 text-xs text-[#555555]">
-                        <span class="flex items-center gap-1.5"><span class="text-[#FF6B50] font-bold">5+</span> Years Experience</span>
-                        <span class="w-1 h-1 rounded-full bg-[#333333]"></span>
-                        <span class="flex items-center gap-1.5"><span class="text-[#FF6B50] font-bold">15+</span> Brands Served</span>
-                        <span class="w-1 h-1 rounded-full bg-[#333333]"></span>
-                        <span class="flex items-center gap-1.5">Fintech &middot; Banking &middot; Insurance</span>
-                        <span class="w-1 h-1 rounded-full bg-[#333333]"></span>
-                        <span class="flex items-center gap-1.5">Google &amp; AltSchool Certified</span>
-                    </div>
-                </div>
-            </header>
-
-            <div class="max-w-4xl mx-auto px-4 md:px-12 pb-24 md:pb-32">
-
-                <!-- Professional Summary -->
-                <section class="mb-12 md:mb-16 reveal">
-                    <h2 class="cv-section-title text-lg md:text-xl font-bold text-white mb-4 md:mb-5">Professional Summary</h2>
-                    <p class="text-[#888888] text-sm md:text-base leading-relaxed">
-                        Client-facing professional with 5+ years across fintech, banking, and insurance, combining client success,
-                        digital marketing, and operations. I act as the operational link between clients, internal teams, and
-                        technical/web teams, onboarding and retaining customers, running multi-channel marketing, and
-                        keeping projects on track. Google- and AltSchool-certified in digital and product marketing.
-                    </p>
-                </section>
-
-                <!-- Core Skills -->
-                <section class="mb-12 md:mb-16 reveal">
-                    <h2 class="cv-section-title text-lg md:text-xl font-bold text-white mb-5">Core Skills</h2>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:-translate-y-0.5">
-                            <h3 class="text-sm font-bold text-[#FF6B50] mb-3 flex items-center gap-2">
-                                <i class="ph ph-handshake text-lg"></i>Client Success
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag">Relationship Management</span>
-                                <span class="skill-tag">Onboarding & Retention</span>
-                                <span class="skill-tag">Multi-Channel Service</span>
-                                <span class="skill-tag">Complaint Resolution</span>
-                                <span class="skill-tag">Stakeholder Coordination</span>
-                            </div>
-                        </div>
-                        <div class="bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:-translate-y-0.5">
-                            <h3 class="text-sm font-bold text-[#FF6B50] mb-3 flex items-center gap-2">
-                                <i class="ph ph-megaphone text-lg"></i>Marketing
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag">Digital & Social Media</span>
-                                <span class="skill-tag">Content Creation</span>
-                                <span class="skill-tag">Campaign Execution</span>
-                                <span class="skill-tag">Lead Generation</span>
-                                <span class="skill-tag">Graphic Design (Canva)</span>
-                                <span class="skill-tag">Analytics & Reporting</span>
-                            </div>
-                        </div>
-                        <div class="bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:-translate-y-0.5">
-                            <h3 class="text-sm font-bold text-[#FF6B50] mb-3 flex items-center gap-2">
-                                <i class="ph ph-gear text-lg"></i>Operations & Tools
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag">Calendar & Project Coordination</span>
-                                <span class="skill-tag">Website Delivery Support</span>
-                                <span class="skill-tag">CRM (HubSpot, Zoho, Zendesk)</span>
-                                <span class="skill-tag">Microsoft 365</span>
-                                <span class="skill-tag">Google Workspace</span>
-                                <span class="skill-tag">Meta Business Suite</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Work Experience -->
-                <section class="mb-12 md:mb-16 reveal">
-                    <h2 class="cv-section-title text-lg md:text-xl font-bold text-white mb-6">Work Experience</h2>
-
-                    <div class="space-y-0">
-                        <!-- Switchboard -->
-                        <div class="timeline-line pl-8 pb-8">
-                            <div>
-                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                    <h3 class="text-base md:text-lg font-bold text-white">Switchboard Communications</h3>
-                                    <span class="inline-block text-[10px] font-semibold text-black bg-[#FF6B50] px-2.5 py-0.5 rounded-full mt-1 md:mt-0 w-fit">Current</span>
-                                </div>
-                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Client Success & Digital Marketing Executive <span class="text-[#555555]">· United Kingdom · Mar 2026 – Present</span></p>
-                                <ul class="space-y-2">
-                                    <li class="text-sm text-[#888888] leading-relaxed">Act as the central operational link between clients, internal management, and the technical/web development team, keeping projects aligned and delivery on schedule.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Execute digital marketing across social, email, and content channels to grow visibility and engagement for the agency and its clients.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Own client relationships and customer service end to end — onboarding, day-to-day queries, updates, and retention.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Coordinate administrative, scheduling, and reporting tasks that keep daily operations running smoothly.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Support website project delivery, tracking deliverables and timelines between clients and the development team.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Temlio -->
-                        <div class="timeline-line pl-8 pb-8">
-                            <div>
-                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                    <h3 class="text-base md:text-lg font-bold text-white">Temlio Communication</h3>
-                                    <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">Oct 2024 – Nov 2025</span>
-                                </div>
-                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Executive Administrator <span class="text-[#555555]">· Lagos, Nigeria</span></p>
-                                <ul class="space-y-2">
-                                    <li class="text-sm text-[#888888] leading-relaxed">Coordinated executive schedules, meetings, and appointments, ensuring smooth daily operations with no scheduling conflicts.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Managed email correspondence and filtered priority communications, cutting executive response time by roughly 30%.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Served as the communication bridge between customers, internal teams, and leadership for efficient service delivery.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Compiled and analyzed customer feedback reports, surfacing insights that improved service quality.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Bytelabs -->
-                        <div class="timeline-line pl-8 pb-8">
-                            <div>
-                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                    <h3 class="text-base md:text-lg font-bold text-white">Bytelabs Technologies (Billa / Watu)</h3>
-                                    <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">Apr 2023 – Sep 2024</span>
-                                </div>
-                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Business Development Manager <span class="text-[#555555]">· Ibadan, Nigeria</span></p>
-                                <ul class="space-y-2">
-                                    <li class="text-sm text-[#888888] leading-relaxed">Directed client relationships across the Billa and Watu fintech platforms, maintaining strong retention through proactive engagement.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Managed social media and content for Billa, increasing product visibility and supporting customer acquisition and adoption.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Ran outreach and lead generation (LinkedIn, email) using Sales Navigator and Zoho CRM, lifting lead generation and conversion.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Collaborated with product, design, and operations teams to onboard clients and implement service improvements from customer feedback.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Davodani -->
-                        <div class="timeline-line pl-8 pb-8">
-                            <div>
-                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                    <h3 class="text-base md:text-lg font-bold text-white">Davodani Microfinance Bank</h3>
-                                    <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">Feb 2021 – Apr 2022</span>
-                                </div>
-                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Customer Service Officer <span class="text-[#555555]">· Lagos, Nigeria</span></p>
-                                <ul class="space-y-2">
-                                    <li class="text-sm text-[#888888] leading-relaxed">Processed account opening and daily transactions with a high accuracy rate while ensuring regulatory compliance.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Resolved customer complaints professionally and educated customers on banking products and digital banking.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Partnered with the operations team to streamline account management and reduce turnaround time.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Coronation -->
-                        <div class="timeline-line pl-8 pb-8">
-                            <div>
-                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                    <h3 class="text-base md:text-lg font-bold text-white">Coronation Insurance Plc</h3>
-                                    <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">Oct 2020 – Jan 2021</span>
-                                </div>
-                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Contact Center Agent (Contract) <span class="text-[#555555]">· Lagos, Nigeria</span></p>
-                                <ul class="space-y-2">
-                                    <li class="text-sm text-[#888888] leading-relaxed">Handled inbound calls on policies, premiums, claims, and renewals, coordinating across underwriting and claims for timely processing.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Improved team efficiency through documented best practices and knowledge sharing.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- OPay -->
-                        <div class="pl-8">
-                            <div>
-                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                    <h3 class="text-base md:text-lg font-bold text-white">OPay</h3>
-                                    <span class="text-xs text-[#FF6B50] font-medium mt-0.5 md:mt-0">May 2018 – Mar 2020</span>
-                                </div>
-                                <p class="text-sm text-[#aaaaaa] font-medium mb-3">Customer Service Representative <span class="text-[#555555]">· Lagos, Nigeria</span></p>
-                                <ul class="space-y-2">
-                                    <li class="text-sm text-[#888888] leading-relaxed">Handled 80+ daily customer inquiries via phone and in-app chat with high transaction accuracy.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Coordinated with technical, operations, and fraud teams to resolve complex issues and reduce escalation time.</li>
-                                    <li class="text-sm text-[#888888] leading-relaxed">Authored step-by-step guides and knowledge-based content that cut resolution time for common issues.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Education & Certifications -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                    <!-- Education -->
-                    <section class="reveal">
-                        <h2 class="cv-section-title text-lg md:text-xl font-bold text-white mb-5">Education</h2>
-                        <div class="bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 rounded-lg bg-[#1a1a1a] flex items-center justify-center shrink-0">
-                                    <i class="ph ph-graduation-cap text-lg text-[#FF6B50]"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-base font-bold text-white">Bachelor of Arts, Mass Communication</h3>
-                                    <p class="text-sm text-[#aaaaaa]">ESCAE University, Porto-Novo</p>
-                                    <p class="text-xs text-[#666666] mt-1">NYSC completed</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Certifications -->
-                    <section class="reveal">
-                        <h2 class="cv-section-title text-lg md:text-xl font-bold text-white mb-5">Certifications</h2>
-                        <div class="space-y-3">
-                            <a href="https://learndigital.withgoogle.com/link/1qsdpcedm9s" target="_blank" rel="noopener noreferrer" class="flex items-start gap-4 bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] hover:-translate-y-0.5 transition-all duration-300 group">
-                                <div class="w-10 h-10 rounded-lg bg-[#1a1a1a] flex items-center justify-center shrink-0 group-hover:bg-[#FF6B50] transition-all duration-300">
-                                    <i class="ph ph-certificate text-lg text-[#FF6B50] group-hover:text-black transition-colors duration-300"></i>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <h3 class="text-sm font-bold text-white group-hover:text-[#FF6B50] transition-colors">Fundamentals of Digital Marketing</h3>
-                                    <p class="text-xs text-[#888888] mt-1">Google (Google Digital Garage)</p>
-                                </div>
-                                <i class="ph ph-arrow-up-right text-lg text-[#555555] group-hover:text-[#FF6B50] transition-colors shrink-0 mt-0.5"></i>
-                            </a>
-                            <a href="https://drive.google.com/file/d/1f1iX2mTFo_u6xNxpGzlVzLQlNg1VjsEp/view" target="_blank" rel="noopener noreferrer" class="flex items-start gap-4 bg-[#111111] rounded-xl p-5 md:p-6 border border-[#1a1a1a] hover:border-[#333333] hover:-translate-y-0.5 transition-all duration-300 group">
-                                <div class="w-10 h-10 rounded-lg bg-[#1a1a1a] flex items-center justify-center shrink-0 group-hover:bg-[#FF6B50] transition-all duration-300">
-                                    <i class="ph ph-certificate text-lg text-[#FF6B50] group-hover:text-black transition-colors duration-300"></i>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <h3 class="text-sm font-bold text-white group-hover:text-[#FF6B50] transition-colors">Product Marketing</h3>
-                                    <p class="text-xs text-[#888888] mt-1">AltSchool Africa</p>
-                                </div>
-                                <i class="ph ph-arrow-up-right text-lg text-[#555555] group-hover:text-[#FF6B50] transition-colors shrink-0 mt-0.5"></i>
-                            </a>
-                        </div>
-                    </section>
-                </div>
-
-                <!-- Download / Contact CTA -->
-                <div class="mt-16 md:mt-20 text-center no-print">
-                    <div class="bg-gradient-to-br from-[#1a1a1a] to-[#111111] rounded-2xl md:rounded-3xl p-10 md:p-14 border border-[#333333]">
-                        <i class="ph ph-download-simple text-4xl text-[#FF6B50] mb-4 block"></i>
-                        <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">Download or share this CV</h2>
-                        <p class="text-[#888888] text-sm md:text-base mb-8 max-w-md mx-auto">Save as PDF or send the link directly to recruiters and hiring managers.</p>
-                        <div class="flex items-center justify-center gap-3 md:gap-4 flex-wrap">
-                            <button onclick="window.print()" class="px-6 md:px-8 py-3.5 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold rounded-xl transition-all min-h-[48px] flex items-center gap-2">
-                                <i class="ph ph-file-pdf text-lg"></i> Download PDF
-                            </button>
-                            <a href="https://wa.me/2348027184325" target="_blank" rel="noopener noreferrer" class="px-6 md:px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all min-h-[48px] flex items-center gap-2 text-white">
-                                <i class="ph ph-whatsapp-logo text-lg"></i> Share on WhatsApp
-                            </a>
-                            <a href="index.html#contact" class="px-6 md:px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all min-h-[48px] text-white">
-                                Contact Me
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Footer -->
-            <footer class="pb-12 md:pb-16 px-4 md:px-12 border-t border-[#1a1a1a] pt-12 md:pt-16 no-print" role="contentinfo">
-                <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div class="flex items-center gap-4 md:gap-6">
-                        <a href="/" class="flex items-center group" aria-label="Home">
-                            <div class="w-8 h-8 bg-white rounded flex items-center justify-center text-black font-extrabold text-lg transition-transform duration-300 group-hover:rotate-12">PA</div>
-                        </a>
-                        <p class="text-[#555555] text-xs font-medium">&copy; 2024 Oluwapelumi Akande</p>
-                    </div>
-                    <div class="flex gap-3 md:gap-4">
-                        <a href="https://www.linkedin.com/in/oluwapelumi-akande-94b00a1b5/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 md:w-12 md:h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all" aria-label="LinkedIn"><i class="ph ph-linkedin-logo text-base md:text-lg"></i></a>
-                        <a href="https://wa.me/2348027184325" target="_blank" rel="noopener noreferrer" class="w-11 h-11 md:w-12 md:h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo text-base md:text-lg"></i></a>
-                        <a href="mailto:akandeoluwapelumi15@gmail.com" class="w-11 h-11 md:w-12 md:h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all" aria-label="Email"><i class="ph ph-envelope text-base md:text-lg"></i></a>
-                    </div>
-                    <div class="flex gap-6 md:gap-8 text-[#333333] text-xs md:text-sm font-medium">
-                        <a href="index.html" class="hover:text-[#666666] transition-colors">Home</a>
-                        <a href="portfolio.html" class="hover:text-[#666666] transition-colors">Portfolio</a>
-                        <a href="cv.html" class="hover:text-[#666666] transition-colors">CV</a>
-                        <a href="insights.html" class="hover:text-[#666666] transition-colors">Insights</a>
-                    </div>
-                </div>
-            </footer>
-
-        </main>
-
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="monogram">OA</span><b>Oluwapelumi Akande</b></a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="insights.html">Insights</a>
+        <a href="cv.html">CV</a>
+        <a class="nav-cta" href="index.html#contact">Let's talk</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Mobile Menu -->
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let menuOpen = false;
+  <main>
+    <div class="container">
+      <header class="cv-hdr">
+        <div class="avatar">OA</div>
+        <h1>Oluwapelumi Akande</h1>
+        <p class="title">Client Success &amp; Digital Marketing Executive</p>
+        <div class="meta">
+          <a href="mailto:akandeoluwapelumi15@gmail.com">akandeoluwapelumi15@gmail.com</a>
+          <a href="tel:+2348027184325">+234 802 7184 325</a>
+          <a href="https://www.linkedin.com/in/oluwapelumi-akande-94b00a1b5/" target="_blank" rel="noopener">LinkedIn</a>
+          <span>Lagos, Nigeria</span>
+        </div>
+        <div class="stats">
+          <span><b>5+</b> years experience</span>
+          <span><b>15+</b> brands served</span>
+          <span>Fintech · Banking · Insurance</span>
+          <span>Google &amp; AltSchool Certified</span>
+        </div>
+      </header>
 
-        menuBtn.addEventListener('click', () => {
-            menuOpen = !menuOpen;
-            mobileMenu.classList.toggle('translate-y-0', menuOpen);
-            mobileMenu.classList.toggle('-translate-y-full', !menuOpen);
-            mobileMenu.classList.toggle('opacity-100', menuOpen);
-            mobileMenu.classList.toggle('opacity-0', !menuOpen);
-            menuBtn.setAttribute('aria-expanded', menuOpen);
-            menuBtn.innerHTML = menuOpen ? '<i class="ph ph-x text-2xl text-white"></i>' : '<i class="ph ph-list text-2xl text-white"></i>';
-            document.body.style.overflow = menuOpen ? 'hidden' : '';
-        });
+      <div class="cv-body">
 
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                menuOpen = false;
-                mobileMenu.classList.add('-translate-y-full', 'opacity-0');
-                mobileMenu.classList.remove('translate-y-0', 'opacity-100');
-                menuBtn.setAttribute('aria-expanded', 'false');
-                menuBtn.innerHTML = '<i class="ph ph-list text-2xl text-white"></i>';
-                document.body.style.overflow = '';
-            });
-        });
+        <!-- Summary -->
+        <section class="cv-section">
+          <h2 class="cv-section-title">Professional Summary</h2>
+          <p>Client-facing professional with 5+ years across fintech, banking, and insurance, combining client success, digital marketing, and operations. I act as the operational link between clients, internal teams, and technical/web teams — onboarding and retaining customers, running multi-channel marketing, and keeping projects on track. Google- and AltSchool-certified in digital and product marketing.</p>
+        </section>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+        <!-- Skills -->
+        <section class="cv-section">
+          <h2 class="cv-section-title">Core Skills</h2>
+          <div class="skill-grid">
+            <div class="skill-card"><h3>Client Success</h3><div class="tags"><span>Relationship Management</span><span>Onboarding &amp; Retention</span><span>Multi-Channel Service</span><span>Complaint Resolution</span><span>Stakeholder Coordination</span></div></div>
+            <div class="skill-card"><h3>Marketing</h3><div class="tags"><span>Digital &amp; Social Media</span><span>Content Creation</span><span>Campaign Execution</span><span>Lead Generation</span><span>Graphic Design (Canva)</span><span>Analytics &amp; Reporting</span></div></div>
+            <div class="skill-card"><h3>Operations &amp; Tools</h3><div class="tags"><span>Project Coordination</span><span>Website Delivery Support</span><span>CRM (HubSpot, Zoho, Zendesk)</span><span>Microsoft 365</span><span>Google Workspace</span><span>Meta Business Suite</span></div></div>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="cv-section">
+          <h2 class="cv-section-title">Work Experience</h2>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-when">Mar 2026 — Present · United Kingdom · Remote</div>
+              <div class="tl-title">Client Success &amp; Digital Marketing Executive</div>
+              <div class="tl-org">Switchboard Communications</div>
+              <div class="tl-desc">
+                <ul>
+                  <li>Act as the central operational link between clients, management, and the web development team, keeping projects aligned and delivery on schedule.</li>
+                  <li>Execute digital marketing across social, email, and content channels to grow visibility and engagement.</li>
+                  <li>Own client relationships end to end — onboarding, queries, updates, and retention.</li>
+                  <li>Coordinate administrative, scheduling, and reporting tasks that keep daily operations running smoothly.</li>
+                  <li>Support website project delivery, tracking deliverables and timelines between clients and developers.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-when">Oct 2024 — Nov 2025 · Lagos, Nigeria</div>
+              <div class="tl-title">Executive Administrator</div>
+              <div class="tl-org">Temlio Communication</div>
+              <div class="tl-desc">
+                <ul>
+                  <li>Coordinated executive schedules, meetings, and appointments, ensuring smooth daily operations.</li>
+                  <li>Managed email correspondence and filtered priority communications, cutting executive response time ~30%.</li>
+                  <li>Served as the communication bridge between customers, teams, and leadership for efficient service delivery.</li>
+                  <li>Compiled customer feedback reports that improved service quality.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-when">Apr 2023 — Sep 2024 · Ibadan, Nigeria</div>
+              <div class="tl-title">Business Development Manager</div>
+              <div class="tl-org">Bytelabs Technologies (Billa / Watu)</div>
+              <div class="tl-desc">
+                <ul>
+                  <li>Directed client relationships across two fintech platforms, maintaining strong retention through proactive engagement.</li>
+                  <li>Managed social media and content for Billa, increasing product visibility and supporting customer acquisition.</li>
+                  <li>Ran outreach and lead generation (LinkedIn, email) using Sales Navigator and Zoho CRM, lifting leads and conversion.</li>
+                  <li>Collaborated with product, design, and operations teams to onboard clients and improve service from feedback.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-when">Feb 2021 — Apr 2022 · Lagos, Nigeria</div>
+              <div class="tl-title">Customer Service Officer</div>
+              <div class="tl-org">DavoDani Microfinance Bank</div>
+              <div class="tl-desc">
+                <ul>
+                  <li>Processed account opening and daily transactions with high accuracy while ensuring regulatory compliance.</li>
+                  <li>Resolved customer complaints professionally and educated customers on banking products and digital banking.</li>
+                  <li>Partnered with the operations team to streamline account management and reduce turnaround time.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-when">Oct 2020 — Jan 2021 · Lagos, Nigeria</div>
+              <div class="tl-title">Contact Center Agent (Contract)</div>
+              <div class="tl-org">Coronation Insurance Plc</div>
+              <div class="tl-desc">
+                <ul>
+                  <li>Handled inbound calls on policies, premiums, claims, and renewals, coordinating across teams for timely processing.</li>
+                  <li>Improved team efficiency through documented best practices and knowledge sharing.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-when">May 2018 — Mar 2020 · Lagos, Nigeria</div>
+              <div class="tl-title">Customer Service Representative</div>
+              <div class="tl-org">OPay</div>
+              <div class="tl-desc">
+                <ul>
+                  <li>Handled 80+ daily customer inquiries via phone and in-app chat with high transaction accuracy.</li>
+                  <li>Coordinated with technical, operations, and fraud teams to resolve complex issues and reduce escalation time.</li>
+                  <li>Authored step-by-step guides that cut resolution time for common issues.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education & Certs -->
+        <section class="cv-section">
+          <h2 class="cv-section-title">Education &amp; Certifications</h2>
+          <div class="edu-cert-grid">
+            <div class="edu-card">
+              <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/></svg></div>
+              <h3>Bachelor of Arts, Mass Communication</h3>
+              <p>ESCAE University, Porto-Novo</p>
+              <p style="font-size:12.5px;color:var(--muted);margin-top:4px">NYSC completed</p>
+            </div>
+            <a class="cert-card" href="https://learndigital.withgoogle.com/link/1qsdpcedm9s" target="_blank" rel="noopener">
+              <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5"/></svg></div>
+              <h3>Fundamentals of Digital Marketing</h3>
+              <p>Google (Google Digital Garage)</p>
+              <span class="go"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Verify</span>
+            </a>
+            <a class="cert-card" href="https://drive.google.com/file/d/1f1iX2mTFo_u6xNxpGzlVzLQlNg1VjsEp/view" target="_blank" rel="noopener">
+              <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/></svg></div>
+              <h3>Product Marketing — Diploma</h3>
+              <p>AltSchool Africa</p>
+              <span class="go"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> View certificate</span>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <!-- CTA -->
+      <section class="cta-section no-print">
+        <h2>Download or share this CV</h2>
+        <p>Save as PDF or send the link directly to recruiters and hiring managers.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" onclick="window.print()"><svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download PDF</button>
+          <a class="btn btn-outline" href="https://wa.me/2348027184325" target="_blank" rel="noopener">Share on WhatsApp</a>
+          <a class="btn btn-outline" href="index.html#contact">Contact me</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container foot-inner">
+      <p>&copy; <span id="yr"></span> Oluwapelumi Akande · Social &amp; Digital Marketing</p>
+      <div class="fl"><a href="portfolio.html">Portfolio</a><a href="#top">Back to top</a></div>
+    </div>
+  </footer>
+
+  <button class="totop" id="totop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg></button>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    var burger=document.getElementById('burger'), navLinks=document.getElementById('navLinks');
+    burger.addEventListener('click',function(){navLinks.classList.toggle('open');});
+    navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){navLinks.classList.remove('open');});});
+    var totop=document.getElementById('totop');
+    function onScroll(){totop.classList.toggle('show',window.scrollY>560);} window.addEventListener('scroll',onScroll); onScroll();
+    totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+    var revealEls=document.querySelectorAll('.cv-hdr,.cv-section,.cta-section');
+    if('IntersectionObserver'in window&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){revealEls.forEach(function(el){el.classList.add('reveal');});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});revealEls.forEach(function(el){io.observe(el);});}
+  </script>
 </body>
 </html>
