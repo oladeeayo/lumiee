@@ -854,7 +854,7 @@
     <script>
         const floatNav = document.querySelector('.fixed.bottom-6');
         if (floatNav) {
-            const hideSections = document.querySelectorAll('section, footer');
+            const hideSections = document.querySelectorAll('section, footer, header, main');
             const btnObserver = new IntersectionObserver((entries) => {
                 let shouldHide = false;
                 entries.forEach(entry => {
