@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights — Oluwapelumi Akande | Social Media & Digital Marketing</title>
+    <meta name="description" content="Insights and articles on social media strategy, digital marketing, content creation, and community management by Oluwapelumi Akande.">
+    <meta property="og:title" content="Insights — Oluwapelumi Akande">
+    <meta property="og:description" content="Thoughts on social media strategy, digital marketing, and community building.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        @font-face {
+            font-family: 'Satoshi';
+            src: url('https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/4aed2f49-a476-436f-bae8-f31aa18f46fa/1767920861040-60c1c779/Satoshi-Variable.woff2') format('woff2');
+            font-weight: 300 900;
+            font-display: swap;
+            font-style: normal;
+        }
+
+        :root {
+            --font-satoshi: 'Satoshi', 'Inter', sans-serif;
+            --color-bg: #050505;
+            --color-accent: #FF6B50;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-satoshi);
+            background-color: var(--color-bg);
+            color: #ebebeb;
+            scroll-behavior: smooth;
+        }
+
+        ::selection { background-color: var(--color-accent); color: white; }
+
+        .glass-nav {
+            background: rgba(17, 17, 17, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .blog-content h2 { font-size: 1.75rem; font-weight: 700; color: white; margin-top: 2.5rem; margin-bottom: 1rem; }
+        .blog-content h3 { font-size: 1.25rem; font-weight: 600; color: #ddd; margin-top: 2rem; margin-bottom: 0.75rem; }
+        .blog-content p { color: #999; line-height: 1.8; margin-bottom: 1.25rem; font-size: 1rem; }
+        .blog-content ul, .blog-content ol { color: #999; line-height: 1.8; margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .blog-content li { margin-bottom: 0.5rem; }
+        .blog-content strong { color: #ddd; font-weight: 600; }
+        .blog-content blockquote {
+            border-left: 3px solid var(--color-accent);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background: #111;
+            border-radius: 0 12px 12px 0;
+            color: #bbb;
+            font-style: italic;
+        }
+        .blog-content hr { border-color: #222; margin: 2rem 0; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-scale { opacity: 0; transform: scale(0.95); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen bg-[#050505] overflow-x-hidden">
+
+        <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-6 focus:py-3 focus:bg-[#FF6B50] focus:text-black focus:rounded-xl focus:font-bold">Skip to main content</a>
+
+        <!-- Navigation -->
+        <nav class="fixed top-0 left-0 right-0 z-[100] px-4 md:px-6 py-4 flex items-center justify-between text-sm font-medium tracking-tight glass-nav" role="navigation" aria-label="Main navigation">
+            <div class="flex items-center gap-10">
+                <a href="/" class="flex items-center group shrink-0" aria-label="Home">
+                    <div class="w-9 h-9 bg-white rounded-xl flex items-center justify-center text-black font-extrabold text-lg transition-transform duration-300 group-hover:rotate-12">PA</div>
+                </a>
+                <div class="hidden lg:flex items-center gap-8 text-[#888888]">
+                    <a href="index.html" class="hover:text-white transition-colors duration-300 py-2">Home</a>
+                    <a href="index.html#about" class="hover:text-white transition-colors duration-300 py-2">About</a>
+                    <a href="portfolio.html" class="hover:text-white transition-colors duration-300 py-2">Portfolio</a>
+                    <a href="insights.html" class="text-white py-2">Insights</a>
+                    <a href="index.html#contact" class="hover:text-white transition-colors duration-300 py-2">Contact</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="index.html#contact" class="hidden sm:inline-flex px-5 py-2.5 bg-[#1a1a1a] hover:bg-white hover:text-black border border-[#333333] rounded-lg transition-all duration-300 text-sm">
+                    Let's Talk
+                </a>
+                <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-[#222222] transition-all duration-300" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="ph ph-list text-2xl text-white"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed top-0 left-0 right-0 z-[90] bg-[#050505] border-b border-[#222222] pt-20 pb-8 px-6 transform -translate-y-full opacity-0 transition-all duration-300 ease-in-out lg:hidden">
+            <div class="flex flex-col gap-2">
+                <a href="index.html" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Home</a>
+                <a href="index.html#about" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">About</a>
+                <a href="portfolio.html" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Portfolio</a>
+                <a href="insights.html" class="mobile-nav-link text-lg font-medium text-white py-4 border-b border-[#1a1a1a]">Insights</a>
+                <a href="index.html#contact" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 transition-colors duration-300">Contact</a>
+                <a href="index.html#contact" class="mt-4 px-6 py-4 bg-[#FF6B50] text-black font-bold rounded-xl text-center">Let's Talk</a>
+            </div>
+        </div>
+
+        <main id="main" class="pt-16 md:pt-20">
+
+            <!-- Header -->
+            <header class="relative pt-24 md:pt-40 pb-16 md:pb-24 px-4 md:px-12" role="banner">
+                <div class="absolute inset-0 z-0 pointer-events-none">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_#1a1a1a_0%,_#050505_70%)] opacity-60"></div>
+                    <div class="absolute top-20 right-20 w-64 h-64 bg-[#4F46E5] rounded-full blur-[120px] opacity-10"></div>
+                </div>
+                <div class="max-w-4xl mx-auto relative z-10 text-center">
+                    <div class="flex items-center justify-center gap-3 mb-6 reveal">
+                        <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
+                        <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Insights & Thinking</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight reveal-scale">
+                        Thoughts on <span class="text-[#FF6B50]">social</span> & marketing
+                    </h1>
+                    <p class="text-[#888888] text-base md:text-lg mt-6 max-w-xl mx-auto reveal">
+                        Ideas, frameworks, and trends shaping social media, content, and digital growth.
+                    </p>
+                </div>
+            </header>
+
+            <!-- Post 1 -->
+            <article id="post-1" class="scroll-mt-28 px-4 md:px-12 max-w-4xl mx-auto pb-16 md:pb-24">
+                <div class="border-b border-[#222222] pb-8 md:pb-12 mb-10 md:mb-16 reveal">
+                    <div class="flex items-center gap-3 text-[#555555] text-xs md:text-sm font-medium mb-4">
+                        <span>Dec 12, 2024</span>
+                        <span class="w-1 h-1 rounded-full bg-[#555555] shrink-0"></span>
+                        <span>Social Media</span>
+                        <span class="w-1 h-1 rounded-full bg-[#555555] shrink-0"></span>
+                        <span>8 min read</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-6">5 Fintech Social Media Trends to Watch in 2025</h2>
+                    <div class="aspect-[16/9] rounded-2xl overflow-hidden mb-10">
+                        <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1200&auto=format&fit=crop" alt="Social media trends" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="blog-content">
+                    <p>The fintech social media landscape is evolving faster than ever. What worked in 2023 feels stale in 2024, and by 2025, brands that don't adapt will be left behind. After managing social strategies for multiple fintech brands this year, here are the five trends I believe will define fintech social media in 2025.</p>
+
+                    <h2>1. Community-Led Growth Will Replace Follower Chasing</h2>
+                    <p>For years, fintech brands chased vanity metrics — follower counts, like numbers, and reach. In 2025, the focus will shift to <strong>community-led growth</strong>. Brands that build real communities — not just audiences — will win.</p>
+                    <p>We're already seeing this with brands that prioritize engagement over reach. The fintechs seeing the best retention rates are those with active communities on platforms like WhatsApp, Telegram, and Discord where customers can interact, ask questions, and feel a sense of belonging.</p>
+                    <blockquote>"The brands that win in 2025 won't be the ones with the most followers. They'll be the ones with the most engaged communities."</blockquote>
+
+                    <h2>2. AI-Powered Content Personalization at Scale</h2>
+                    <p>AI tools are no longer optional — they're essential. But the winning strategy isn't about using AI to generate generic content. It's about using AI to <strong>personalize at scale</strong>. Imagine serving different social content to different audience segments based on their behavior, lifecycle stage, and preferences.</p>
+                    <p>Tools like ChatGPT, Jasper, and Canva's AI features are already making this possible. In 2025, fintech brands that leverage AI to create personalized content journeys will see significantly higher engagement and conversion rates.</p>
+
+                    <h2>3. Short-Form Video Will Dominate — Especially on LinkedIn</h2>
+                    <p>We all know TikTok and Instagram Reels dominate short-form video. But the interesting shift in 2025 will be <strong>LinkedIn's rise as a video-first platform</strong>. LinkedIn is aggressively pushing native video content, and early adopters are seeing 3-5× higher engagement on video posts compared to text or image posts.</p>
+                    <p>For fintech brands targeting B2B audiences, this is a massive opportunity. Short, punchy thought leadership videos, product demos, and behind-the-scenes content will outperform traditional LinkedIn text posts.</p>
+
+                    <h2>4. Financial Education as a Content Pillar</h2>
+                    <p>Fintech brands that educate their audience will build more trust and loyalty than those that just promote features. <strong>Financial literacy content</strong> — explaining concepts like credit scores, investment basics, savings strategies — performs exceptionally well on social media because it provides genuine value.</p>
+                    <p>In 2025, I expect every fintech brand to have a dedicated "financial education" content pillar. The brands that do this authentically will become trusted resources, not just service providers.</p>
+
+                    <h2>5. Micro-Influencer Partnerships Over Mega-Influencers</h2>
+                    <p>The era of mega-influencer campaigns with 6-figure price tags is fading. In 2025, <strong>micro-influencers (1k-50k followers)</strong> will drive the most ROI for fintech brands. They have higher engagement rates, more trusted relationships with their audiences, and are significantly more cost-effective.</p>
+                    <p>We've seen this firsthand at NestCredit, where a micro-influencer campaign generated 5.1× earned media value with just 20 influencers. The key is finding creators whose audiences align with your target customer profile.</p>
+
+                    <hr>
+
+                    <p>The fintech social media landscape in 2025 will reward brands that are authentic, community-focused, and willing to experiment. Start building your community now, invest in video content, and partner with micro-influencers who genuinely believe in your product.</p>
+                    <p>Ready to level up your fintech social strategy? <a href="index.html#contact" class="text-[#FF6B50] hover:underline">Let's talk</a>.</p>
+                </div>
+
+                <div class="mt-12 md:mt-16 pt-8 border-t border-[#222222] flex items-center justify-between">
+                    <a href="index.html" class="text-[#888888] hover:text-white transition-colors text-sm flex items-center gap-2">
+                        <i class="ph ph-arrow-left"></i> Back to Home
+                    </a>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all" aria-label="Share on LinkedIn"><i class="ph ph-linkedin-logo text-sm"></i></a>
+                        <a href="#" class="w-10 h-10 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all" aria-label="Share on Twitter"><i class="ph ph-twitter-logo text-sm"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 2 -->
+            <article id="post-2" class="scroll-mt-28 px-4 md:px-12 max-w-4xl mx-auto pb-16 md:pb-24 border-t border-[#1a1a1a] pt-16 md:pt-24">
+                <div class="border-b border-[#222222] pb-8 md:pb-12 mb-10 md:mb-16 reveal">
+                    <div class="flex items-center gap-3 text-[#555555] text-xs md:text-sm font-medium mb-4">
+                        <span>Nov 28, 2024</span>
+                        <span class="w-1 h-1 rounded-full bg-[#555555] shrink-0"></span>
+                        <span>Content</span>
+                        <span class="w-1 h-1 rounded-full bg-[#555555] shrink-0"></span>
+                        <span>10 min read</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-6">Building a Content Engine That Actually Converts</h2>
+                    <div class="aspect-[16/9] rounded-2xl overflow-hidden mb-10">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop" alt="Content strategy" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="blog-content">
+                    <p>Most brands treat content as an afterthought — a blog post here, a social update there, with no real strategy behind it. But the brands that win are the ones that build <strong>content engines</strong>: repeatable systems that consistently produce high-quality content that drives engagement, builds trust, and generates revenue.</p>
+                    <p>Here's the framework I use to build content engines for fintech and B2B brands.</p>
+
+                    <h2>Step 1: Define Your Content Pillars</h2>
+                    <p>Every piece of content you create should fall under one of 3-5 core content pillars. These pillars represent the topics your brand owns and the areas where you provide unique value. For a fintech brand, your pillars might be:</p>
+                    <ul>
+                        <li><strong>Financial Education</strong> — Explaining complex financial concepts in simple terms</li>
+                        <li><strong>Product Highlights</strong> — Showing how your product solves specific problems</li>
+                        <li><strong>Customer Stories</strong> — Real results from real users</li>
+                        <li><strong>Industry Insights</strong> — Trends and analysis your audience cares about</li>
+                        <li><strong>Behind the Scenes</strong> — The people and culture behind the product</li>
+                    </ul>
+
+                    <h2>Step 2: Create a Repurposing Workflow</h2>
+                    <p>The secret to a sustainable content engine is <strong>repurposing</strong>. One piece of long-form content (like this article) can become:</p>
+                    <ul>
+                        <li>5-10 social media posts</li>
+                        <li>3-5 LinkedIn carousels</li>
+                        <li>2-3 short-form videos</li>
+                        <li>1 email newsletter</li>
+                        <li>1 infographic</li>
+                    </ul>
+                    <p>This is how you create 20+ pieces of content from one idea without burning out your team. At NestCredit, this repurposing workflow helped us grow organic traffic 3× in 6 months with the same team size.</p>
+
+                    <h2>Step 3: Optimize for Each Platform</h2>
+                    <p>Too many brands create one piece of content and post it everywhere. That's not a content engine — that's noise. Each platform has its own language, format, and audience expectations.</p>
+                    <blockquote>"A great LinkedIn post is not a great Instagram caption. A great TikTok is not a great email. Optimize for the platform, not for your ego."</blockquote>
+                    <p><strong>LinkedIn</strong> favors professional insights and thought leadership. <strong>Instagram</strong> rewards visual storytelling and behind-the-scenes content. <strong>TikTok</strong> wants entertainment and authenticity. <strong>Twitter/X</strong> thrives on real-time commentary and thread-style deep dives. Give each platform what it wants.</p>
+
+                    <h2>Step 4: Measure What Matters</h2>
+                    <p>Vanity metrics (likes, views, follower counts) won't tell you if your content engine is working. Instead, focus on:</p>
+                    <ul>
+                        <li><strong>Engagement Rate</strong> — Are people interacting with your content?</li>
+                        <li><strong>Share of Voice</strong> — How much of the conversation in your niche are you owning?</li>
+                        <li><strong>Conversion Rate</strong> — Is content driving sign-ups, demo requests, or sales?</li>
+                        <li><strong>Return on Content (ROC)</strong> — What's the revenue generated per piece of content?</li>
+                    </ul>
+
+                    <hr>
+
+                    <p>Building a content engine takes time, but it's the single best investment you can make in your brand's long-term growth. Start with your pillars, build a repurposing workflow, optimize for each platform, and measure what actually matters.</p>
+                    <p>Need help building your content engine? <a href="index.html#contact" class="text-[#FF6B50] hover:underline">Let's build something together</a>.</p>
+                </div>
+
+                <div class="mt-12 md:mt-16 pt-8 border-t border-[#222222] flex items-center justify-between">
+                    <a href="index.html" class="text-[#888888] hover:text-white transition-colors text-sm flex items-center gap-2">
+                        <i class="ph ph-arrow-left"></i> Back to Home
+                    </a>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all" aria-label="Share on LinkedIn"><i class="ph ph-linkedin-logo text-sm"></i></a>
+                        <a href="#" class="w-10 h-10 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all" aria-label="Share on Twitter"><i class="ph ph-twitter-logo text-sm"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 3 -->
+            <article id="post-3" class="scroll-mt-28 px-4 md:px-12 max-w-4xl mx-auto pb-16 md:pb-24 border-t border-[#1a1a1a] pt-16 md:pt-24">
+                <div class="border-b border-[#222222] pb-8 md:pb-12 mb-10 md:mb-16 reveal">
+                    <div class="flex items-center gap-3 text-[#555555] text-xs md:text-sm font-medium mb-4">
+                        <span>Nov 15, 2024</span>
+                        <span class="w-1 h-1 rounded-full bg-[#555555] shrink-0"></span>
+                        <span>Analytics</span>
+                        <span class="w-1 h-1 rounded-full bg-[#555555] shrink-0"></span>
+                        <span>7 min read</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-6">Beyond Vanity Metrics: What Actually Matters on Social</h2>
+                    <div class="aspect-[16/9] rounded-2xl overflow-hidden mb-10">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Social media analytics" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="blog-content">
+                    <p>I had a client who was obsessed with follower count. Every week, they'd ask: "Did we grow this week?" They had 50k followers but virtually no engagement — no comments, no shares, no conversions. Their social media presence was a ghost town dressed up to look busy.</p>
+                    <p>This is the trap of <strong>vanity metrics</strong>. They make you feel good but don't tell you if your strategy is actually working. Here's the metrics framework I use to measure what actually matters.</p>
+
+                    <h2>The Metrics That Matter</h2>
+
+                    <h3>1. Engagement Rate</h3>
+                    <p>Engagement rate (likes + comments + shares / impressions × 100) is the single most important metric for social media. It tells you if your content is actually resonating with your audience. A high follower count with low engagement rate is a red flag — it means your content isn't connecting.</p>
+                    <p><strong>Benchmark:</strong> 1-3% is average. 3-6% is good. 6%+ is excellent. For FinFlow, we grew engagement rate from 1.2% to 4.8% in 4 months by focusing on community-driven content.</p>
+
+                    <h3>2. Share of Voice (SOV)</h3>
+                    <p>SOV measures how much of the conversation in your industry your brand owns. It's calculated by dividing your brand's mentions by total mentions in your category. This is especially important for fintech brands competing in crowded spaces.</p>
+                    <p>Tools like Brand24, Mention, and Sprout Social can track this automatically. The goal is to increase SOV month over month through consistent, valuable content and community engagement.</p>
+
+                    <h3>3. Conversion Rate</h3>
+                    <p>Social media should ultimately drive business results. Whether it's website clicks, email sign-ups, app downloads, or direct sales — you need to track how social media contributes to your bottom line.</p>
+                    <blockquote>"If you can't connect your social media activity to business outcomes, you're not doing social media marketing — you're just posting."</blockquote>
+                    <p>Set up UTM parameters, use platform-native analytics (Meta Business Suite, LinkedIn Analytics), and create conversion tracking through Google Analytics or your CRM.</p>
+
+                    <h3>4. Customer Sentiment</h3>
+                    <p>Numbers don't tell the whole story. Customer sentiment — what people are actually saying about your brand — is a qualitative metric that matters deeply. Are comments positive, negative, or neutral? Are customers asking questions, complaining, or praising?</p>
+                    <p>Regular sentiment analysis helps you catch issues early and double down on what's working.</p>
+
+                    <h2>What About the Vanity Metrics?</h2>
+                    <p>I'm not saying follower count, reach, and impressions don't matter at all. They do — but only in context. A growing follower count combined with strong engagement? That's a sign of health. A growing follower count with declining engagement? You have a problem.</p>
+                    <p>The key is to use vanity metrics as directional indicators, not success metrics. They tell you if people are seeing your content, but they don't tell you if people care.</p>
+
+                    <hr>
+
+                    <p>Stop chasing likes. Start measuring what matters. If you'd like help setting up a real social media analytics framework for your brand, <a href="index.html#contact" class="text-[#FF6B50] hover:underline">reach out</a>.</p>
+                </div>
+
+                <div class="mt-12 md:mt-16 pt-8 border-t border-[#222222] flex items-center justify-between">
+                    <a href="index.html" class="text-[#888888] hover:text-white transition-colors text-sm flex items-center gap-2">
+                        <i class="ph ph-arrow-left"></i> Back to Home
+                    </a>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all" aria-label="Share on LinkedIn"><i class="ph ph-linkedin-logo text-sm"></i></a>
+                        <a href="#" class="w-10 h-10 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all" aria-label="Share on Twitter"><i class="ph ph-twitter-logo text-sm"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CTA -->
+            <section class="px-4 md:px-12 max-w-4xl mx-auto pb-24 md:pb-32">
+                <div class="bg-gradient-to-br from-[#1a1a1a] to-[#111111] rounded-2xl md:rounded-3xl p-10 md:p-16 text-center border border-[#333333]">
+                    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">Want more insights like this?</h2>
+                    <p class="text-[#888888] text-sm md:text-base max-w-lg mx-auto mb-8">Subscribe to my newsletter for weekly thoughts on social media, content strategy, and digital growth.</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+                        <input type="email" placeholder="Enter your email" class="w-full px-5 py-3 bg-[#1a1a1a] border border-[#333333] rounded-xl text-white text-sm focus:outline-none focus:border-[#FF6B50] transition-colors">
+                        <button class="w-full sm:w-auto px-6 py-3 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold rounded-xl transition-all whitespace-nowrap min-h-[48px]">Subscribe</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="pb-12 md:pb-16 px-4 md:px-12 border-t border-[#1a1a1a] pt-12 md:pt-16" role="contentinfo">
+                <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center gap-4 md:gap-6">
+                        <a href="/" class="flex items-center group" aria-label="Home">
+                            <div class="w-8 h-8 bg-white rounded flex items-center justify-center text-black font-extrabold text-lg transition-transform duration-300 group-hover:rotate-12">PA</div>
+                        </a>
+                        <p class="text-[#555555] text-xs font-medium">&copy; 2024 Oluwapelumi Akande</p>
+                    </div>
+                    <div class="flex gap-3 md:gap-4">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-11 h-11 md:w-12 md:h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300" aria-label="LinkedIn"><i class="ph ph-linkedin-logo text-base md:text-lg"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-11 h-11 md:w-12 md:h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300" aria-label="X / Twitter"><i class="ph ph-twitter-logo text-base md:text-lg"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-11 h-11 md:w-12 md:h-12 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300" aria-label="Instagram"><i class="ph ph-instagram-logo text-base md:text-lg"></i></a>
+                    </div>
+                    <div class="flex gap-6 md:gap-8 text-[#333333] text-xs md:text-sm font-medium">
+                        <a href="#" class="hover:text-[#666666] transition-colors duration-300">Privacy</a>
+                        <a href="#" class="hover:text-[#666666] transition-colors duration-300">Terms</a>
+                    </div>
+                </div>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- Mobile Menu -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let menuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('translate-y-0', menuOpen);
+            mobileMenu.classList.toggle('-translate-y-full', !menuOpen);
+            mobileMenu.classList.toggle('opacity-100', menuOpen);
+            mobileMenu.classList.toggle('opacity-0', !menuOpen);
+            menuBtn.setAttribute('aria-expanded', menuOpen);
+            menuBtn.innerHTML = menuOpen ? '<i class="ph ph-x text-2xl text-white"></i>' : '<i class="ph ph-list text-2xl text-white"></i>';
+            document.body.style.overflow = menuOpen ? 'hidden' : '';
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.add('-translate-y-full', 'opacity-0');
+                mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                menuBtn.innerHTML = '<i class="ph ph-list text-2xl text-white"></i>';
+                document.body.style.overflow = '';
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.reveal, .reveal-scale').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

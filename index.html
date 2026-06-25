@@ -16,6 +16,7 @@
     <meta name="twitter:description" content="Helping fintechs and startups grow through strategic social media, content, and digital campaigns.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
@@ -50,7 +51,8 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .hero-text { font-size: 9vw; line-height: 0.85; letter-spacing: -0.05em; }
+        .hero-text { font-size: 15vw; line-height: 0.85; letter-spacing: -0.05em; }
+        @media (min-width: 768px) { .hero-text { font-size: 9vw; } }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
@@ -71,9 +73,7 @@
             100% { transform: translateX(-50%); }
         }
 
-        .gradient-border {
-            position: relative;
-        }
+        .gradient-border { position: relative; }
         .gradient-border::after {
             content: '';
             position: absolute;
@@ -87,9 +87,7 @@
             pointer-events: none;
         }
 
-        .platform-card:hover .platform-icon {
-            transform: scale(1.1) rotate(-5deg);
-        }
+        .platform-card:hover .platform-icon { transform: scale(1.1) rotate(-5deg); }
 
         .stat-number {
             background: linear-gradient(135deg, #fff 0%, #FF6B50 100%);
@@ -98,68 +96,25 @@
             background-clip: text;
         }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
+        .reveal-right { opacity: 0; transform: translateX(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
+        .reveal-scale { opacity: 0; transform: scale(0.95); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .reveal-scale.visible { opacity: 1; transform: scale(1); }
 
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-        }
-        .reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(30px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-        }
-        .reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.95);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-        }
-        .reveal-scale.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .service-card {
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .service-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .project-card {
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .project-card:hover {
-            transform: translateY(-2px);
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
+        .service-card { transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .service-card:hover { transform: translateY(-4px); }
+        .project-card { transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .project-card:hover { transform: translateY(-2px); }
 
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
+
+        .mobile-nav-open { max-height: 100vh !important; opacity: 1 !important; }
     </style>
 </head>
 <body>
@@ -168,338 +123,354 @@
         <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-6 focus:py-3 focus:bg-[#FF6B50] focus:text-black focus:rounded-xl focus:font-bold">Skip to main content</a>
 
         <!-- Navigation -->
-        <nav class="fixed top-0 left-0 right-0 z-[100] px-6 py-5 flex items-center justify-between text-sm font-medium tracking-tight" role="navigation" aria-label="Main navigation">
+        <nav class="fixed top-0 left-0 right-0 z-[100] px-4 md:px-6 py-4 flex items-center justify-between text-sm font-medium tracking-tight glass-nav" role="navigation" aria-label="Main navigation">
             <div class="flex items-center gap-10">
-                <a href="/" class="flex items-center group" aria-label="Home">
+                <a href="/" class="flex items-center group shrink-0" aria-label="Home">
                     <div class="w-9 h-9 bg-white rounded-xl flex items-center justify-center text-black font-extrabold text-lg transition-transform duration-300 group-hover:rotate-12">PA</div>
                 </a>
                 <div class="hidden lg:flex items-center gap-8 text-[#888888]">
-                    <a href="#about" class="hover:text-white transition-colors duration-300">About</a>
-                    <a href="#services" class="hover:text-white transition-colors duration-300">Services</a>
-                    <a href="#platforms" class="hover:text-white transition-colors duration-300">Platforms</a>
-                    <a href="portfolio.html" class="hover:text-white transition-colors duration-300">Portfolio</a>
-                    <a href="#insights" class="hover:text-white transition-colors duration-300">Insights</a>
-                    <a href="#contact" class="hover:text-white transition-colors duration-300">Contact</a>
+                    <a href="#about" class="hover:text-white transition-colors duration-300 py-2">About</a>
+                    <a href="#services" class="hover:text-white transition-colors duration-300 py-2">Services</a>
+                    <a href="#platforms" class="hover:text-white transition-colors duration-300 py-2">Platforms</a>
+                    <a href="portfolio.html" class="hover:text-white transition-colors duration-300 py-2">Portfolio</a>
+                    <a href="insights.html" class="hover:text-white transition-colors duration-300 py-2">Insights</a>
+                    <a href="#contact" class="hover:text-white transition-colors duration-300 py-2">Contact</a>
                 </div>
             </div>
-            <div class="flex items-center gap-8">
-                <a href="#contact" class="px-5 py-2.5 bg-[#1a1a1a] hover:bg-white hover:text-black border border-[#333333] rounded-lg transition-all duration-300">
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:inline-flex px-5 py-2.5 bg-[#1a1a1a] hover:bg-white hover:text-black border border-[#333333] rounded-lg transition-all duration-300 text-sm">
                     Let's Talk
                 </a>
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-[#222222] transition-all duration-300" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="ph ph-list text-2xl text-white"></i>
+                </button>
             </div>
         </nav>
 
-        <!-- Floating Bottom Nav -->
-        <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[110] hidden md:flex items-center gap-2 p-2 glass-nav rounded-2xl shadow-2xl" role="navigation" aria-label="Quick navigation">
-            <div class="flex items-center gap-1 pr-4 border-r border-[#333333]">
-                <a href="#about" class="p-3 hover:bg-[#222222] rounded-xl transition-all duration-300" title="About" aria-label="About">
-                    <iconify-icon icon="lucide:user" class="text-xl text-white"></iconify-icon>
-                </a>
-                <a href="#services" class="p-3 hover:bg-[#222222] rounded-xl transition-all duration-300" title="Services" aria-label="Services">
-                    <iconify-icon icon="lucide:package" class="text-xl text-white"></iconify-icon>
-                </a>
-                <a href="portfolio.html" class="p-3 hover:bg-[#222222] rounded-xl transition-all duration-300" title="Portfolio" aria-label="Portfolio">
-                    <iconify-icon icon="lucide:layout-grid" class="text-xl text-white"></iconify-icon>
-                </a>
-                <a href="#insights" class="p-3 hover:bg-[#222222] rounded-xl transition-all duration-300" title="Insights" aria-label="Insights">
-                    <iconify-icon icon="lucide:pen-line" class="text-xl text-white"></iconify-icon>
-                </a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed top-0 left-0 right-0 z-[90] bg-[#050505] border-b border-[#222222] pt-20 pb-8 px-6 transform -translate-y-full opacity-0 transition-all duration-300 ease-in-out lg:hidden">
+            <div class="flex flex-col gap-2">
+                <a href="#about" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">About</a>
+                <a href="#services" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Services</a>
+                <a href="#platforms" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Platforms</a>
+                <a href="portfolio.html" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Portfolio</a>
+                <a href="insights.html" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Insights</a>
+                <a href="#contact" class="mobile-nav-link text-lg font-medium text-[#888888] hover:text-white py-4 border-b border-[#1a1a1a] transition-colors duration-300">Contact</a>
+                <a href="#contact" class="mt-4 px-6 py-4 bg-[#FF6B50] text-black font-bold rounded-xl text-center">Let's Talk</a>
             </div>
-            <a href="#contact" class="px-6 py-3 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold text-sm tracking-wide rounded-xl transition-all duration-300">
-                Contact
-            </a>
         </div>
 
-        <main id="main">
+        <!-- Floating Bottom Nav -->
+        <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[110] hidden md:flex items-center gap-2 p-2 glass-nav rounded-2xl shadow-2xl" role="navigation" aria-label="Quick navigation">
+            <div class="flex items-center gap-1 pr-4 border-r border-[#333333]">
+                <a href="#about" class="p-2.5 hover:bg-[#222222] rounded-xl transition-all duration-300" title="About" aria-label="About">
+                    <i class="ph ph-user text-xl text-white"></i>
+                </a>
+                <a href="#services" class="p-2.5 hover:bg-[#222222] rounded-xl transition-all duration-300" title="Services" aria-label="Services">
+                    <i class="ph ph-package text-xl text-white"></i>
+                </a>
+                <a href="portfolio.html" class="p-2.5 hover:bg-[#222222] rounded-xl transition-all duration-300" title="Portfolio" aria-label="Portfolio">
+                    <i class="ph ph-squares-four text-xl text-white"></i>
+                </a>
+                <a href="insights.html" class="p-2.5 hover:bg-[#222222] rounded-xl transition-all duration-300" title="Insights" aria-label="Insights">
+                    <i class="ph ph-pen text-xl text-white"></i>
+                </a>
+            </div>
+            <a href="#contact" class="px-5 py-2.5 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold text-sm tracking-wide rounded-xl transition-all duration-300">Contact</a>
+        </div>
+
+        <main id="main" class="pt-16 md:pt-20">
             <!-- Hero Section -->
-            <header class="relative h-screen w-full flex flex-col items-center justify-center" role="banner">
+            <header class="relative min-h-screen w-full flex flex-col items-center justify-center" role="banner">
                 <div class="absolute inset-0 z-0 pointer-events-none">
                     <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1a1a1a_0%,_#050505_70%)] opacity-60"></div>
                     <div class="absolute top-1/4 left-10 w-72 h-72 bg-[#FF6B50] rounded-full blur-[120px] opacity-15"></div>
                     <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-[#4F46E5] rounded-full blur-[150px] opacity-10"></div>
                 </div>
 
-                <div class="relative z-10 text-center px-6">
+                <div class="relative z-10 text-center px-4 md:px-6 w-full max-w-5xl mx-auto">
                     <div class="flex items-center justify-center gap-3 mb-6">
-                        <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                        <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0"></div>
                         <span class="text-[10px] font-bold tracking-[0.3em] text-[#888888]">Available for Projects & Collaborations</span>
                     </div>
-                    <h1 class="hero-text font-bold text-white">
+                    <h1 class="hero-text font-bold text-white leading-none">
                         <span class="block">Social</span>
                         <span class="block text-[#FF6B50]">Manager</span>
                     </h1>
-                    <p class="mt-8 text-lg md:text-xl text-[#888888] max-w-2xl mx-auto leading-relaxed font-light">
+                    <p class="mt-6 md:mt-8 text-base md:text-xl text-[#888888] max-w-2xl mx-auto leading-relaxed font-light px-2">
                         Helping fintechs & startups <span class="text-white font-medium">build loyal communities</span> through strategic social media, content, and data-driven digital campaigns.
                     </p>
-                    <div class="mt-10 flex items-center justify-center gap-4 flex-wrap">
-                        <a href="#contact" class="px-8 py-3.5 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold rounded-xl transition-all duration-300 glow-pulse">
+                    <div class="mt-8 md:mt-10 flex items-center justify-center gap-3 md:gap-4 flex-wrap px-2">
+                        <a href="#contact" class="px-6 md:px-8 py-3 md:py-3.5 bg-[#FF6B50] hover:bg-[#E55A40] text-black font-bold rounded-xl transition-all duration-300 glow-pulse text-sm md:text-base min-h-[48px] flex items-center">
                             Start a Project
                         </a>
-                        <a href="portfolio.html" class="px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all duration-300 text-white">
+                        <a href="portfolio.html" class="px-6 md:px-8 py-3 md:py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all duration-300 text-white text-sm md:text-base min-h-[48px] flex items-center">
                             View Portfolio
                         </a>
                     </div>
                 </div>
 
-                <div class="absolute bottom-12 left-8 md:left-12 flex items-center gap-5">
-                    <div class="flex -space-x-4">
-                        <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-gradient-to-br from-[#feda75] via-[#fa7e1e] to-[#d62976] flex items-center justify-center" title="Instagram">
-                            <iconify-icon icon="lucide:camera" class="text-sm text-white"></iconify-icon>
+                <!-- Social Proof - Mobile adjusts -->
+                <div class="absolute bottom-6 md:bottom-12 left-4 md:left-12 flex items-center gap-3 md:gap-5">
+                    <div class="flex -space-x-3 md:-space-x-4">
+                        <div class="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-[#050505] bg-gradient-to-br from-[#feda75] via-[#fa7e1e] to-[#d62976] flex items-center justify-center" title="Instagram">
+                            <i class="ph ph-instagram-logo text-xs md:text-sm text-white"></i>
                         </div>
-                        <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-[#0A66C2] flex items-center justify-center" title="LinkedIn">
-                            <iconify-icon icon="lucide:briefcase" class="text-sm text-white"></iconify-icon>
+                        <div class="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-[#050505] bg-[#0A66C2] flex items-center justify-center" title="LinkedIn">
+                            <i class="ph ph-linkedin-logo text-xs md:text-sm text-white"></i>
                         </div>
-                        <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-black border-white/30 flex items-center justify-center" title="TikTok">
-                            <iconify-icon icon="lucide:music" class="text-sm text-white"></iconify-icon>
+                        <div class="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-[#050505] bg-black border-white/30 flex items-center justify-center" title="TikTok">
+                            <i class="ph ph-tiktok-logo text-xs md:text-sm text-white"></i>
                         </div>
-                        <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-[#1DA1F2] flex items-center justify-center" title="X / Twitter">
-                            <iconify-icon icon="lucide:message-circle" class="text-sm text-white"></iconify-icon>
+                        <div class="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-[#050505] bg-[#1DA1F2] flex items-center justify-center" title="X / Twitter">
+                            <i class="ph ph-twitter-logo text-xs md:text-sm text-white"></i>
                         </div>
                     </div>
-                    <p class="text-xs md:text-sm font-medium leading-tight text-[#888888]">
+                    <p class="hidden sm:block text-xs md:text-sm font-medium leading-tight text-[#888888]">
                         Multi-platform expertise<br/>Content that converts
                     </p>
                 </div>
 
-                <div class="absolute bottom-12 right-8 md:right-12 text-right">
-                    <a href="mailto:akandeoluwapelumi15@gmail.com" class="text-white font-medium hover:text-[#FF6B50] transition-colors duration-300 border-b-2 border-white hover:border-[#FF6B50] pb-1">
+                <div class="absolute bottom-6 md:bottom-12 right-4 md:right-12 text-right">
+                    <a href="mailto:akandeoluwapelumi15@gmail.com" class="text-xs md:text-base text-white font-medium hover:text-[#FF6B50] transition-colors duration-300 border-b-2 border-white hover:border-[#FF6B50] pb-0.5 md:pb-1">
                         akandeoluwapelumi15@gmail.com
                     </a>
-                    <p class="text-[#555555] text-xs mt-2 tracking-wide">Lagos, NG & Remote · Open to Work</p>
+                    <p class="text-[#555555] text-[10px] md:text-xs mt-1 md:mt-2 tracking-wide">Lagos, NG & Remote · Open to Work</p>
                 </div>
             </header>
 
             <!-- Marquee -->
-            <div class="marquee py-8 border-t border-b border-[#1a1a1a]" aria-hidden="true">
+            <div class="marquee py-6 md:py-8 border-t border-b border-[#1a1a1a]" aria-hidden="true">
                 <div class="marquee-content">
-                    <iconify-icon icon="lucide:share-2" class="text-2xl text-[#FF6B50] mx-6"></iconify-icon>
-                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] mx-4">Social Media Strategy</span>
-                    <iconify-icon icon="lucide:image" class="text-2xl text-[#4F46E5] mx-6"></iconify-icon>
-                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] mx-4">Content Creation</span>
-                    <iconify-icon icon="lucide:message-square" class="text-2xl text-[#10B981] mx-6"></iconify-icon>
-                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] mx-4">Community Management</span>
-                    <iconify-icon icon="lucide:target" class="text-2xl text-[#EC4899] mx-6"></iconify-icon>
-                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] mx-4">Paid Social</span>
-                    <iconify-icon icon="lucide:bar-chart-4" class="text-2xl text-[#F59E0B] mx-6"></iconify-icon>
-                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] mx-4">Analytics & Reporting</span>
-                    <iconify-icon icon="lucide:users" class="text-2xl text-[#3B82F6] mx-6"></iconify-icon>
-                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] mx-4">Influencer Marketing</span>
-                    <iconify-icon icon="lucide:share-2" class="text-2xl text-[#FF6B50] mx-6"></iconify-icon>
-                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] mx-4">Social Media Strategy</span>
-                    <iconify-icon icon="lucide:image" class="text-2xl text-[#4F46E5] mx-6"></iconify-icon>
-                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] mx-4">Content Creation</span>
-                    <iconify-icon icon="lucide:message-square" class="text-2xl text-[#10B981] mx-6"></iconify-icon>
-                    <span class="text-lg md:text-xl font-bold tracking-tight text-[#333333] mx-4">Community Management</span>
+                    <i class="ph ph-share-network text-xl md:text-2xl text-[#FF6B50] mx-4 md:mx-6"></i>
+                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Social Media Strategy</span>
+                    <i class="ph ph-image text-xl md:text-2xl text-[#4F46E5] mx-4 md:mx-6"></i>
+                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Content Creation</span>
+                    <i class="ph ph-chat-circle-dots text-xl md:text-2xl text-[#10B981] mx-4 md:mx-6"></i>
+                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Community Management</span>
+                    <i class="ph ph-crosshair text-xl md:text-2xl text-[#EC4899] mx-4 md:mx-6"></i>
+                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Paid Social</span>
+                    <i class="ph ph-chart-bar text-xl md:text-2xl text-[#F59E0B] mx-4 md:mx-6"></i>
+                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Analytics & Reporting</span>
+                    <i class="ph ph-users text-xl md:text-2xl text-[#3B82F6] mx-4 md:mx-6"></i>
+                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Influencer Marketing</span>
+                    <i class="ph ph-share-network text-xl md:text-2xl text-[#FF6B50] mx-4 md:mx-6"></i>
+                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Social Media Strategy</span>
+                    <i class="ph ph-image text-xl md:text-2xl text-[#4F46E5] mx-4 md:mx-6"></i>
+                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Content Creation</span>
+                    <i class="ph ph-chat-circle-dots text-xl md:text-2xl text-[#10B981] mx-4 md:mx-6"></i>
+                    <span class="text-base md:text-xl font-bold tracking-tight text-[#333333] mx-3 md:mx-4">Community Management</span>
                 </div>
             </div>
 
             <!-- About Section -->
-            <section id="about" class="py-32 px-6 md:px-12 max-w-7xl mx-auto" aria-label="About me">
+            <section id="about" class="py-20 md:py-32 px-4 md:px-12 max-w-7xl mx-auto scroll-mt-24" aria-label="About me">
                 <div class="flex items-center gap-3 mb-10 reveal">
-                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
                     <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">About Me</span>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 md:gap-16">
                     <div class="lg:col-span-3 reveal-left">
-                        <h2 class="text-4xl md:text-5xl font-bold leading-[1.05] tracking-tight text-white mb-8">
+                        <h2 class="text-3xl md:text-5xl font-bold leading-[1.05] tracking-tight text-white mb-6 md:mb-8">
                             I'm Oluwapelumi Akande — <span class="text-[#444444]">Social Media & Digital Marketing</span> professional.
                         </h2>
-                        <p class="text-lg text-[#888888] leading-relaxed mb-6 max-w-2xl">
+                        <p class="text-base md:text-lg text-[#888888] leading-relaxed mb-4 md:mb-6 max-w-2xl">
                             I help fintechs and startups grow their digital presence through strategic social media management, 
                             compelling content creation, and data-driven campaigns. With certifications from Google in Digital 
                             Marketing and AltSchool in Product Marketing, I blend analytical rigor with creative storytelling 
                             to build communities that convert.
                         </p>
-                        <p class="text-lg text-[#777777] leading-relaxed mb-8 max-w-2xl">
+                        <p class="text-base md:text-lg text-[#777777] leading-relaxed mb-6 md:mb-8 max-w-2xl">
                             From full-funnel social strategies to viral content campaigns, I've helped brands across fintech, 
                             SaaS, and B2B sectors achieve measurable growth across Instagram, LinkedIn, Twitter/X, and TikTok.
                         </p>
-                        <div class="flex flex-wrap gap-4 reveal">
-                            <div class="flex items-center gap-3 bg-[#111111] px-5 py-3 rounded-xl hover:bg-[#1a1a1a] transition-all duration-300">
-                                <iconify-icon icon="lucide:award" class="text-[#FF6B50] text-xl"></iconify-icon>
-                                <span class="text-sm font-medium">Google Digital Marketing</span>
+                        <div class="flex flex-wrap gap-3 md:gap-4 reveal">
+                            <div class="flex items-center gap-3 bg-[#111111] px-4 md:px-5 py-3 rounded-xl hover:bg-[#1a1a1a] transition-all duration-300">
+                                <i class="ph ph-award text-[#FF6B50] text-xl"></i>
+                                <span class="text-xs md:text-sm font-medium">Google Digital Marketing</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-[#111111] px-5 py-3 rounded-xl hover:bg-[#1a1a1a] transition-all duration-300">
-                                <iconify-icon icon="lucide:award" class="text-[#FF6B50] text-xl"></iconify-icon>
-                                <span class="text-sm font-medium">AltSchool Product Marketing</span>
+                            <div class="flex items-center gap-3 bg-[#111111] px-4 md:px-5 py-3 rounded-xl hover:bg-[#1a1a1a] transition-all duration-300">
+                                <i class="ph ph-award text-[#FF6B50] text-xl"></i>
+                                <span class="text-xs md:text-sm font-medium">AltSchool Product Marketing</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-[#111111] px-5 py-3 rounded-xl hover:bg-[#1a1a1a] transition-all duration-300">
-                                <iconify-icon icon="lucide:badge-check" class="text-[#FF6B50] text-xl"></iconify-icon>
-                                <span class="text-sm font-medium">Meta Certified</span>
+                            <div class="flex items-center gap-3 bg-[#111111] px-4 md:px-5 py-3 rounded-xl hover:bg-[#1a1a1a] transition-all duration-300">
+                                <i class="ph ph-seal-check text-[#FF6B50] text-xl"></i>
+                                <span class="text-xs md:text-sm font-medium">Meta Certified</span>
                             </div>
                         </div>
                     </div>
-                    <div class="lg:col-span-2 flex items-center justify-center reveal-right">
-                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-[#1a1a1a] to-[#111111] flex items-center justify-center relative gradient-border">
+                    <div class="lg:col-span-2 flex items-center justify-center mt-6 lg:mt-0 reveal-right">
+                        <div class="w-56 h-56 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-[#1a1a1a] to-[#111111] flex items-center justify-center relative gradient-border">
                             <div class="text-center">
-                                <div class="text-6xl font-bold text-white">PA</div>
-                                <p class="text-[#666666] text-sm mt-2 tracking-wide">Social Media & Digital Marketing</p>
+                                <div class="text-5xl md:text-6xl font-bold text-white">PA</div>
+                                <p class="text-[#666666] text-xs md:text-sm mt-2 tracking-wide">Social Media & Digital Marketing</p>
                             </div>
-                            <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-[#FF6B50] rounded-full flex items-center justify-center text-2xl font-bold text-black animate-float">5+</div>
+                            <div class="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-14 h-14 md:w-16 md:h-16 bg-[#FF6B50] rounded-full flex items-center justify-center text-xl md:text-2xl font-bold text-black animate-float">5+</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-16 border-t border-[#1a1a1a]">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-16 md:mt-24 pt-12 md:pt-16 border-t border-[#1a1a1a]">
                     <div class="reveal-scale text-center md:text-left">
-                        <div class="stat-number text-4xl md:text-5xl font-bold mb-2">50+</div>
-                        <p class="text-[#666666] text-xs font-medium">Campaigns Run</p>
+                        <div class="stat-number text-4xl md:text-5xl font-bold mb-1 md:mb-2">50+</div>
+                        <p class="text-[#666666] text-xs md:text-sm font-medium">Campaigns Run</p>
                     </div>
                     <div class="reveal-scale text-center md:text-left" style="transition-delay: 0.1s;">
-                        <div class="stat-number text-4xl md:text-5xl font-bold mb-2">15+</div>
-                        <p class="text-[#666666] text-xs font-medium">Brands Served</p>
+                        <div class="stat-number text-4xl md:text-5xl font-bold mb-1 md:mb-2">15+</div>
+                        <p class="text-[#666666] text-xs md:text-sm font-medium">Brands Served</p>
                     </div>
                     <div class="reveal-scale text-center md:text-left" style="transition-delay: 0.2s;">
-                        <div class="stat-number text-4xl md:text-5xl font-bold mb-2">10M+</div>
-                        <p class="text-[#666666] text-xs font-medium">Impressions Generated</p>
+                        <div class="stat-number text-4xl md:text-5xl font-bold mb-1 md:mb-2">10M+</div>
+                        <p class="text-[#666666] text-xs md:text-sm font-medium">Impressions Generated</p>
                     </div>
                     <div class="reveal-scale text-center md:text-left" style="transition-delay: 0.3s;">
-                        <div class="stat-number text-4xl md:text-5xl font-bold mb-2">3.5×</div>
-                        <p class="text-[#666666] text-xs font-medium">Avg. ROAS</p>
+                        <div class="stat-number text-4xl md:text-5xl font-bold mb-1 md:mb-2">3.5×</div>
+                        <p class="text-[#666666] text-xs md:text-sm font-medium">Avg. ROAS</p>
                     </div>
                 </div>
             </section>
 
             <!-- Services Section -->
-            <section id="services" class="py-32 px-6 md:px-12 max-w-7xl mx-auto" aria-label="Services">
+            <section id="services" class="py-20 md:py-32 px-4 md:px-12 max-w-7xl mx-auto scroll-mt-24" aria-label="Services">
                 <div class="flex items-center gap-3 mb-10 reveal">
-                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
                     <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">What I Do</span>
                 </div>
 
-                <h2 class="text-4xl md:text-5xl font-medium leading-[1.05] tracking-tight text-white max-w-5xl mb-20 reveal-left">
+                <h2 class="text-3xl md:text-5xl font-medium leading-[1.05] tracking-tight text-white max-w-5xl mb-16 md:mb-20 reveal-left">
                     Social media services that <span class="text-[#444444]">build communities</span> and drive revenue.
                 </h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="service-card bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale">
-                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
-                            <iconify-icon icon="lucide:share-2" class="text-2xl text-white group-hover:text-black transition-colors duration-500"></iconify-icon>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <div class="service-card bg-[#111111] rounded-2xl p-6 md:p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale">
+                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
+                            <i class="ph ph-share-network text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-white">Social Media Strategy</h3>
-                        <p class="text-[#888888] leading-relaxed">Full-funnel social strategies tailored for fintech and B2B growth — from brand awareness to conversion.</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">Social Media Strategy</h3>
+                        <p class="text-[#888888] text-sm md:text-base leading-relaxed">Full-funnel social strategies tailored for fintech and B2B growth — from brand awareness to conversion.</p>
                     </div>
-                    <div class="service-card bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.1s;">
-                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
-                            <iconify-icon icon="lucide:image" class="text-2xl text-white group-hover:text-black transition-colors duration-500"></iconify-icon>
+                    <div class="service-card bg-[#111111] rounded-2xl p-6 md:p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.1s;">
+                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
+                            <i class="ph ph-image text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-white">Content Creation</h3>
-                        <p class="text-[#888888] leading-relaxed">Scroll-stopping visuals, copy, and video content optimized for each platform's unique audience and algorithm.</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">Content Creation</h3>
+                        <p class="text-[#888888] text-sm md:text-base leading-relaxed">Scroll-stopping visuals, copy, and video content optimized for each platform's unique audience and algorithm.</p>
                     </div>
-                    <div class="service-card bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.2s;">
-                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
-                            <iconify-icon icon="lucide:message-square" class="text-2xl text-white group-hover:text-black transition-colors duration-500"></iconify-icon>
+                    <div class="service-card bg-[#111111] rounded-2xl p-6 md:p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.2s;">
+                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
+                            <i class="ph ph-chat-circle-dots text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-white">Community Management</h3>
-                        <p class="text-[#888888] leading-relaxed">Building and nurturing engaged online communities that turn followers into brand advocates and customers.</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">Community Management</h3>
+                        <p class="text-[#888888] text-sm md:text-base leading-relaxed">Building and nurturing engaged online communities that turn followers into brand advocates and customers.</p>
                     </div>
-                    <div class="service-card bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.3s;">
-                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
-                            <iconify-icon icon="lucide:target" class="text-2xl text-white group-hover:text-black transition-colors duration-500"></iconify-icon>
+                    <div class="service-card bg-[#111111] rounded-2xl p-6 md:p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.3s;">
+                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
+                            <i class="ph ph-crosshair text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-white">Paid Social</h3>
-                        <p class="text-[#888888] leading-relaxed">Data-driven ad campaigns across Meta, LinkedIn, and Twitter with precise targeting and ROAS optimization.</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">Paid Social</h3>
+                        <p class="text-[#888888] text-sm md:text-base leading-relaxed">Data-driven ad campaigns across Meta, LinkedIn, and Twitter with precise targeting and ROAS optimization.</p>
                     </div>
-                    <div class="service-card bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.4s;">
-                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
-                            <iconify-icon icon="lucide:bar-chart-4" class="text-2xl text-white group-hover:text-black transition-colors duration-500"></iconify-icon>
+                    <div class="service-card bg-[#111111] rounded-2xl p-6 md:p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.4s;">
+                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
+                            <i class="ph ph-chart-bar text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-white">Analytics & Reporting</h3>
-                        <p class="text-[#888888] leading-relaxed">Custom dashboards and actionable insights that track what matters and inform smarter content decisions.</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">Analytics & Reporting</h3>
+                        <p class="text-[#888888] text-sm md:text-base leading-relaxed">Custom dashboards and actionable insights that track what matters and inform smarter content decisions.</p>
                     </div>
-                    <div class="service-card bg-[#111111] rounded-2xl p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.5s;">
-                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
-                            <iconify-icon icon="lucide:users" class="text-2xl text-white group-hover:text-black transition-colors duration-500"></iconify-icon>
+                    <div class="service-card bg-[#111111] rounded-2xl p-6 md:p-8 group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.5s;">
+                        <div class="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-5 md:mb-6 group-hover:bg-[#FF6B50] transition-all duration-500">
+                            <i class="ph ph-users text-2xl text-white group-hover:text-black transition-colors duration-500"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-white">Influencer Marketing</h3>
-                        <p class="text-[#888888] leading-relaxed">Strategic influencer partnerships and creator campaigns that amplify brand reach and build trust.</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">Influencer Marketing</h3>
+                        <p class="text-[#888888] text-sm md:text-base leading-relaxed">Strategic influencer partnerships and creator campaigns that amplify brand reach and build trust.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Platforms Section -->
-            <section id="platforms" class="py-32 px-6 md:px-12 max-w-7xl mx-auto" aria-label="Platforms">
+            <section id="platforms" class="py-20 md:py-32 px-4 md:px-12 max-w-7xl mx-auto scroll-mt-24" aria-label="Platforms">
                 <div class="flex items-center gap-3 mb-10 reveal">
-                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
                     <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Platform Expertise</span>
                 </div>
 
-                <h2 class="text-4xl md:text-5xl font-medium leading-[1.05] tracking-tight text-white max-w-4xl mb-20 reveal-left">
+                <h2 class="text-3xl md:text-5xl font-medium leading-[1.05] tracking-tight text-white max-w-4xl mb-16 md:mb-20 reveal-left">
                     I speak the language of <span class="text-[#444444]">every major platform</span>
                 </h2>
 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                    <div class="platform-card bg-[#111111] rounded-2xl p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale">
-                        <div class="platform-icon w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-[#feda75] via-[#fa7e1e] to-[#d62976] flex items-center justify-center transition-transform duration-300">
-                            <iconify-icon icon="lucide:camera" class="text-3xl text-white"></iconify-icon>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+                    <div class="platform-card bg-[#111111] rounded-2xl p-6 md:p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale">
+                        <div class="platform-icon w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-5 rounded-2xl bg-gradient-to-br from-[#feda75] via-[#fa7e1e] to-[#d62976] flex items-center justify-center transition-transform duration-300">
+                            <i class="ph ph-instagram-logo text-2xl md:text-3xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Instagram</h3>
+                        <h3 class="text-base md:text-xl font-bold text-white mb-2">Instagram</h3>
                         <p class="text-[#777777] text-xs leading-relaxed">Reels, Stories, Carousels, UGC campaigns, and community building.</p>
                     </div>
-                    <div class="platform-card bg-[#111111] rounded-2xl p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.1s;">
-                        <div class="platform-icon w-16 h-16 mx-auto mb-5 rounded-2xl bg-[#0A66C2] flex items-center justify-center transition-transform duration-300">
-                            <iconify-icon icon="lucide:briefcase" class="text-3xl text-white"></iconify-icon>
+                    <div class="platform-card bg-[#111111] rounded-2xl p-6 md:p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.1s;">
+                        <div class="platform-icon w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-5 rounded-2xl bg-[#0A66C2] flex items-center justify-center transition-transform duration-300">
+                            <i class="ph ph-linkedin-logo text-2xl md:text-3xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">LinkedIn</h3>
+                        <h3 class="text-base md:text-xl font-bold text-white mb-2">LinkedIn</h3>
                         <p class="text-[#777777] text-xs leading-relaxed">B2B thought leadership, lead gen, and professional community growth.</p>
                     </div>
-                    <div class="platform-card bg-[#111111] rounded-2xl p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.2s;">
-                        <div class="platform-icon w-16 h-16 mx-auto mb-5 rounded-2xl bg-black border border-white/10 flex items-center justify-center transition-transform duration-300">
-                            <iconify-icon icon="lucide:music" class="text-3xl text-white"></iconify-icon>
+                    <div class="platform-card bg-[#111111] rounded-2xl p-6 md:p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.2s;">
+                        <div class="platform-icon w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-5 rounded-2xl bg-black border border-white/10 flex items-center justify-center transition-transform duration-300">
+                            <i class="ph ph-tiktok-logo text-2xl md:text-3xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">TikTok</h3>
+                        <h3 class="text-base md:text-xl font-bold text-white mb-2">TikTok</h3>
                         <p class="text-[#777777] text-xs leading-relaxed">Viral short-form content, trend-jacking, and creator campaigns.</p>
                     </div>
-                    <div class="platform-card bg-[#111111] rounded-2xl p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.3s;">
-                        <div class="platform-icon w-16 h-16 mx-auto mb-5 rounded-2xl bg-[#1DA1F2] flex items-center justify-center transition-transform duration-300">
-                            <iconify-icon icon="lucide:message-circle" class="text-3xl text-white"></iconify-icon>
+                    <div class="platform-card bg-[#111111] rounded-2xl p-6 md:p-8 text-center group hover:bg-[#161616] transition-all duration-500 border border-[#1a1a1a] hover:border-[#333333] reveal-scale" style="transition-delay: 0.3s;">
+                        <div class="platform-icon w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-5 rounded-2xl bg-[#1DA1F2] flex items-center justify-center transition-transform duration-300">
+                            <i class="ph ph-twitter-logo text-2xl md:text-3xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">X / Twitter</h3>
+                        <h3 class="text-base md:text-xl font-bold text-white mb-2">X / Twitter</h3>
                         <p class="text-[#777777] text-xs leading-relaxed">Real-time engagement, thread campaigns, and brand voice development.</p>
                     </div>
                 </div>
 
-                <!-- Tools Section -->
-                <div class="mt-20 bg-[#111111] rounded-3xl p-10 md:p-16 border border-[#1a1a1a] reveal-scale">
+                <!-- Tools -->
+                <div class="mt-16 md:mt-20 bg-[#111111] rounded-2xl md:rounded-3xl p-8 md:p-16 border border-[#1a1a1a] reveal-scale">
                     <div class="flex items-center gap-3 mb-8">
-                        <div class="w-2 h-2 rounded-full bg-[#4F46E5] animate-pulse"></div>
+                        <div class="w-2 h-2 rounded-full bg-[#4F46E5] animate-pulse shrink-0"></div>
                         <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Tools & Technologies</span>
                     </div>
                     <div class="grid grid-cols-3 md:grid-cols-6 gap-6 md:gap-8">
                         <div class="text-center group">
-                            <div class="w-14 h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
-                                <iconify-icon icon="lucide:facebook" class="text-2xl text-white group-hover:text-black transition-colors duration-300"></iconify-icon>
+                            <div class="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
+                                <i class="ph ph-meta-logo text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-300"></i>
                             </div>
                             <p class="text-[#888888] text-xs font-medium">Meta Suite</p>
                         </div>
                         <div class="text-center group">
-                            <div class="w-14 h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
-                                <iconify-icon icon="lucide:bar-chart-3" class="text-2xl text-white group-hover:text-black transition-colors duration-300"></iconify-icon>
+                            <div class="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
+                                <i class="ph ph-chart-bar text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-300"></i>
                             </div>
                             <p class="text-[#888888] text-xs font-medium">Analytics</p>
                         </div>
                         <div class="text-center group">
-                            <div class="w-14 h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
-                                <iconify-icon icon="lucide:layout-dashboard" class="text-2xl text-white group-hover:text-black transition-colors duration-300"></iconify-icon>
+                            <div class="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
+                                <i class="ph ph-layout text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-300"></i>
                             </div>
                             <p class="text-[#888888] text-xs font-medium">Hootsuite</p>
                         </div>
                         <div class="text-center group">
-                            <div class="w-14 h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
-                                <iconify-icon icon="lucide:paintbrush" class="text-2xl text-white group-hover:text-black transition-colors duration-300"></iconify-icon>
+                            <div class="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
+                                <i class="ph ph-paint-brush text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-300"></i>
                             </div>
                             <p class="text-[#888888] text-xs font-medium">Canva</p>
                         </div>
                         <div class="text-center group">
-                            <div class="w-14 h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
-                                <iconify-icon icon="lucide:file-text" class="text-2xl text-white group-hover:text-black transition-colors duration-300"></iconify-icon>
+                            <div class="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
+                                <i class="ph ph-file-text text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-300"></i>
                             </div>
                             <p class="text-[#888888] text-xs font-medium">Notion</p>
                         </div>
                         <div class="text-center group">
-                            <div class="w-14 h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
-                                <iconify-icon icon="lucide:calendar-clock" class="text-2xl text-white group-hover:text-black transition-colors duration-300"></iconify-icon>
+                            <div class="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 bg-[#1a1a1a] rounded-xl flex items-center justify-center group-hover:bg-[#FF6B50] transition-all duration-300">
+                                <i class="ph ph-calendar text-xl md:text-2xl text-white group-hover:text-black transition-colors duration-300"></i>
                             </div>
                             <p class="text-[#888888] text-xs font-medium">Buffer</p>
                         </div>
@@ -508,34 +479,34 @@
             </section>
 
             <!-- Portfolio Preview -->
-            <section class="py-32 px-6 md:px-12 max-w-7xl mx-auto" aria-label="Portfolio preview">
-                <div class="flex justify-between items-end mb-20 border-b border-[#222222] pb-10">
+            <section class="py-20 md:py-32 px-4 md:px-12 max-w-7xl mx-auto scroll-mt-24" aria-label="Portfolio preview">
+                <div class="flex justify-between items-end mb-16 md:mb-20 border-b border-[#222222] pb-8 md:pb-10">
                     <div>
                         <div class="flex items-center gap-3 mb-4 reveal">
-                            <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                            <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
                             <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Portfolio</span>
                         </div>
-                        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white reveal-left">Selected Work</h2>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white reveal-left">Selected Work</h2>
                     </div>
-                    <a href="portfolio.html" class="hidden md:flex items-center gap-2 text-[#888888] hover:text-white transition-colors duration-300 text-sm font-medium">
+                    <a href="portfolio.html" class="hidden md:flex items-center gap-2 text-[#888888] hover:text-white transition-colors duration-300 text-sm font-medium shrink-0">
                         View All Projects
-                        <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
+                        <i class="ph ph-arrow-right text-lg"></i>
                     </a>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-32">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-20 md:gap-y-32">
                     <article class="project-card group cursor-pointer reveal-scale">
                         <a href="portfolio.html">
                             <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
                                 <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop" alt="Social media campaign for fintech brand" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             </div>
-                            <div class="mt-8 flex justify-between items-start">
-                                <div>
-                                    <h3 class="text-3xl font-bold tracking-tight mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">FinFlow</h3>
-                                    <p class="text-[#666666] text-xs font-medium">Social Strategy / Fintech</p>
+                            <div class="mt-6 md:mt-8 flex justify-between items-start gap-4">
+                                <div class="min-w-0">
+                                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight mb-1 md:mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">FinFlow</h3>
+                                    <p class="text-[#666666] text-xs md:text-sm font-medium">Social Strategy / Fintech</p>
                                 </div>
-                                <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
-                                    <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                                <div class="p-2.5 md:p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300 shrink-0">
+                                    <i class="ph ph-arrow-up-right text-xl md:text-2xl"></i>
                                 </div>
                             </div>
                         </a>
@@ -546,13 +517,13 @@
                             <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
                                 <img src="https://images.unsplash.com/photo-1432889821006-3149403b3405?q=80&w=1000&auto=format&fit=crop" alt="Content marketing campaign" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             </div>
-                            <div class="mt-8 flex justify-between items-start">
-                                <div>
-                                    <h3 class="text-3xl font-bold tracking-tight mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">NestCredit</h3>
-                                    <p class="text-[#666666] text-xs font-medium">Content Strategy / Fintech</p>
+                            <div class="mt-6 md:mt-8 flex justify-between items-start gap-4">
+                                <div class="min-w-0">
+                                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight mb-1 md:mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">NestCredit</h3>
+                                    <p class="text-[#666666] text-xs md:text-sm font-medium">Content Strategy / Fintech</p>
                                 </div>
-                                <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
-                                    <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                                <div class="p-2.5 md:p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300 shrink-0">
+                                    <i class="ph ph-arrow-up-right text-xl md:text-2xl"></i>
                                 </div>
                             </div>
                         </a>
@@ -563,13 +534,13 @@
                             <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
                                 <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=1000&auto=format&fit=crop" alt="Influencer campaign" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             </div>
-                            <div class="mt-8 flex justify-between items-start">
-                                <div>
-                                    <h3 class="text-3xl font-bold tracking-tight mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">VaultEdge</h3>
-                                    <p class="text-[#666666] text-xs font-medium">Paid Social / SaaS</p>
+                            <div class="mt-6 md:mt-8 flex justify-between items-start gap-4">
+                                <div class="min-w-0">
+                                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight mb-1 md:mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">VaultEdge</h3>
+                                    <p class="text-[#666666] text-xs md:text-sm font-medium">Paid Social / SaaS</p>
                                 </div>
-                                <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
-                                    <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                                <div class="p-2.5 md:p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300 shrink-0">
+                                    <i class="ph ph-arrow-up-right text-xl md:text-2xl"></i>
                                 </div>
                             </div>
                         </a>
@@ -580,165 +551,165 @@
                             <div class="aspect-[4/3] overflow-hidden bg-[#111111] rounded-sm">
                                 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Digital marketing dashboard" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             </div>
-                            <div class="mt-8 flex justify-between items-start">
-                                <div>
-                                    <h3 class="text-3xl font-bold tracking-tight mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">PaySwift</h3>
-                                    <p class="text-[#666666] text-xs font-medium">Product Launch / Paid Social</p>
+                            <div class="mt-6 md:mt-8 flex justify-between items-start gap-4">
+                                <div class="min-w-0">
+                                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight mb-1 md:mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">PaySwift</h3>
+                                    <p class="text-[#666666] text-xs md:text-sm font-medium">Product Launch / Paid Social</p>
                                 </div>
-                                <div class="p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300">
-                                    <iconify-icon icon="lucide:arrow-up-right" class="text-2xl"></iconify-icon>
+                                <div class="p-2.5 md:p-3 rounded-full border border-[#333333] group-hover:bg-[#FF6B50] group-hover:text-black group-hover:border-transparent transition-all duration-300 shrink-0">
+                                    <i class="ph ph-arrow-up-right text-xl md:text-2xl"></i>
                                 </div>
                             </div>
                         </a>
                     </article>
                 </div>
 
-                <div class="mt-20 text-center md:hidden reveal">
-                    <a href="portfolio.html" class="inline-flex items-center gap-2 px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all duration-300 text-white font-medium">
+                <div class="mt-16 md:mt-20 text-center md:hidden reveal">
+                    <a href="portfolio.html" class="inline-flex items-center gap-2 px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all duration-300 text-white font-medium min-h-[48px]">
                         View All Projects
-                        <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
+                        <i class="ph ph-arrow-right text-lg"></i>
                     </a>
                 </div>
             </section>
 
             <!-- Insights / Blog -->
-            <section id="insights" class="py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]" aria-label="Insights">
+            <section id="insights" class="py-20 md:py-32 px-4 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a] scroll-mt-24" aria-label="Insights">
                 <div class="flex items-center gap-3 mb-10 reveal">
-                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
                     <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Insights</span>
                 </div>
 
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20">
-                    <h2 class="text-4xl md:text-5xl font-bold leading-[1.05] tracking-tight text-white max-w-3xl reveal-left">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-20">
+                    <h2 class="text-3xl md:text-5xl font-bold leading-[1.05] tracking-tight text-white max-w-3xl reveal-left">
                         Latest thoughts on <span class="text-[#444444]">social media & digital marketing</span>
                     </h2>
-                    <a href="#" class="hidden md:flex items-center gap-2 text-[#888888] hover:text-white transition-colors duration-300 text-sm font-medium mt-4 md:mt-0">
+                    <a href="insights.html" class="hidden md:flex items-center gap-2 text-[#888888] hover:text-white transition-colors duration-300 text-sm font-medium mt-4 md:mt-0">
                         All Insights
-                        <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
+                        <i class="ph ph-arrow-right text-lg"></i>
                     </a>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                     <article class="bg-[#111111] rounded-2xl overflow-hidden group border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale">
-                        <a href="#" class="block">
+                        <a href="insights.html#post-1" class="block">
                             <div class="aspect-[16/9] overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1000&auto=format&fit=crop" alt="Social media trends" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             </div>
-                            <div class="p-6">
+                            <div class="p-5 md:p-6">
                                 <div class="flex items-center gap-3 text-[#555555] text-xs font-medium mb-3">
                                     <span>Dec 12, 2024</span>
-                                    <span class="w-1 h-1 rounded-full bg-[#555555]"></span>
+                                    <span class="w-1 h-1 rounded-full bg-[#555555] shrink-0"></span>
                                     <span>Social Media</span>
                                 </div>
-                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">5 Fintech Social Media Trends to Watch in 2025</h3>
+                                <h3 class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">5 Fintech Social Media Trends to Watch in 2025</h3>
                                 <p class="text-[#777777] text-sm leading-relaxed">From AI-powered content to community-led growth — here's what's shaping fintech social this year.</p>
                             </div>
                         </a>
                     </article>
 
                     <article class="bg-[#111111] rounded-2xl overflow-hidden group border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale" style="transition-delay: 0.1s;">
-                        <a href="#" class="block">
+                        <a href="insights.html#post-2" class="block">
                             <div class="aspect-[16/9] overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1000&auto=format&fit=crop" alt="Content strategy" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             </div>
-                            <div class="p-6">
+                            <div class="p-5 md:p-6">
                                 <div class="flex items-center gap-3 text-[#555555] text-xs font-medium mb-3">
                                     <span>Nov 28, 2024</span>
-                                    <span class="w-1 h-1 rounded-full bg-[#555555]"></span>
+                                    <span class="w-1 h-1 rounded-full bg-[#555555] shrink-0"></span>
                                     <span>Content</span>
                                 </div>
-                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">Building a Content Engine That Actually Converts</h3>
+                                <h3 class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">Building a Content Engine That Actually Converts</h3>
                                 <p class="text-[#777777] text-sm leading-relaxed">How to create a repeatable content system that drives engagement and revenue for B2B brands.</p>
                             </div>
                         </a>
                     </article>
 
                     <article class="bg-[#111111] rounded-2xl overflow-hidden group border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale" style="transition-delay: 0.2s;">
-                        <a href="#" class="block">
+                        <a href="insights.html#post-3" class="block">
                             <div class="aspect-[16/9] overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Social media analytics" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy">
                             </div>
-                            <div class="p-6">
+                            <div class="p-5 md:p-6">
                                 <div class="flex items-center gap-3 text-[#555555] text-xs font-medium mb-3">
                                     <span>Nov 15, 2024</span>
-                                    <span class="w-1 h-1 rounded-full bg-[#555555]"></span>
+                                    <span class="w-1 h-1 rounded-full bg-[#555555] shrink-0"></span>
                                     <span>Analytics</span>
                                 </div>
-                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">Beyond Vanity Metrics: What Actually Matters on Social</h3>
+                                <h3 class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#FF6B50] transition-colors duration-300">Beyond Vanity Metrics: What Actually Matters on Social</h3>
                                 <p class="text-[#777777] text-sm leading-relaxed">Stop chasing likes. Here's the metrics framework I use to measure real social media ROI.</p>
                             </div>
                         </a>
                     </article>
                 </div>
 
-                <div class="mt-8 text-center md:hidden reveal">
-                    <a href="#" class="inline-flex items-center gap-2 px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all duration-300 text-white font-medium">
+                <div class="mt-8 md:mt-10 text-center md:hidden reveal">
+                    <a href="insights.html" class="inline-flex items-center gap-2 px-8 py-3.5 border border-[#333333] hover:border-white rounded-xl transition-all duration-300 text-white font-medium min-h-[48px]">
                         All Insights
-                        <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
+                        <i class="ph ph-arrow-right text-lg"></i>
                     </a>
                 </div>
             </section>
 
             <!-- Testimonials -->
-            <section id="testimonials" class="py-32 px-6 md:px-12 max-w-7xl mx-auto" aria-label="Testimonials">
+            <section id="testimonials" class="py-20 md:py-32 px-4 md:px-12 max-w-7xl mx-auto scroll-mt-24" aria-label="Testimonials">
                 <div class="flex items-center gap-3 mb-10 reveal">
-                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                    <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
                     <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Testimonials</span>
                 </div>
 
-                <h2 class="text-4xl md:text-5xl font-medium leading-[1.05] tracking-tight text-white max-w-4xl mb-20 reveal-left">
+                <h2 class="text-3xl md:text-5xl font-medium leading-[1.05] tracking-tight text-white max-w-4xl mb-16 md:mb-20 reveal-left">
                     What brands say about <span class="text-[#444444]">working with me</span>
                 </h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-[#111111] rounded-2xl p-8 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale">
-                        <div class="flex items-center gap-1 mb-6">
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                    <div class="bg-[#111111] rounded-2xl p-6 md:p-8 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale">
+                        <div class="flex items-center gap-1 mb-5 md:mb-6">
+                            <i class="ph ph-star text-yellow-500 text-lg fill-yellow-500"></i>
+                            <i class="ph ph-star text-yellow-500 text-lg fill-yellow-500"></i>
+                            <i class="ph ph-star text-yellow-500 text-lg fill-yellow-500"></i>
+                            <i class="ph ph-star text-yellow-500 text-lg fill-yellow-500"></i>
+                            <i class="ph ph-star text-yellow-500 text-lg fill-yellow-500"></i>
                         </div>
-                        <p class="text-[#aaaaaa] leading-relaxed mb-8">"Pelumi transformed our social media presence. Our engagement rate tripled and we consistently hit 1M+ impressions monthly. She just gets fintech."</p>
+                        <p class="text-[#aaaaaa] text-sm md:text-base leading-relaxed mb-6 md:mb-8">"Pelumi transformed our social media presence. Our engagement rate tripled and we consistently hit 1M+ impressions monthly. She just gets fintech."</p>
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#4F46E5] to-[#7C3AED] flex items-center justify-center text-sm font-bold">TK</div>
-                            <div>
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#4F46E5] to-[#7C3AED] flex items-center justify-center text-sm font-bold shrink-0">TK</div>
+                            <div class="min-w-0">
                                 <p class="text-white text-sm font-semibold">Tunde K.</p>
                                 <p class="text-[#666666] text-xs">CEO, FinFlow</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-[#111111] rounded-2xl p-8 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale" style="transition-delay: 0.1s;">
-                        <div class="flex items-center gap-1 mb-6">
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                    <div class="bg-[#111111] rounded-2xl p-6 md:p-8 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale" style="transition-delay: 0.1s;">
+                        <div class="flex items-center gap-1 mb-5 md:mb-6">
+                            <i class="ph ph-star text-yellow-500 text-lg"></i>
+                            <i class="ph ph-star text-yellow-500 text-lg"></i>
+                            <i class="ph ph-star text-yellow-500 text-lg"></i>
+                            <i class="ph ph-star text-yellow-500 text-lg"></i>
+                            <i class="ph ph-star text-yellow-500 text-lg"></i>
                         </div>
-                        <p class="text-[#aaaaaa] leading-relaxed mb-8">"The product launch campaign Pelumi ran for PaySwift was incredible. We hit 10k users in 30 days and the paid social ROAS was 3.5×. She's a powerhouse."</p>
+                        <p class="text-[#aaaaaa] text-sm md:text-base leading-relaxed mb-6 md:mb-8">"The product launch campaign Pelumi ran for PaySwift was incredible. We hit 10k users in 30 days and the paid social ROAS was 3.5×. She's a powerhouse."</p>
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#EC4899] to-[#F43F5E] flex items-center justify-center text-sm font-bold">AM</div>
-                            <div>
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#EC4899] to-[#F43F5E] flex items-center justify-center text-sm font-bold shrink-0">AM</div>
+                            <div class="min-w-0">
                                 <p class="text-white text-sm font-semibold">Ada M.</p>
                                 <p class="text-[#666666] text-xs">CMO, PaySwift</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-[#111111] rounded-2xl p-8 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale" style="transition-delay: 0.2s;">
-                        <div class="flex items-center gap-1 mb-6">
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
-                            <iconify-icon icon="lucide:star" class="text-yellow-500 text-lg"></iconify-icon>
+                    <div class="bg-[#111111] rounded-2xl p-6 md:p-8 border border-[#1a1a1a] hover:border-[#333333] transition-all duration-500 reveal-scale" style="transition-delay: 0.2s;">
+                        <div class="flex items-center gap-1 mb-5 md:mb-6">
+                            <i class="ph ph-star text-yellow-500 text-lg"></i>
+                            <i class="ph ph-star text-yellow-500 text-lg"></i>
+                            <i class="ph ph-star text-yellow-500 text-lg"></i>
+                            <i class="ph ph-star text-yellow-500 text-lg"></i>
+                            <i class="ph ph-star text-yellow-500 text-lg"></i>
                         </div>
-                        <p class="text-[#aaaaaa] leading-relaxed mb-8">"Our community grew 5× in 4 months under Pelumi's management. She created a content strategy that actually resonated with our audience. Highly recommend."</p>
+                        <p class="text-[#aaaaaa] text-sm md:text-base leading-relaxed mb-6 md:mb-8">"Our community grew 5× in 4 months under Pelumi's management. She created a content strategy that actually resonated with our audience. Highly recommend."</p>
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#10B981] to-[#3B82F6] flex items-center justify-center text-sm font-bold">CI</div>
-                            <div>
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#10B981] to-[#3B82F6] flex items-center justify-center text-sm font-bold shrink-0">CI</div>
+                            <div class="min-w-0">
                                 <p class="text-white text-sm font-semibold">Chidi I.</p>
                                 <p class="text-[#666666] text-xs">COO, NestCredit</p>
                             </div>
@@ -748,79 +719,79 @@
             </section>
 
             <!-- Trusted By -->
-            <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]" aria-label="Brands worked with">
-                <div class="text-center mb-16 reveal">
+            <section class="py-16 md:py-24 px-4 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]" aria-label="Brands worked with">
+                <div class="text-center mb-12 md:mb-16 reveal">
                     <div class="flex items-center justify-center gap-3 mb-4">
-                        <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse"></div>
+                        <div class="w-2 h-2 rounded-full bg-[#FF6B50] animate-pulse shrink-0"></div>
                         <span class="text-[10px] font-bold tracking-[0.3em] text-[#666666]">Trusted By</span>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Brands I've worked with</h2>
+                    <h2 class="text-2xl md:text-4xl font-bold text-white">Brands I've worked with</h2>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-                    <div class="w-36 h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:bg-[#161616]">
-                        <span class="text-xl font-bold text-[#444444] hover:text-white transition-colors duration-300">FinFlow</span>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 items-center justify-items-center">
+                    <div class="w-full max-w-[160px] h-14 md:h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:bg-[#161616]">
+                        <span class="text-lg md:text-xl font-bold text-[#444444] hover:text-white transition-colors duration-300">FinFlow</span>
                     </div>
-                    <div class="w-36 h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:bg-[#161616]">
-                        <span class="text-xl font-bold text-[#444444] hover:text-white transition-colors duration-300">PaySwift</span>
+                    <div class="w-full max-w-[160px] h-14 md:h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:bg-[#161616]">
+                        <span class="text-lg md:text-xl font-bold text-[#444444] hover:text-white transition-colors duration-300">PaySwift</span>
                     </div>
-                    <div class="w-36 h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:bg-[#161616]">
-                        <span class="text-xl font-bold text-[#444444] hover:text-white transition-colors duration-300">VaultEdge</span>
+                    <div class="w-full max-w-[160px] h-14 md:h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:bg-[#161616]">
+                        <span class="text-lg md:text-xl font-bold text-[#444444] hover:text-white transition-colors duration-300">VaultEdge</span>
                     </div>
-                    <div class="w-36 h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:bg-[#161616]">
-                        <span class="text-xl font-bold text-[#444444] hover:text-white transition-colors duration-300">NestCredit</span>
+                    <div class="w-full max-w-[160px] h-14 md:h-16 bg-[#111111] rounded-xl flex items-center justify-center border border-[#1a1a1a] hover:border-[#333333] transition-all duration-300 hover:bg-[#161616]">
+                        <span class="text-lg md:text-xl font-bold text-[#444444] hover:text-white transition-colors duration-300">NestCredit</span>
                     </div>
                 </div>
             </section>
 
             <!-- CTA / Contact -->
-            <footer id="contact" class="relative pt-48 pb-32 px-6 md:px-12 border-t border-[#1a1a1a]" role="contentinfo">
-                <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
-                    <div class="flex-1 reveal-left">
-                        <h2 class="text-[14vw] md:text-[10vw] leading-[0.85] font-black tracking-tighter text-white mb-12 select-none">
+            <footer id="contact" class="relative pt-32 md:pt-48 pb-20 md:pb-32 px-4 md:px-12 border-t border-[#1a1a1a] scroll-mt-24" role="contentinfo">
+                <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-12 md:gap-16">
+                    <div class="flex-1 w-full reveal-left">
+                        <h2 class="text-[15vw] md:text-[10vw] leading-[0.85] font-black tracking-tighter text-white mb-10 md:mb-12 select-none">
                             Let's<br />Create.
                         </h2>
-                        <div class="flex flex-col gap-6">
-                            <a href="mailto:akandeoluwapelumi15@gmail.com" class="text-3xl md:text-4xl font-semibold hover:text-[#FF6B50] transition-all duration-300 w-fit break-all">
+                        <div class="flex flex-col gap-4 md:gap-6">
+                            <a href="mailto:akandeoluwapelumi15@gmail.com" class="text-2xl md:text-4xl font-semibold hover:text-[#FF6B50] transition-all duration-300 w-fit break-all">
                                 akandeoluwapelumi15@gmail.com
                             </a>
-                            <div class="flex items-center gap-4 flex-wrap">
-                                <a href="https://wa.me/234XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="text-[#666666] flex items-center gap-2 hover:text-white transition-colors duration-300">
-                                    <iconify-icon icon="lucide:message-circle"></iconify-icon>
+                            <div class="flex flex-wrap items-center gap-3 md:gap-4">
+                                <a href="https://wa.me/234XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="text-[#666666] flex items-center gap-2 hover:text-white transition-colors duration-300 text-sm md:text-base">
+                                    <i class="ph ph-whatsapp-logo"></i>
                                     WhatsApp
                                 </a>
-                                <span class="text-[#333333] mx-1">/</span>
-                                <p class="text-[#666666] flex items-center gap-2">
-                                    <iconify-icon icon="lucide:map-pin"></iconify-icon>
+                                <span class="text-[#333333] text-sm">/</span>
+                                <p class="text-[#666666] flex items-center gap-2 text-sm md:text-base">
+                                    <i class="ph ph-map-pin"></i>
                                     Lagos, NG & Remote
                                 </p>
-                                <span class="text-[#333333] mx-1">/</span>
-                                <p class="text-[#666666] flex items-center gap-2">
-                                    <iconify-icon icon="lucide:clock"></iconify-icon>
+                                <span class="text-[#333333] text-sm">/</span>
+                                <p class="text-[#666666] flex items-center gap-2 text-sm md:text-base">
+                                    <i class="ph ph-clock"></i>
                                     Response within 24hrs
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex gap-4 md:mb-6 reveal-right">
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-14 h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-2" aria-label="LinkedIn">
-                            <iconify-icon icon="lucide:linkedin" class="text-xl"></iconify-icon>
+                    <div class="flex gap-3 md:gap-4 md:mb-6 reveal-right">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-2" aria-label="LinkedIn">
+                            <i class="ph ph-linkedin-logo text-lg md:text-xl"></i>
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-14 h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-2" aria-label="X / Twitter">
-                            <iconify-icon icon="lucide:twitter" class="text-xl"></iconify-icon>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-2" aria-label="X / Twitter">
+                            <i class="ph ph-twitter-logo text-lg md:text-xl"></i>
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-14 h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-2" aria-label="Instagram">
-                            <iconify-icon icon="lucide:instagram" class="text-xl"></iconify-icon>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 md:w-14 md:h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-2" aria-label="Instagram">
+                            <i class="ph ph-instagram-logo text-lg md:text-xl"></i>
                         </a>
-                        <a href="mailto:akandeoluwapelumi15@gmail.com" class="w-14 h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-2" aria-label="Email">
-                            <iconify-icon icon="lucide:mail" class="text-xl"></iconify-icon>
+                        <a href="mailto:akandeoluwapelumi15@gmail.com" class="w-12 h-12 md:w-14 md:h-14 border border-[#333333] rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-2" aria-label="Email">
+                            <i class="ph ph-envelope text-lg md:text-xl"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="max-w-7xl mx-auto mt-40 pt-10 border-t border-[#111111] flex flex-col md:flex-row justify-between text-[#333333] text-xs font-medium">
+                <div class="max-w-7xl mx-auto mt-24 md:mt-40 pt-8 md:pt-10 border-t border-[#111111] flex flex-col md:flex-row justify-between text-[#333333] text-xs md:text-sm font-medium gap-4 md:gap-0">
                     <p>&copy; 2024 Oluwapelumi Akande. Crafted with purpose.</p>
-                    <div class="flex gap-10 mt-6 md:mt-0">
+                    <div class="flex gap-6 md:gap-10">
                         <a href="#" class="hover:text-[#666666] transition-colors duration-300">Privacy Policy</a>
                         <a href="#" class="hover:text-[#666666] transition-colors duration-300">Terms of Service</a>
                     </div>
@@ -829,6 +800,35 @@
         </main>
 
     </div>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let menuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('translate-y-0', menuOpen);
+            mobileMenu.classList.toggle('-translate-y-full', !menuOpen);
+            mobileMenu.classList.toggle('opacity-100', menuOpen);
+            mobileMenu.classList.toggle('opacity-0', !menuOpen);
+            menuBtn.setAttribute('aria-expanded', menuOpen);
+            menuBtn.innerHTML = menuOpen ? '<i class="ph ph-x text-2xl text-white"></i>' : '<i class="ph ph-list text-2xl text-white"></i>';
+            document.body.style.overflow = menuOpen ? 'hidden' : '';
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.add('-translate-y-full', 'opacity-0');
+                mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                menuBtn.innerHTML = '<i class="ph ph-list text-2xl text-white"></i>';
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
 
     <!-- Scroll Reveal -->
     <script>
