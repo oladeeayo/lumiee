@@ -854,21 +854,27 @@
     <script>
         const floatNav = document.querySelector('.fixed.bottom-6');
         if (floatNav) {
-            const hideSections = document.querySelectorAll('section, footer, header, main');
-            const btnObserver = new IntersectionObserver((entries) => {
+            const btnSections = [
+                document.querySelector('header'),
+                document.querySelector('#services'),
+                document.querySelector('#contact')
+            ].filter(Boolean);
+            floatNav.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            const checkNav = () => {
                 let shouldHide = false;
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const hasBtn = entry.target.querySelector('a[href="#contact"], a[href="portfolio.html"], a[href="insights.html"], a[href="#services"]');
-                        if (hasBtn) shouldHide = true;
+                for (const el of btnSections) {
+                    const r = el.getBoundingClientRect();
+                    if (r.bottom > 0 && r.top < window.innerHeight) {
+                        shouldHide = true;
+                        break;
                     }
-                });
+                }
                 floatNav.style.opacity = shouldHide ? '0' : '1';
                 floatNav.style.pointerEvents = shouldHide ? 'none' : 'auto';
                 floatNav.style.transform = shouldHide ? 'translateX(-50%) translateY(20px)' : 'translateX(-50%) translateY(0)';
-                floatNav.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-            }, { threshold: 0.15 });
-            hideSections.forEach(s => btnObserver.observe(s));
+            };
+            window.addEventListener('scroll', checkNav, { passive: true });
+            checkNav();
         }
     </script>
 </body>
