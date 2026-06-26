@@ -181,7 +181,8 @@ section.paper2{background:var(--paper-2)}
 .plat h3{font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:19px; color:var(--on-dark); margin-bottom:9px}
 .plat p{font-size:14px; color:var(--on-dark-mut)}
 .tools-row{display:flex; flex-wrap:wrap; gap:11px; margin-top:42px; justify-content:center}
-.tool{font-size:14px; font-weight:600; color:var(--on-dark); background:rgba(247,243,234,.05); border:1px solid var(--ink-line); border-radius:999px; padding:9px 18px; transition:background .15s ease, border-color .15s ease}
+.tool{font-size:14px; font-weight:600; color:var(--on-dark); background:rgba(247,243,234,.05); border:1px solid var(--ink-line); border-radius:999px; padding:9px 18px; transition:background .15s ease, border-color .15s ease; display:inline-flex; align-items:center; gap:6px; white-space:nowrap}
+.tool img{flex-shrink:0;border-radius:2px}
 .tool:hover{background:rgba(216,155,43,.12); border-color:rgba(216,155,43,.4)}
 @media (max-width:860px){.plat-grid{grid-template-columns:1fr}}
 
@@ -250,7 +251,8 @@ section.paper2 .tl-item::before{background:var(--paper-2)}
 .cert-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:820px; margin:0 auto}
 a.cert{display:flex; align-items:center; gap:18px; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px; box-shadow:var(--shadow); transition:.2s}
 a.cert:hover{transform:translateY(-4px); box-shadow:var(--shadow-lg)}
-.cert-ic{width:50px; height:50px; flex-shrink:0; border-radius:14px; background:var(--ink); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:24px}
+.cert-ic{width:50px; height:50px; flex-shrink:0; border-radius:14px; background:var(--ink); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:24px; overflow:hidden}
+.cert-ic img{width:100%;height:100%;object-fit:cover;border-radius:14px}
 .cert b{display:block; font-family:'Bricolage Grotesque',sans-serif; font-size:16.5px; color:var(--text); font-weight:700}
 .cert span{display:block; font-size:13.5px; color:var(--muted); margin-top:2px}
 .cert .verified{color:var(--green); font-size:12.5px; font-weight:600; margin-top:5px}
@@ -393,15 +395,15 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
       <div class="container">
         <div class="sec-head">
           <span class="eyebrow">About me</span>
-          <h2>I'm Oluwapelumi Akande, a social &amp; digital marketing professional with a client-success backbone.</h2>
+          <h2>I'm Oluwapelumi Akande <i class="ph ph-arrow-right" style="display:inline-block;vertical-align:middle;font-size:.65em;color:var(--gold)"></i> a social &amp; digital marketing professional with a client-success backbone.</h2>
         </div>
         <div class="about-grid">
           <div class="about-copy">
             <p>I help fintechs and startups grow their digital presence through strategic social media, compelling content, and data-driven campaigns, then keep the customers I help win. With over five years across fintech, banking, and insurance, I work at the seam between clients, marketing, and the teams that build the product.</p>
             <p>At Bytelabs I owned all of Billa's social and content and built its online community; on Watu I ran lead generation and outreach that lifted leads 30%. I blend creative storytelling with the operational discipline to onboard, support, and retain the people those campaigns bring in.</p>
             <div class="badge-row">
-              <span class="vbadge"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=16" alt="" width="16" height="16" style="border-radius:2px;margin-right:6px" loading="lazy"> Google Digital Marketing</span>
-              <span class="vbadge"><img src="https://www.google.com/s2/favicons?domain=altschoolafrica.com&sz=16" alt="" width="16" height="16" style="border-radius:2px;margin-right:6px" loading="lazy"> AltSchool Product Marketing</span>
+              <span class="vbadge"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=16" alt="" width="16" height="16" loading="lazy"> Google Digital Marketing</span>
+              <span class="vbadge"><img src="https://www.google.com/s2/favicons?domain=altschoolafrica.com&sz=16" alt="" width="16" height="16" loading="lazy"> AltSchool Product Marketing</span>
             </div>
           </div>
           <div class="about-facts">
@@ -448,7 +450,7 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
           <div class="plat"><div class="plat-ic"><i class="ph ph-envelope"></i></div><h3>Email &amp; Community</h3><p>Direct outreach, follow-up, and the day-to-day relationship work that keeps customers loyal.</p></div>
         </div>
         <div class="tools-row">
-          <span class="tool"><img src="https://www.google.com/s2/favicons?domain=hubspot.com&sz=16" alt="" width="16" height="16" style="margin-right:6px;border-radius:2px" loading="lazy">HubSpot</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=zoho.com&sz=16" alt="" width="16" height="16" style="margin-right:6px;border-radius:2px" loading="lazy">Zoho CRM</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=zendesk.com&sz=16" alt="" width="16" height="16" style="margin-right:6px;border-radius:2px" loading="lazy">Zendesk</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=canva.com&sz=16" alt="" width="16" height="16" style="margin-right:6px;border-radius:2px" loading="lazy">Canva</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=meta.com&sz=16" alt="" width="16" height="16" style="margin-right:6px;border-radius:2px" loading="lazy">Meta Business Suite</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=16" alt="" width="16" height="16" style="margin-right:6px;border-radius:2px" loading="lazy">Sales Navigator</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=16" alt="" width="16" height="16" style="margin-right:6px;border-radius:2px" loading="lazy">Google Workspace</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=microsoft.com&sz=16" alt="" width="16" height="16" style="margin-right:6px;border-radius:2px" loading="lazy">Microsoft 365</span>
+          <span class="tool"><img src="https://www.google.com/s2/favicons?domain=hubspot.com&sz=16" alt="" width="16" height="16" loading="lazy">HubSpot</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=zoho.com&sz=16" alt="" width="16" height="16" loading="lazy">Zoho CRM</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=zendesk.com&sz=16" alt="" width="16" height="16" loading="lazy">Zendesk</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=canva.com&sz=16" alt="" width="16" height="16" loading="lazy">Canva</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=meta.com&sz=16" alt="" width="16" height="16" loading="lazy">Meta Business Suite</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=16" alt="" width="16" height="16" loading="lazy">Sales Navigator</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=16" alt="" width="16" height="16" loading="lazy">Google Workspace</span><span class="tool"><img src="https://www.google.com/s2/favicons?domain=microsoft.com&sz=16" alt="" width="16" height="16" loading="lazy">Microsoft 365</span>
         </div>
       </div>
     </section>
@@ -458,7 +460,7 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
       <div class="container">
         <div class="sec-head">
           <span class="eyebrow">Portfolio</span>
-          <h2>Selected work, real projects, real numbers.</h2>
+          <h2>Selected work <i class="ph ph-arrow-right" style="display:inline-block;vertical-align:middle;font-size:.65em;color:var(--gold)"></i> real projects, real numbers.</h2>
         </div>
         <div class="filters">
           <button class="filter active" data-filter="all">All</button>
@@ -485,7 +487,7 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
     <!-- EXPERIENCE -->
     <section class="block paper2" id="experience">
       <div class="container">
-        <div class="sec-head"><span class="eyebrow">Career</span><h2>Six roles, one through-line: customers.</h2></div>
+        <div class="sec-head"><span class="eyebrow">Career</span>          <h2>Six roles <i class="ph ph-arrow-right" style="display:inline-block;vertical-align:middle;font-size:.65em;color:var(--gold)"></i> one through-line, customers.</h2></div>
         <div class="timeline">
           <div class="tl-item"><div class="tl-when">Mar 2026 &ndash; Present · United Kingdom · Remote</div><div class="tl-title">Client Success &amp; Digital Marketing Executive</div><div class="tl-org">Switchboard Communications</div><div class="tl-desc">The link between clients, management, and the web team, owning relationships end to end, running digital marketing, and keeping website projects on schedule.</div></div>
           <div class="tl-item"><div class="tl-when">Oct 2024 &ndash; Nov 2025 · Lagos, Nigeria</div><div class="tl-title">Executive Administrator</div><div class="tl-org">Temlio Communication</div><div class="tl-desc">Coordinated executive schedules and communications, cut response time ~30%, and turned customer feedback into reports that improved service quality.</div></div>
@@ -513,12 +515,12 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
       <div class="container">
         <div class="sec-head center"><span class="eyebrow">Track record</span><h2>Where I've worked.</h2></div>
         <div class="logos">
-          <a class="logo" href="https://www.opayweb.com/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=www.opayweb.com&sz=32" alt="" width="20" height="20" style="vertical-align:middle;margin-right:6px" loading="lazy">OPay</a>
-          <a class="logo" href="https://coronation.ng/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=coronation.ng&sz=32" alt="" width="20" height="20" style="vertical-align:middle;margin-right:6px" loading="lazy">Coronation Insurance</a>
-          <a class="logo" href="https://davodanimfb.com/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=davodanimfb.com&sz=32" alt="" width="20" height="20" style="vertical-align:middle;margin-right:6px" loading="lazy">DavoDani MFB</a>
-          <a class="logo" href="https://www.bytelabs.ng/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=bytelabs.ng&sz=32" alt="" width="20" height="20" style="vertical-align:middle;margin-right:6px" loading="lazy">Bytelabs</a>
-          <a class="logo" href="https://switchboard.uk/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=switchboard.uk&sz=32" alt="" width="20" height="20" style="vertical-align:middle;margin-right:6px" loading="lazy">Switchboard</a>
-          <a class="logo" href="https://temlio.com/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=temlio.com&sz=32" alt="" width="20" height="20" style="vertical-align:middle;margin-right:4px" loading="lazy">Temlio</a>
+          <a class="logo" href="https://www.opayweb.com/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=www.opayweb.com&sz=32" alt="" width="20" height="20" loading="lazy">OPay</a>
+          <a class="logo" href="https://coronation.ng/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=coronation.ng&sz=32" alt="" width="20" height="20" loading="lazy">Coronation Insurance</a>
+          <a class="logo" href="https://davodanimfb.com/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=davodanimfb.com&sz=32" alt="" width="20" height="20" loading="lazy">DavoDani MFB</a>
+          <a class="logo" href="https://www.bytelabs.ng/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=bytelabs.ng&sz=32" alt="" width="20" height="20" loading="lazy">Bytelabs</a>
+          <a class="logo" href="https://switchboard.uk/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=switchboard.uk&sz=32" alt="" width="20" height="20" loading="lazy">Switchboard</a>
+          <a class="logo" href="https://temlio.com/" target="_blank" rel="noopener"><img src="https://www.google.com/s2/favicons?domain=temlio.com&sz=32" alt="" width="20" height="20" loading="lazy">Temlio</a>
         </div>
       </div>
     </section>
@@ -528,8 +530,8 @@ footer{background:#0F0D09; color:var(--on-dark-mut); padding:38px 0}
       <div class="container">
         <div class="sec-head center"><span class="eyebrow">Credentials</span><h2>Certifications.</h2></div>
         <div class="cert-grid">
-          <a class="cert" href="https://learndigital.withgoogle.com/link/1qsdpcedm9s" target="_blank" rel="noopener"><span class="cert-ic"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" alt="" width="28" height="28" style="border-radius:4px" loading="lazy"></span><span><b>Fundamentals of Digital Marketing</b><span>Google Digital Garage</span><span class="verified"><i class="ph ph-check-circle" style="margin-right:4px"></i>Verify on Google</span></span></a>
-          <a class="cert" href="https://drive.google.com/file/d/1f1iX2mTFo_u6xNxpGzlVzLQlNg1VjsEp/view" target="_blank" rel="noopener"><span class="cert-ic"><img src="https://www.google.com/s2/favicons?domain=altschoolafrica.com&sz=32" alt="" width="28" height="28" style="border-radius:4px" loading="lazy"></span><span><b>Product Marketing Diploma</b><span>AltSchool Africa</span></span></a>
+          <a class="cert" href="https://learndigital.withgoogle.com/link/1qsdpcedm9s" target="_blank" rel="noopener"><span class="cert-ic"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" alt="" loading="lazy"></span><span><b>Fundamentals of Digital Marketing</b><span>Google Digital Garage</span><span class="verified"><i class="ph ph-check-circle" style="margin-right:4px"></i>Verify on Google</span></span></a>
+          <a class="cert" href="https://drive.google.com/file/d/1f1iX2mTFo_u6xNxpGzlVzLQlNg1VjsEp/view" target="_blank" rel="noopener"><span class="cert-ic"><img src="https://www.google.com/s2/favicons?domain=altschoolafrica.com&sz=32" alt="" loading="lazy"></span><span><b>Product Marketing Diploma</b><span>AltSchool Africa</span></span></a>
         </div>
       </div>
     </section>
